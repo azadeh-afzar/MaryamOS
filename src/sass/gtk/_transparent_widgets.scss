@@ -55,7 +55,7 @@ filechooser,
       &:backdrop { opacity: 0.85; }
 
       &:hover {
-        transition: background-image 0;
+        transition: background-image ease-out 10ms;
         background-repeat: no-repeat;
         background-color: transparent;
         background-position: left center;
