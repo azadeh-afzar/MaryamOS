@@ -152,15 +152,11 @@ install() {
   parse_sass
   # copy css files.
   mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
+  cp -ur "${SRC_DIR}/assets/gnome-shell/source-assets"/*                                  "${THEME_DIR}/gnome-shell"
   cp -ur "${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.css"                  "${THEME_DIR}/gnome-shell/gnome-shell.css"
   cp -ur "${SRC_DIR}/assets/gnome-shell/common-assets"                                    "${THEME_DIR}/gnome-shell/assets"
   cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}"/*.svg                             "${THEME_DIR}/gnome-shell/assets"
   cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}/activities/activities${icon}"*.svg "${THEME_DIR}/gnome-shell/assets/"
-  cd "${THEME_DIR}/gnome-shell"
-  ln -s assets/no-events.svg no-events.svg
-  ln -s assets/process-working.svg process-working.svg
-  ln -s assets/no-notifications.svg no-notifications.svg
-  cd "${REPO_DIR}"
 
   mkdir -p                                                                                 "${THEME_DIR}/gtk-3.0"
   cp -ur "${SRC_DIR}/assets/gtk-3.0/common-assets/assets"                                  "${THEME_DIR}/gtk-3.0"
@@ -196,10 +192,10 @@ UBUNTU_THEME_FILE="/usr/share/gnome-shell/theme/ubuntu.css"
 UBUNTU_NEW_THEME_FILE="/usr/share/gnome-shell/theme/gnome-shell.css"
 
 install_gdm() {
-  local GDM_THEME_DIR="${1}/${2}${3}"
+  local GDM_THEME_DIR="${1}/${2}${3}${4}"
 
   echo
-  echo "Installing ${2}${3} gdm theme..."
+  echo "Installing ${2}${3}${4} gdm theme..."
 
   if [[ -f "$GS_THEME_FILE" ]] && command -v glib-compile-resources >/dev/null ; then
     echo "Installing '$GS_THEME_FILE'..."
