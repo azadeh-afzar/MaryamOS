@@ -38,7 +38,7 @@ stage {
   border-radius: 6px;
   font-size: 9.75pt;
   font-weight: 500;
-  color: #afafaf;
+  color: #e4e4e4;
   background-color: transparent;
   border-color: transparent;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.05);
@@ -157,7 +157,7 @@ StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
 }
 
 StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover {
-  background-color: #afafaf;
+  background-color: #e4e4e4;
 }
 
 StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
@@ -187,23 +187,23 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 16px;
   -slider-height: 19px;
   -slider-background-color: rgba(255, 255, 255, 0.1);
-  -slider-border-color: transparent;
+  -slider-border-color: rgba(255, 255, 255, 0.12);
   -slider-active-background-color: rgba(255, 255, 255, 0.35);
-  -slider-active-border-color: transparent;
+  -slider-active-border-color: rgba(255, 255, 255, 0.12);
   -slider-border-width: 1px;
   -slider-handle-radius: 10px;
   -slider-handle-border-width: 1px;
-  -slider-handle-border-color: transparent;
+  -slider-handle-border-color: rgba(255, 255, 255, 0.12);
   -barlevel-height: 19px;
   -barlevel-background-color: rgba(255, 255, 255, 0.1);
-  -barlevel-border-color: transparent;
+  -barlevel-border-color: rgba(255, 255, 255, 0.12);
   -barlevel-active-background-color: rgba(255, 255, 255, 0.35);
-  -barlevel-active-border-color: transparent;
+  -barlevel-active-border-color: rgba(255, 255, 255, 0.12);
   -barlevel-overdrive-color: #f8464c;
-  -barlevel-overdrive-border-color: transparent;
+  -barlevel-overdrive-border-color: rgba(255, 255, 255, 0.12);
   -barlevel-overdrive-separator-width: 0;
   -barlevel-border-width: 1px;
-  -barlevel-border-color: transparent;
+  -barlevel-border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Check Boxes */
@@ -331,7 +331,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 6px;
   font-size: 9.75pt;
   font-weight: 500;
-  color: #afafaf;
+  color: #e4e4e4;
   background-color: transparent;
   border-color: transparent;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.05);
@@ -436,7 +436,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-dialog-subtitle {
-  color: #afafaf;
+  color: #e4e4e4;
   font-weight: bold;
 }
 
@@ -467,7 +467,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-description {
-  color: #afafaf;
+  color: #e4e4e4;
   font-size: 15pt;
   font-weight: 500;
 }
@@ -484,7 +484,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .run-dialog .run-dialog-description {
   text-align: center;
-  color: #afafaf;
+  color: #e4e4e4;
   font-size: 15pt;
   font-weight: 500;
 }
@@ -815,7 +815,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .extension-dialog .message-dialog-title {
-  color: #afafaf;
+  color: #e4e4e4;
 }
 
 /* Inhibit-Shortcuts Dialog */
@@ -836,14 +836,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Popovers/Menus */
 .candidate-popup-boxpointer, .popup-menu .popup-menu-content, .modal-dialog {
-  background-color: rgba(36, 36, 36, 0.95);
+  background-color: #242424;
   border-radius: 14px;
   border: none;
 }
 
 .popup-menu {
   min-width: 12em;
-  color: #afafaf;
+  color: #e4e4e4;
   padding: 0 0;
 }
 
@@ -884,7 +884,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu .popup-menu-item {
   spacing: 12px;
   padding: 6px;
-  color: #afafaf;
+  color: #e4e4e4;
   text-shadow: none;
   border-radius: 10px;
   margin: 0 6px;
@@ -940,7 +940,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-inactive-menu-item {
-  color: #afafaf;
+  color: #e4e4e4;
 }
 
 .popup-menu .popup-inactive-menu-item:insensitive {
@@ -977,7 +977,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .candidate-popup-boxpointer {
   -arrow-border-radius: 2px;
-  -arrow-background-color: rgba(36, 36, 36, 0.95);
+  -arrow-background-color: #242424;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 5px;
@@ -1045,7 +1045,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .system-menu-action {
-  color: #afafaf;
+  color: #e4e4e4;
   border-radius: 100px;
   /* wish we could do 50% */
   padding: 12px;
@@ -1523,7 +1523,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
   background: none;
   text-shadow: none;
-  color: #afafaf;
+  color: #e4e4e4;
 }
 
 .datemenu-today-button:hover, .datemenu-today-button:focus,
@@ -1548,7 +1548,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-header,
 .weather-header,
 .events-section-title {
-  color: #afafaf;
+  color: #e4e4e4;
   font-weight: bold;
 }
 
@@ -1591,7 +1591,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .weather-button .weather-header {
-  color: #afafaf;
+  color: #e4e4e4;
   font-weight: bold;
 }
 
@@ -1606,7 +1606,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .weather-button .weather-forecast-time {
-  color: #afafaf;
+  color: #e4e4e4;
   font-feature-settings: "tnum";
   font-size: 9pt;
   font-weight: normal;
@@ -1685,7 +1685,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 2px;
   margin: 2px;
   border-radius: 1000px;
-  color: #afafaf;
+  color: #e4e4e4;
   font-feature-settings: "tnum";
 }
 
@@ -1826,7 +1826,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message {
   border-radius: 6px;
   border: none;
-  color: #afafaf;
+  color: #e4e4e4;
   background-color: #383838;
   margin: 4px;
   box-shadow: none;
@@ -1891,7 +1891,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-close-button {
-  color: #afafaf;
+  color: #e4e4e4;
   padding: 0;
   height: 24px;
   width: 24px;
@@ -1922,7 +1922,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 16px 4px;
   padding: 8px;
   border-radius: 100px;
-  color: #afafaf;
+  color: #e4e4e4;
 }
 
 .message-media-control:hover, .message-media-control:focus {
@@ -2648,7 +2648,7 @@ StWidget.focused .app-well-app-running-dot {
   min-height: 40px;
   padding: 0 16px;
   background-color: transparent;
-  color: #afafaf;
+  color: #e4e4e4;
   font-weight: 500;
 }
 
@@ -2715,7 +2715,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .chat-sent {
   padding-left: 18pt;
-  color: #afafaf;
+  color: #e4e4e4;
 }
 
 .chat-sent:rtl {
@@ -3024,7 +3024,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .login-dialog .modal-dialog-button {
   padding: 0 16px;
-  color: #afafaf;
+  color: #e4e4e4;
   background-color: transparent;
   border-color: transparent;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.05);
@@ -3433,7 +3433,7 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 6px;
   font-size: 9.75pt;
   font-weight: 500;
-  color: #afafaf;
+  color: #e4e4e4;
   background-color: transparent;
   border-color: transparent;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.05);
@@ -3624,7 +3624,7 @@ StWidget.focused .app-well-app-running-dot {
 .openweather-provider {
   padding: 0 16px;
   font-weight: 500;
-  color: #afafaf;
+  color: #e4e4e4;
   background-color: transparent;
   border-color: transparent;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.05);
@@ -3674,7 +3674,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .openweather-forecast-icon, .openweather-forecast-summary {
   background: none;
-  color: #afafaf;
+  color: #e4e4e4;
 }
 
 .openweather-forecast-day, .openweather-forecast-temperature {
@@ -3683,7 +3683,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .openweather-sunrise-icon, .openweather-sunset-icon, .openweather-build-icon {
-  color: #afafaf;
+  color: #e4e4e4;
 }
 
 .popup-menu .search-entry {

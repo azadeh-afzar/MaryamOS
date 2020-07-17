@@ -5445,7 +5445,7 @@ configurationview list {
 }
 
 window.org-gnome-Builder.workspace > popover.dzlmenubutton > box.vertical > dzlmenubuttonsection.vertical > box.vertical > button.dzlmenubuttonitem {
-  color: #afafaf;
+  color: #e4e4e4;
 }
 
 window.org-gnome-Builder.workspace > popover.dzlmenubutton > box.vertical > dzlmenubuttonsection.vertical > box.vertical > button.dzlmenubuttonitem:active, window.org-gnome-Builder.workspace > popover.dzlmenubutton > box.vertical > dzlmenubuttonsection.vertical > box.vertical > button.dzlmenubuttonitem:checked {
