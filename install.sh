@@ -158,6 +158,7 @@ install() {
   cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}"/*.svg                             "${THEME_DIR}/gnome-shell/assets"
   cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}/activities/activities${icon}"*.svg "${THEME_DIR}/gnome-shell/assets/"
 
+  # install gtk3 theme.
   mkdir -p                                                                                 "${THEME_DIR}/gtk-3.0"
   cp -ur "${SRC_DIR}/assets/gtk-3.0/common-assets/assets"                                  "${THEME_DIR}/gtk-3.0"
   cp -ur "${SRC_DIR}/assets/gtk-3.0/windows-assets/titlebutton${alt}"                      "${THEME_DIR}/gtk-3.0/windows-assets"
@@ -175,6 +176,7 @@ install() {
   echo '@import url("resource:///org/gnome/Mcata-theme/gtk.css");' >>                      "${THEME_DIR}/gtk-3.0/gtk.css"
   echo '@import url("resource:///org/gnome/Mcata-theme/gtk-dark.css");' >>                 "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
+  # install plank dock theme.
   mkdir -p                                                                                 "${THEME_DIR}/plank"
   cp -ur "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${THEME_DIR}/plank"
 
