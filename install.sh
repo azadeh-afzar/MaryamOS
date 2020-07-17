@@ -3,7 +3,7 @@ set -ueo pipefail
 #set -x
 
 REPO_DIR=$(cd $(dirname $0) && pwd)
-SRC_DIR=${REPO_DIR}/src
+SRC_DIR="${REPO_DIR}/src"
 
 ROOT_UID=0
 DEST_DIR=
@@ -11,8 +11,10 @@ DEST_DIR=
 # Destination directory
 if [ "$UID" -eq "$ROOT_UID" ]; then
   DEST_DIR="/usr/share/themes"
+  PLANK_DIR="/usr/share/plank/themes"
 else
   DEST_DIR="$HOME/.themes"
+  PLANK_DIR="$HOME/.local/share/plank/themes"
 fi
 
 THEME_NAME=MaryamOS
@@ -53,51 +55,54 @@ install() {
 
   echo "Installing '${THEME_DIR}'..."
 
-  mkdir -p                                                                              ${THEME_DIR}
-  cp -ur ${REPO_DIR}/COPYING                                                            ${THEME_DIR}
+  mkdir -p                                                                                "${THEME_DIR}"
+  cp -ur "${REPO_DIR}/COPYING"                                                            "${THEME_DIR}"
 
-  echo "[Desktop Entry]" >>                                                             ${THEME_DIR}/index.theme
-  echo "Type=X-GNOME-Metatheme" >>                                                      ${THEME_DIR}/index.theme
-  echo "Name=${name}${color}${opacity}" >>                                              ${THEME_DIR}/index.theme
-  echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >>                       ${THEME_DIR}/index.theme
-  echo "Encoding=UTF-8" >>                                                              ${THEME_DIR}/index.theme
-  echo "" >>                                                                            ${THEME_DIR}/index.theme
-  echo "[X-GNOME-Metatheme]" >>                                                         ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${color}${opacity}" >>                                          ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${color}${opacity}" >>                                     ${THEME_DIR}/index.theme
-  echo "IconTheme=McMojave-circle" >>                                                   ${THEME_DIR}/index.theme
-  echo "CursorTheme=McMojave-circle" >>                                                 ${THEME_DIR}/index.theme
-  echo "ButtonLayout=close,minimize,maximize:menu" >>                                   ${THEME_DIR}/index.theme
+  echo "[Desktop Entry]" >>                                                               "${THEME_DIR}/index.theme"
+  echo "Type=X-GNOME-Metatheme" >>                                                        "${THEME_DIR}/index.theme"
+  echo "Name=${name}${color}${opacity}" >>                                                "${THEME_DIR}/index.theme"
+  echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >>                         "${THEME_DIR}/index.theme"
+  echo "Encoding=UTF-8" >>                                                                "${THEME_DIR}/index.theme"
+  echo "" >>                                                                              "${THEME_DIR}/index.theme"
+  echo "[X-GNOME-Metatheme]" >>                                                           "${THEME_DIR}/index.theme"
+  echo "GtkTheme=${name}${color}${opacity}" >>                                            "${THEME_DIR}/index.theme"
+  echo "MetacityTheme=${name}${color}${opacity}" >>                                       "${THEME_DIR}/index.theme"
+  echo "IconTheme=McMojave-circle" >>                                                     "${THEME_DIR}/index.theme"
+  echo "CursorTheme=McMojave-circle" >>                                                   "${THEME_DIR}/index.theme"
+  echo "ButtonLayout=close,minimize,maximize:menu" >>                                     "${THEME_DIR}/index.theme"
 
-  mkdir -p                                                                              ${THEME_DIR}/gnome-shell
-  cp -ur ${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.css                  ${THEME_DIR}/gnome-shell/gnome-shell.css
-  cp -ur ${SRC_DIR}/assets/gnome-shell/common-assets                                    ${THEME_DIR}/gnome-shell/assets
-  cp -ur ${SRC_DIR}/assets/gnome-shell/assets${color}/*.svg                             ${THEME_DIR}/gnome-shell/assets
-  cp -ur ${SRC_DIR}/assets/gnome-shell/assets${color}/activities/activities${icon}.svg  ${THEME_DIR}/gnome-shell/assets/activities.svg
-  cd ${THEME_DIR}/gnome-shell
+  mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
+  cp -ur "${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.css"                  "${THEME_DIR}/gnome-shell/gnome-shell.css"
+  cp -ur "${SRC_DIR}/assets/gnome-shell/common-assets"                                    "${THEME_DIR}/gnome-shell/assets"
+  cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}"/*.svg                             "${THEME_DIR}/gnome-shell/assets"
+  cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}/activities/activities${icon}.svg"  "${THEME_DIR}/gnome-shell/assets/activities.svg"
+  cd "${THEME_DIR}/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
   ln -s assets/process-working.svg process-working.svg
   ln -s assets/no-notifications.svg no-notifications.svg
 
-  mkdir -p                                                                              ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/assets/gtk-3.0/common-assets/assets                                 ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/assets/gtk-3.0/windows-assets/titlebutton${alt}                     ${THEME_DIR}/gtk-3.0/windows-assets
-  cp -ur ${SRC_DIR}/assets/gtk-3.0/thumbnail${color}.png                                ${THEME_DIR}/gtk-3.0/thumbnail.png
-  cp -ur ${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css                                 ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  mkdir -p                                                                                 "${THEME_DIR}/gtk-3.0"
+  cp -ur "${SRC_DIR}/assets/gtk-3.0/common-assets/assets"                                  "${THEME_DIR}/gtk-3.0"
+  cp -ur "${SRC_DIR}/assets/gtk-3.0/windows-assets/titlebutton${alt}"                      "${THEME_DIR}/gtk-3.0/windows-assets"
+  cp -ur "${SRC_DIR}/assets/gtk-3.0/thumbnail${color}.png"                                 "${THEME_DIR}/gtk-3.0/thumbnail.png"
+  cp -ur "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                                  "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
   if [[ ${color} == '-light' ]]; then
-    cp -ur ${SRC_DIR}/main/gtk-3.0/gtk-light${opacity}.css                              ${THEME_DIR}/gtk-3.0/gtk.css
+    cp -ur "${SRC_DIR}/main/gtk-3.0/gtk-light${opacity}.css"                               "${THEME_DIR}/gtk-3.0/gtk.css"
   else
-    cp -ur ${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css                               ${THEME_DIR}/gtk-3.0/gtk.css
+    cp -ur "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                                "${THEME_DIR}/gtk-3.0/gtk.css"
   fi
 
-  glib-compile-resources --sourcedir=${THEME_DIR}/gtk-3.0 --target=${THEME_DIR}/gtk-3.0/gtk.gresource ${SRC_DIR}/main/gtk-3.0/gtk.gresource.xml
-  rm -rf ${THEME_DIR}/gtk-3.0/{assets,windows-assets,gtk.css,gtk-dark.css}
-  echo '@import url("resource:///org/gnome/Mcata-theme/gtk.css");' >>                   ${THEME_DIR}/gtk-3.0/gtk.css
-  echo '@import url("resource:///org/gnome/Mcata-theme/gtk-dark.css");' >>              ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  glib-compile-resources --sourcedir="${THEME_DIR}/gtk-3.0" --target="${THEME_DIR}/gtk-3.0/gtk.gresource" "${SRC_DIR}/main/gtk-3.0/gtk.gresource.xml"
+  rm -rf                                                                                   "${THEME_DIR}/gtk-3.0/{assets,windows-assets,gtk.css,gtk-dark.css}"
+  echo '@import url("resource:///org/gnome/Mcata-theme/gtk.css");' >>                      "${THEME_DIR}/gtk-3.0/gtk.css"
+  echo '@import url("resource:///org/gnome/Mcata-theme/gtk-dark.css");' >>                 "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
-  mkdir -p                                                                              ${THEME_DIR}/plank
-  cp -ur ${SRC_DIR}/other/plank/theme${color}/*.theme                                   ${THEME_DIR}/plank
+  mkdir -p                                                                                 "${THEME_DIR}/plank"
+  cp -ur "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${THEME_DIR}/plank"
+
+  mkdir -p                                                                                 "${PLANK_DIR}/${2}${3}${4}${5}"
+  cp -ur "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${PLANK_DIR}/${2}${3}${4}${5}"
 }
 
 # Backup and install files related to GDM theme
