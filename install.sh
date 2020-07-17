@@ -38,6 +38,79 @@ usage() {
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
+# check command avalibility
+function has_command() {
+  command -v $1 > /dev/null
+}
+
+install_package() {
+  if [ ! "$(which sassc 2> /dev/null)" ]; then
+    echo "\n sassc needs to be installed to generate the css."
+
+    if has_command zypper; then
+
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo zypper in sassc "
+        sudo -S <<< $REPLY zypper in sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
+
+      elif has_command apt; then
+
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo apt install sassc "
+        sudo -S <<< $REPLY apt install sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
+
+      elif has_command dnf; then
+
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo dnf install sassc "
+        sudo -S <<< $REPLY dnf install sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
+
+      elif has_command yum; then
+
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo yum install sassc "
+        sudo -S <<< $REPLY yum install sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
+
+      elif has_command pacman; then
+
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo pacman -S --noconfirm sassc "
+        sudo -S <<< $REPLY pacman -S --noconfirm sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
+
+    fi
+  fi
+}
+
+parse_sass() {
+  cd "${REPO_DIR}"
+  ./parse-sass.sh
+}
+
 install() {
   local dest=${1}
   local name=${2}
@@ -49,7 +122,7 @@ install() {
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
 
-  local THEME_DIR=${1}/${2}${3}${4}${5}
+  local THEME_DIR=${1}/${2}${3}${4}${5}${6}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -71,15 +144,23 @@ install() {
   echo "CursorTheme=McMojave-circle" >>                                                   "${THEME_DIR}/index.theme"
   echo "ButtonLayout=close,minimize,maximize:menu" >>                                     "${THEME_DIR}/index.theme"
 
+  # install Gnome shell theme.
+  # set right icon for activity panel
+  local var="\$icon-logo: '${icon}';";
+  sed -i "1s/.*/${var}/"  "${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.scss"
+  # generate css files.
+  parse_sass
+  # copy css files.
   mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
   cp -ur "${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.css"                  "${THEME_DIR}/gnome-shell/gnome-shell.css"
   cp -ur "${SRC_DIR}/assets/gnome-shell/common-assets"                                    "${THEME_DIR}/gnome-shell/assets"
   cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}"/*.svg                             "${THEME_DIR}/gnome-shell/assets"
-  cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}/activities/activities${icon}.svg"  "${THEME_DIR}/gnome-shell/assets/activities.svg"
+  cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}/activities/activities${icon}"*.svg "${THEME_DIR}/gnome-shell/assets/"
   cd "${THEME_DIR}/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
   ln -s assets/process-working.svg process-working.svg
   ln -s assets/no-notifications.svg no-notifications.svg
+  cd "${REPO_DIR}"
 
   mkdir -p                                                                                 "${THEME_DIR}/gtk-3.0"
   cp -ur "${SRC_DIR}/assets/gtk-3.0/common-assets/assets"                                  "${THEME_DIR}/gtk-3.0"
