@@ -129,10 +129,10 @@ StScrollBar {
 
 /* Slider */
 
-$slider_color: if($variant == 'light', white, white);
-$barlevel_bg_color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
-$barlevel_active_bg_color: if($variant == 'light', white, rgba(white, 0.35));
-$barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), transparent);
+$slider_color: if($variant == 'light', black, white);
+$barlevel_bg_color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1)); // the empty part.
+$barlevel_active_bg_color: if($variant == 'light', rgba(black, 0.35), rgba(white, 0.35)); // the filled part.
+$barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.12)); // border of slider.
 
 .slider {
   height: 20px;
@@ -663,7 +663,7 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), transparent);
 }
 
 /* Popovers/Menus */
-$dialog_bg_color: if($variant == 'light', rgba($bg_color, 0.95), rgba($base_color, 0.95));
+$dialog_bg_color: if($variant == 'light', $bg_color, $base_color);
 $popop_menuitem_radius: $wm_radius - 4px;
 
 // sets popup menu color
@@ -681,6 +681,7 @@ $popop_menuitem_radius: $wm_radius - 4px;
   .popup-menu-arrow { } //defined globally in the TOP BAR
 
   .popup-sub-menu {
+    // color of sub menu background.
     background-color: if($variant == 'light', rgba(white, 0.75), rgba(white, 0.15));
     border-radius: 0 0 $popop_menuitem_radius $popop_menuitem_radius;
     border: none;
@@ -1067,8 +1068,8 @@ $popop_menuitem_radius: $wm_radius - 4px;
   }
 
 /* TOP BAR */
-$panel_bg_color: if($trans == 'true', if($variant == 'light', rgba(white, 0.15), rgba(black, 0.15)), if($variant == 'light', rgba(white, 0.85), rgba(black, 0.85)));
-$panel_fg_color: white;
+$panel_bg_color: if($trans == 'true', if($variant == 'light', rgba(white, 0.15), rgba(black, 0.15)), if($variant == 'light', rgba(white, 0.65), rgba(black, 0.65)));
+$panel_fg_color: if($variant == 'light', if($trans == "true", white, black), white);
 $panel_shadow: 0 2px 3px rgba(black, 0.03), 0 3px 5px rgba(black, 0.03), 0 5px 10px rgba(black, 0.02);
 $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
 
@@ -1226,7 +1227,11 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
 #panel #panelActivities.panel-button {
 
   > * {
-    background-image: url("assets/activities.svg");
+    @if $variant == 'light' and $trans == 'false' {
+      background-image: url("assets/activities#{$icon_logo}-solid.svg");
+    } @else {
+      background-image: url("assets/activities#{$icon_logo}.svg");
+    }
     background-position: center top;
     width: 24px;
     height: 24px;
@@ -1239,8 +1244,6 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   &:active, &:overview, &:focus, &:checked {
     background-color: transparent;
     border: none;
-
-    // > * { background-image: url("assets/activities-active.svg"); }
   }
 }
 
