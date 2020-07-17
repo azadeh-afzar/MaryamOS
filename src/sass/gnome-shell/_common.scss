@@ -663,10 +663,10 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), transparent);
 }
 
 /* Popovers/Menus */
-
 $dialog_bg_color: if($variant == 'light', rgba($bg_color, 0.95), rgba($base_color, 0.95));
 $popop_menuitem_radius: $wm_radius - 4px;
 
+// sets popup menu color
 %theme_dialogs {
   background-color: $dialog_bg_color;
   border-radius: $wm_radius;
@@ -715,6 +715,7 @@ $popop_menuitem_radius: $wm_radius - 4px;
     margin: 4px 12px 20px;
   }
 
+  // rules for popup menu items, like wifi, blutooth, etc ...
   .popup-menu-item {
     spacing: 12px;
     padding: 6px;
@@ -727,6 +728,7 @@ $popop_menuitem_radius: $wm_radius - 4px;
     &:ltr { padding-right: 1.5em; padding-left: 0; }
     &:rtl { padding-right: 0; padding-left: 1.5em; }
 
+    // rules for when an item in menu is selected 
     &:checked {
       font-weight: normal;
       border-radius: $popop_menuitem_radius $popop_menuitem_radius 0 0;
@@ -1065,7 +1067,7 @@ $popop_menuitem_radius: $wm_radius - 4px;
   }
 
 /* TOP BAR */
-$panel_bg_color: if($variant == 'light', rgba(white, 0.15), rgba(black, 0.15));
+$panel_bg_color: if($trans == 'true', if($variant == 'light', rgba(white, 0.15), rgba(black, 0.15)), if($variant == 'light', rgba(white, 0.85), rgba(black, 0.85)));
 $panel_fg_color: white;
 $panel_shadow: 0 2px 3px rgba(black, 0.03), 0 3px 5px rgba(black, 0.03), 0 5px 10px rgba(black, 0.02);
 $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
