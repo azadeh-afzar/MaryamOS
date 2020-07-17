@@ -182,8 +182,8 @@ install() {
   mkdir -p                                                                                 "${THEME_DIR}/plank"
   cp -ur "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${THEME_DIR}/plank"
 
-  mkdir -p                                                                                 "${PLANK_DIR}/${2}${3}${4}${5}"
-  cp -ur "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${PLANK_DIR}/${2}${3}${4}${5}"
+  mkdir -p                                                                                 "${PLANK_DIR}/${2}${3}"
+  cp -ur "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${PLANK_DIR}/${2}${3}"
 }
 
 # Backup and install files related to GDM theme
