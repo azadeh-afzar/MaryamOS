@@ -436,5 +436,24 @@ if [[ "${gdm:-}" != 'true' && "${revert:-}" == 'true' && "$UID" -eq "$ROOT_UID" 
   revert_gdm
 fi
 
+# Install cursors
+# Destination directory
 echo
-echo Done.
+echo "Installing Cursor icons..."
+if [ "$UID" -eq "$ROOT_UID" ]; then
+  CURSOR_DEST_DIR="/usr/share/icons"
+else
+  CURSOR_DEST_DIR="$HOME/.local/share/icons"
+fi
+
+if [ -d "$CURSOR_DEST_DIR/${THEME_NAME} Cursors" ]; then
+  rm -r "$CURSOR_DEST_DIR/${THEME_NAME} Cursors"
+fi
+
+cd "${REPO_DIR}/cursors"
+cp -pr dist "$CURSOR_DEST_DIR/${THEME_NAME} Cursors"
+echo "Installing Cursor icons... DONE"
+
+
+echo
+echo "Done."
