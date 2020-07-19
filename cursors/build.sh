@@ -2,7 +2,7 @@
 
 # generate pixmaps from svg source
 SRC="$PWD/src"
-THEME="MaryamOS Cursors"
+THEME="MaryamOS-Cursors"
 
 function inkscape() {
   command flatpak run org.inkscape.Inkscape "$@"

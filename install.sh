@@ -130,7 +130,7 @@ install() {
   echo "Installing '${THEME_DIR}'..."
 
   mkdir -p                                                                                "${THEME_DIR}"
-  cp -ur "${REPO_DIR}/COPYING"                                                            "${THEME_DIR}"
+  cp -ur "${REPO_DIR}/LICENSE"                                                            "${THEME_DIR}"
 
   echo "[Desktop Entry]" >>                                                               "${THEME_DIR}/index.theme"
   echo "Type=X-GNOME-Metatheme" >>                                                        "${THEME_DIR}/index.theme"
@@ -437,23 +437,28 @@ if [[ "${gdm:-}" != 'true' && "${revert:-}" == 'true' && "$UID" -eq "$ROOT_UID" 
 fi
 
 # Install cursors
-# Destination directory
 echo
-echo "Installing Cursor icons..."
+echo "Installing cursors..."
 if [ "$UID" -eq "$ROOT_UID" ]; then
   CURSOR_DEST_DIR="/usr/share/icons"
 else
   CURSOR_DEST_DIR="$HOME/.local/share/icons"
 fi
 
-if [ -d "$CURSOR_DEST_DIR/${THEME_NAME} Cursors" ]; then
-  rm -r "$CURSOR_DEST_DIR/${THEME_NAME} Cursors"
+if [ -d "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors" ]; then
+  rm -r "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors"
 fi
 
 cd "${REPO_DIR}/cursors"
-cp -pr dist "$CURSOR_DEST_DIR/${THEME_NAME} Cursors"
+cp -pr dist "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors"
 echo "Installing Cursor icons... DONE"
 
+# Install Icons
+echo
+echo "Installing icons..."
+
+cd "${REPO_DIR}/icons"
+./install.sh
 
 echo
 echo "Done."
