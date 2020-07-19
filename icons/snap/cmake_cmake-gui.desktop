@@ -1,0 +1,13 @@
+[Desktop Entry]
+X-SnapInstanceName=cmake
+Version=1.0
+Name=CMake
+Comment=Cross-platform buildsystem
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/cmake_cmake-gui.desktop /snap/bin/cmake.cmake-gui %f
+Icon=cmake
+Terminal=false
+Type=Application
+Categories=Development;
+StartupNotify=true
+MimeType=application/x-cmakecache;
+

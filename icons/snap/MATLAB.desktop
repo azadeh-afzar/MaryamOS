@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=MATLAB
+Icon=matlab
+Exec=matlab -desktop -nosoftwareopengl
+Terminal=false
+Categories=Development;Math;Science;Education;

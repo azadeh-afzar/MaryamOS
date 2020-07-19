@@ -1,0 +1,11 @@
+[Desktop Entry]
+X-SnapInstanceName=datagrip
+Version=1.0
+Type=Application
+Name=DataGrip
+Icon=datagrip
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/datagrip_datagrip.desktop /snap/bin/datagrip %f
+Comment=IDE for Databases and SQL
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-datagrip
