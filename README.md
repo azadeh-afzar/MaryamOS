@@ -1,7 +1,7 @@
 MaryamOS Gtk Theme
 ======
 
-MaryamOS is a MacOS Big Sur like theme for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 based desktop environments like Gnome.
+MaryamOS is a MacOS Big Sur like theme for GTK 3 and Gnome-Shell which supports GTK 3 based desktop environments like Gnome.
 
 MaryamOS includes an x-cursor theme inspired by macOS and
 based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors) and also 
