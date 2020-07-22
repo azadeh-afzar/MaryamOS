@@ -125,12 +125,12 @@ install() {
 
   local THEME_DIR=${1}/${2}${3}${4}${5}${6}
 
-  [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
+  [[ -d ${THEME_DIR} ]] && rm --recursive --force ${THEME_DIR}
 
   echo "Installing '${THEME_DIR}'..."
 
-  mkdir -p                                                                                "${THEME_DIR}"
-  cp -ur "${REPO_DIR}/LICENSE"                                                            "${THEME_DIR}"
+  mkdir --parents                                                                                "${THEME_DIR}"
+  cp --update --recursive "${REPO_DIR}/LICENSE"                                                            "${THEME_DIR}"
 
   echo "[Desktop Entry]" >>                                                               "${THEME_DIR}/index.theme"
   echo "Type=X-GNOME-Metatheme" >>                                                        "${THEME_DIR}/index.theme"
@@ -148,41 +148,41 @@ install() {
   # install Gnome shell theme.
   # set right icon for activity panel
   local var="\$icon-logo: '${icon}';";
-  sed -i "1s/.*/${var}/"  "${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.scss"
+  sed --in-place "1s/.*/${var}/"  "${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.scss"
   # generate css files.
   parse_sass
   # copy css files.
-  mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}/assets/gnome-shell/source-assets"/*                                  "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.css"                  "${THEME_DIR}/gnome-shell/gnome-shell.css"
-  cp -ur "${SRC_DIR}/assets/gnome-shell/common-assets"                                    "${THEME_DIR}/gnome-shell/assets"
-  cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}"/*.svg                             "${THEME_DIR}/gnome-shell/assets"
-  cp -ur "${SRC_DIR}/assets/gnome-shell/assets${color}/activities/activities${icon}"*.svg "${THEME_DIR}/gnome-shell/assets/"
+  mkdir --parents                                                                                "${THEME_DIR}/gnome-shell"
+  cp --update --recursive "${SRC_DIR}/assets/gnome-shell/source-assets"/*                                  "${THEME_DIR}/gnome-shell"
+  cp --update --recursive "${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.css"                  "${THEME_DIR}/gnome-shell/gnome-shell.css"
+  cp --update --recursive "${SRC_DIR}/assets/gnome-shell/common-assets"                                    "${THEME_DIR}/gnome-shell/assets"
+  cp --update --recursive "${SRC_DIR}/assets/gnome-shell/assets${color}"/*.svg                             "${THEME_DIR}/gnome-shell/assets"
+  cp --update --recursive "${SRC_DIR}/assets/gnome-shell/assets${color}/activities/activities${icon}"*.svg "${THEME_DIR}/gnome-shell/assets/"
 
   # install gtk3 theme.
-  mkdir -p                                                                                 "${THEME_DIR}/gtk-3.0"
-  cp -ur "${SRC_DIR}/assets/gtk-3.0/common-assets/assets"                                  "${THEME_DIR}/gtk-3.0"
-  cp -ur "${SRC_DIR}/assets/gtk-3.0/windows-assets/titlebutton${alt}"                      "${THEME_DIR}/gtk-3.0/windows-assets"
-  cp -ur "${SRC_DIR}/assets/gtk-3.0/thumbnail${color}.png"                                 "${THEME_DIR}/gtk-3.0/thumbnail.png"
-  cp -ur "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                                  "${THEME_DIR}/gtk-3.0/gtk-dark.css"
+  mkdir --parents                                                                                 "${THEME_DIR}/gtk-3.0"
+  cp --update --recursive "${SRC_DIR}/assets/gtk-3.0/common-assets/assets"                                  "${THEME_DIR}/gtk-3.0"
+  cp --update --recursive "${SRC_DIR}/assets/gtk-3.0/windows-assets/titlebutton${alt}"                      "${THEME_DIR}/gtk-3.0/windows-assets"
+  cp --update --recursive "${SRC_DIR}/assets/gtk-3.0/thumbnail${color}.png"                                 "${THEME_DIR}/gtk-3.0/thumbnail.png"
+  cp --update --recursive "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                                  "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
   if [[ ${color} == '-light' ]]; then
-    cp -ur "${SRC_DIR}/main/gtk-3.0/gtk-light${opacity}.css"                               "${THEME_DIR}/gtk-3.0/gtk.css"
+    cp --update --recursive "${SRC_DIR}/main/gtk-3.0/gtk-light${opacity}.css"                               "${THEME_DIR}/gtk-3.0/gtk.css"
   else
-    cp -ur "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                                "${THEME_DIR}/gtk-3.0/gtk.css"
+    cp --update --recursive "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                                "${THEME_DIR}/gtk-3.0/gtk.css"
   fi
 
   glib-compile-resources --sourcedir="${THEME_DIR}/gtk-3.0" --target="${THEME_DIR}/gtk-3.0/gtk.gresource" "${SRC_DIR}/main/gtk-3.0/gtk.gresource.xml"
-  rm -rf                                                                                   "${THEME_DIR}/gtk-3.0/{assets,windows-assets,gtk.css,gtk-dark.css}"
+  rm --recursive --force                                                                                   "${THEME_DIR}/gtk-3.0/{assets,windows-assets,gtk.css,gtk-dark.css}"
   echo '@import url("resource:///org/gnome/Mcata-theme/gtk.css");' >>                      "${THEME_DIR}/gtk-3.0/gtk.css"
   echo '@import url("resource:///org/gnome/Mcata-theme/gtk-dark.css");' >>                 "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
   # install plank dock theme.
-  mkdir -p                                                                                 "${THEME_DIR}/plank"
-  cp -ur "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${THEME_DIR}/plank"
+  mkdir --parents                                                                                 "${THEME_DIR}/plank"
+  cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${THEME_DIR}/plank"
 
-  mkdir -p                                                                                 "${PLANK_DIR}/${2}${3}"
-  cp -ur "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${PLANK_DIR}/${2}${3}"
+  mkdir --parents                                                                                 "${PLANK_DIR}/${2}${3}"
+  cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${PLANK_DIR}/${2}${3}"
 }
 
 # Backup and install files related to GDM theme
@@ -202,7 +202,7 @@ install_gdm() {
 
   if [[ -f "$GS_THEME_FILE" ]] && command -v glib-compile-resources >/dev/null ; then
     echo "Installing '$GS_THEME_FILE'..."
-    cp -an "$GS_THEME_FILE" "$GS_THEME_FILE.bak"
+    cp --archive --no-clobber "$GS_THEME_FILE" "$GS_THEME_FILE.bak"
     glib-compile-resources \
       --sourcedir="$GDM_THEME_DIR/gnome-shell" \
       --target="$GS_THEME_FILE" \
@@ -211,50 +211,50 @@ install_gdm() {
 
   if [[ -f "$UBUNTU_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
     echo "Installing '$UBUNTU_THEME_FILE'..."
-    cp -an "$UBUNTU_THEME_FILE" "$UBUNTU_THEME_FILE.bak"
-    cp -af "$GDM_THEME_DIR/gnome-shell/gnome-shell.css" "$UBUNTU_THEME_FILE"
+    cp --archive --no-clobber "$UBUNTU_THEME_FILE" "$UBUNTU_THEME_FILE.bak"
+    cp --archive --force "$GDM_THEME_DIR/gnome-shell/gnome-shell.css" "$UBUNTU_THEME_FILE"
   fi
 
   if [[ -f "$UBUNTU_NEW_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
     echo "Installing '$UBUNTU_NEW_THEME_FILE'..."
-    cp -an "$UBUNTU_NEW_THEME_FILE" "$UBUNTU_NEW_THEME_FILE.bak"
-    cp -af "$GDM_THEME_DIR"/gnome-shell/* "$SHELL_THEME_FOLDER"
+    cp --archive --no-clobber "$UBUNTU_NEW_THEME_FILE" "$UBUNTU_NEW_THEME_FILE.bak"
+    cp --archive --force "$GDM_THEME_DIR"/gnome-shell/* "$SHELL_THEME_FOLDER"
   fi
 
   if [[ -f "$ETC_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
     echo "Installing Ubuntu gnome-shell theme..."
-    cp -an "$ETC_THEME_FILE" "$ETC_THEME_FILE.bak"
-    [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm -rf $SHELL_THEME_FOLDER/$THEME_NAME
-    cp -ur "$GDM_THEME_DIR/gnome-shell" "$SHELL_THEME_FOLDER/$THEME_NAME"
+    cp --archive --no-clobber "$ETC_THEME_FILE" "$ETC_THEME_FILE.bak"
+    [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm --recursive --force $SHELL_THEME_FOLDER/$THEME_NAME
+    cp --update --recursive "$GDM_THEME_DIR/gnome-shell" "$SHELL_THEME_FOLDER/$THEME_NAME"
     cd "$ETC_THEME_FOLDER"
-    ln -s "$SHELL_THEME_FOLDER/$THEME_NAME/gnome-shell.css" gdm3.css
+    ln --symbolic "$SHELL_THEME_FOLDER/$THEME_NAME/gnome-shell.css" gdm3.css
   fi
 }
 
 revert_gdm() {
   if [[ -f "$GS_THEME_FILE.bak" ]]; then
     echo "reverting '$GS_THEME_FILE'..."
-    rm -rf "$GS_THEME_FILE"
+    rm --recursive --force "$GS_THEME_FILE"
     mv "$GS_THEME_FILE.bak" "$GS_THEME_FILE"
   fi
 
   if [[ -f "$UBUNTU_THEME_FILE.bak" ]]; then
     echo "reverting '$UBUNTU_THEME_FILE'..."
-    rm -rf "$UBUNTU_THEME_FILE"
+    rm --recursive --force "$UBUNTU_THEME_FILE"
     mv "$UBUNTU_THEME_FILE.bak" "$UBUNTU_THEME_FILE"
   fi
 
   if [[ -f "$UBUNTU_NEW_THEME_FILE.bak" ]]; then
     echo "reverting '$UBUNTU_NEW_THEME_FILE'..."
-    rm -rf "$UBUNTU_NEW_THEME_FILE" "$SHELL_THEME_FOLDER"/{assets,no-events.svg,process-working.svg,no-notifications.svg}
+    rm --recursive --force "$UBUNTU_NEW_THEME_FILE" "$SHELL_THEME_FOLDER"/{assets,no-events.svg,process-working.svg,no-notifications.svg}
     mv "$UBUNTU_NEW_THEME_FILE.bak" "$UBUNTU_NEW_THEME_FILE"
   fi
 
   if [[ -f "$ETC_THEME_FILE.bak" ]]; then
     echo "reverting Ubuntu gnome-shell theme..."
-    rm -rf "$ETC_THEME_FILE"
+    rm --recursive --force "$ETC_THEME_FILE"
     mv "$ETC_THEME_FILE.bak" "$ETC_THEME_FILE"
-    [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm -rf $SHELL_THEME_FOLDER/$THEME_NAME
+    [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm --recursive --force $SHELL_THEME_FOLDER/$THEME_NAME
   fi
 }
 
@@ -264,7 +264,7 @@ while [[ $# -gt 0 ]]; do
       dest="${2}"
       if [[ ! -d "${dest}" ]]; then
         echo "Destination directory does not exist. Let's make a new one..."
-        mkdir -p ${dest}
+        mkdir --parents ${dest}
       fi
       shift 2
       ;;
@@ -446,11 +446,11 @@ else
 fi
 
 if [ -d "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors" ]; then
-  rm -r "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors"
+  rm --recursive --force "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors"
 fi
 
 cd "${REPO_DIR}/cursors"
-cp -pr dist "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors"
+cp --recursive dist "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors"
 echo "Installing Cursor icons... DONE"
 
 # Install Icons
