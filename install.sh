@@ -64,21 +64,21 @@ install() {
 
   echo "Installing '${THEME_DIR}'..."
 
-  mkdir --parents                                                                                "${THEME_DIR}"
+  mkdir --parents                                                                                          "${THEME_DIR}"
   cp --update --recursive "${REPO_DIR}/LICENSE"                                                            "${THEME_DIR}"
 
-  echo "[Desktop Entry]" >>                                                               "${THEME_DIR}/index.theme"
-  echo "Type=X-GNOME-Metatheme" >>                                                        "${THEME_DIR}/index.theme"
-  echo "Name=${name}${color}${opacity}" >>                                                "${THEME_DIR}/index.theme"
-  echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >>                         "${THEME_DIR}/index.theme"
-  echo "Encoding=UTF-8" >>                                                                "${THEME_DIR}/index.theme"
-  echo "" >>                                                                              "${THEME_DIR}/index.theme"
-  echo "[X-GNOME-Metatheme]" >>                                                           "${THEME_DIR}/index.theme"
-  echo "GtkTheme=${name}${color}${opacity}" >>                                            "${THEME_DIR}/index.theme"
-  echo "MetacityTheme=${name}${color}${opacity}" >>                                       "${THEME_DIR}/index.theme"
-  echo "IconTheme=McMojave-circle" >>                                                     "${THEME_DIR}/index.theme"
-  echo "CursorTheme=McMojave-circle" >>                                                   "${THEME_DIR}/index.theme"
-  echo "ButtonLayout=close,minimize,maximize:menu" >>                                     "${THEME_DIR}/index.theme"
+  echo "[Desktop Entry]" >>                                                                                "${THEME_DIR}/index.theme"
+  echo "Type=X-GNOME-Metatheme" >>                                                                         "${THEME_DIR}/index.theme"
+  echo "Name=${name}${color}${opacity}" >>                                                                 "${THEME_DIR}/index.theme"
+  echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >>                                          "${THEME_DIR}/index.theme"
+  echo "Encoding=UTF-8" >>                                                                                 "${THEME_DIR}/index.theme"
+  echo "" >>                                                                                               "${THEME_DIR}/index.theme"
+  echo "[X-GNOME-Metatheme]" >>                                                                            "${THEME_DIR}/index.theme"
+  echo "GtkTheme=${name}${color}${opacity}" >>                                                             "${THEME_DIR}/index.theme"
+  echo "MetacityTheme=${name}${color}${opacity}" >>                                                        "${THEME_DIR}/index.theme"
+  echo "IconTheme=McMojave-circle" >>                                                                      "${THEME_DIR}/index.theme"
+  echo "CursorTheme=McMojave-circle" >>                                                                    "${THEME_DIR}/index.theme"
+  echo "ButtonLayout=close,minimize,maximize:menu" >>                                                      "${THEME_DIR}/index.theme"
 
   # install Gnome shell theme.
   # set right icon for activity panel
@@ -87,7 +87,7 @@ install() {
   # generate css files.
   parse_sass
   # copy css files.
-  mkdir --parents                                                                                "${THEME_DIR}/gnome-shell"
+  mkdir --parents                                                                                          "${THEME_DIR}/gnome-shell"
   cp --update --recursive "${SRC_DIR}/assets/gnome-shell/source-assets"/*                                  "${THEME_DIR}/gnome-shell"
   cp --update --recursive "${SRC_DIR}/main/gnome-shell/gnome-shell${color}${opacity}.css"                  "${THEME_DIR}/gnome-shell/gnome-shell.css"
   cp --update --recursive "${SRC_DIR}/assets/gnome-shell/common-assets"                                    "${THEME_DIR}/gnome-shell/assets"
@@ -95,29 +95,29 @@ install() {
   cp --update --recursive "${SRC_DIR}/assets/gnome-shell/assets${color}/activities/activities${icon}"*.svg "${THEME_DIR}/gnome-shell/assets/"
 
   # install gtk3 theme.
-  mkdir --parents                                                                                 "${THEME_DIR}/gtk-3.0"
-  cp --update --recursive "${SRC_DIR}/assets/gtk-3.0/common-assets/assets"                                  "${THEME_DIR}/gtk-3.0"
-  cp --update --recursive "${SRC_DIR}/assets/gtk-3.0/windows-assets/titlebutton${alt}"                      "${THEME_DIR}/gtk-3.0/windows-assets"
-  cp --update --recursive "${SRC_DIR}/assets/gtk-3.0/thumbnail${color}.png"                                 "${THEME_DIR}/gtk-3.0/thumbnail.png"
-  cp --update --recursive "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                                  "${THEME_DIR}/gtk-3.0/gtk-dark.css"
+  mkdir --parents                                                                                          "${THEME_DIR}/gtk-3.0"
+  cp --update --recursive "${SRC_DIR}/assets/gtk-3.0/common-assets/assets"                                 "${THEME_DIR}/gtk-3.0"
+  cp --update --recursive "${SRC_DIR}/assets/gtk-3.0/windows-assets/titlebutton${alt}"                     "${THEME_DIR}/gtk-3.0/windows-assets"
+  cp --update --recursive "${SRC_DIR}/assets/gtk-3.0/thumbnail${color}.png"                                "${THEME_DIR}/gtk-3.0/thumbnail.png"
+  cp --update --recursive "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                                 "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
   if [[ ${color} == '-light' ]]; then
-    cp --update --recursive "${SRC_DIR}/main/gtk-3.0/gtk-light${opacity}.css"                               "${THEME_DIR}/gtk-3.0/gtk.css"
+    cp --update --recursive "${SRC_DIR}/main/gtk-3.0/gtk-light${opacity}.css"                              "${THEME_DIR}/gtk-3.0/gtk.css"
   else
-    cp --update --recursive "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                                "${THEME_DIR}/gtk-3.0/gtk.css"
+    cp --update --recursive "${SRC_DIR}/main/gtk-3.0/gtk-dark${opacity}.css"                               "${THEME_DIR}/gtk-3.0/gtk.css"
   fi
 
   glib-compile-resources --sourcedir="${THEME_DIR}/gtk-3.0" --target="${THEME_DIR}/gtk-3.0/gtk.gresource" "${SRC_DIR}/main/gtk-3.0/gtk.gresource.xml"
-  rm --recursive --force                                                                                   "${THEME_DIR}/gtk-3.0/{assets,windows-assets,gtk.css,gtk-dark.css}"
-  echo '@import url("resource:///org/gnome/Mcata-theme/gtk.css");' >>                      "${THEME_DIR}/gtk-3.0/gtk.css"
-  echo '@import url("resource:///org/gnome/Mcata-theme/gtk-dark.css");' >>                 "${THEME_DIR}/gtk-3.0/gtk-dark.css"
+  rm --recursive --force                                                                                  "${THEME_DIR}/gtk-3.0/{assets,windows-assets,gtk.css,gtk-dark.css}"
+  echo '@import url("resource:///org/gnome/Mcata-theme/gtk.css");' >>                                     "${THEME_DIR}/gtk-3.0/gtk.css"
+  echo '@import url("resource:///org/gnome/Mcata-theme/gtk-dark.css");' >>                                "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
   # install plank dock theme.
-  mkdir --parents                                                                                 "${THEME_DIR}/plank"
-  cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${THEME_DIR}/plank"
+  mkdir --parents                                                                                         "${THEME_DIR}/plank"
+  cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                  "${THEME_DIR}/plank"
 
-  mkdir --parents                                                                                 "${PLANK_DIR}/${2}${3}"
-  cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                    "${PLANK_DIR}/${2}${3}"
+  mkdir --parents                                                                                         "${PLANK_DIR}/${2}${3}"
+  cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                   "${PLANK_DIR}/${2}${3}"
 }
 
 # Backup and install files related to GDM theme
