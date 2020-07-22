@@ -2,6 +2,6 @@
 Type=Application
 Name=MATLAB
 Icon=matlab
-Exec=matlab -desktop -nosoftwareopengl
+Exec=matlab -desktop
 Terminal=false
 Categories=Development;Math;Science;Education;
