@@ -13,9 +13,11 @@ DEST_DIR=
 if [ "$UID" -eq "$ROOT_UID" ]; then
   DEST_DIR="/usr/share/themes"
   PLANK_DIR="/usr/share/plank/themes"
+  APP_DIR="/usr/share/applications"
 else
   DEST_DIR="$HOME/.themes"
   PLANK_DIR="$HOME/.local/share/plank/themes"
+  APP_DIR="$HOME/.local/share/applications"
 fi
 
 THEME_NAME=MaryamOS
@@ -34,77 +36,10 @@ usage() {
   printf "  %-25s%s\n" "-a, --alt VARIANTS" "Specify theme titilebutton variant(s) [standard|alt] (Default: All variants)"
   printf "  %-25s%s\n" "-s, --small VARIANTS" "Specify titilebutton size variant(s) [standard|small] (Default: standard variant)"
   printf "  %-25s%s\n" "-i, --icon VARIANTS" "Specify activities icon variant(s) for gnome-shell [standard|normal|gnome|ubuntu|arch|manjaro|fedora|debian|void] (Default: standard variant)"
+  printf "  %-25s%s\n"     "--snap"          "Install modifed Snap application .desktop files to apply custom theme."
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
   printf "  %-25s%s\n" "-r, --revert" "revert GDM theme, this option need root user authority! please run this with sudo"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
-}
-
-# check command avalibility
-function has_command() {
-  command -v $1 > /dev/null
-}
-
-install_package() {
-  if [ ! "$(which sassc 2> /dev/null)" ]; then
-    echo "\n sassc needs to be installed to generate the css."
-
-    if has_command zypper; then
-
-      read -p "[ trusted ] specify the root password : " -t 20 -s
-      [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo zypper in sassc "
-        sudo -S <<< $REPLY zypper in sassc
-      }|| {
-        echo  "\n Operation canceled  Bye"
-        exit 1
-      }
-
-      elif has_command apt; then
-
-      read -p "[ trusted ] specify the root password : " -t 20 -s
-      [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo apt install sassc "
-        sudo -S <<< $REPLY apt install sassc
-      }|| {
-        echo  "\n Operation canceled  Bye"
-        exit 1
-      }
-
-      elif has_command dnf; then
-
-      read -p "[ trusted ] specify the root password : " -t 20 -s
-      [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo dnf install sassc "
-        sudo -S <<< $REPLY dnf install sassc
-      }|| {
-        echo  "\n Operation canceled  Bye"
-        exit 1
-      }
-
-      elif has_command yum; then
-
-      read -p "[ trusted ] specify the root password : " -t 20 -s
-      [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo yum install sassc "
-        sudo -S <<< $REPLY yum install sassc
-      }|| {
-        echo  "\n Operation canceled  Bye"
-        exit 1
-      }
-
-      elif has_command pacman; then
-
-      read -p "[ trusted ] specify the root password : " -t 20 -s
-      [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo pacman -S --noconfirm sassc "
-        sudo -S <<< $REPLY pacman -S --noconfirm sassc
-      }|| {
-        echo  "\n Operation canceled  Bye"
-        exit 1
-      }
-
-    fi
-  fi
 }
 
 parse_sass() {
@@ -272,6 +207,10 @@ while [[ $# -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
+    --snap)
+      snap='true'
+      shift 1
+      ;;
     -g|--gdm)
       gdm='true'
       shift 1
@@ -436,6 +375,13 @@ if [[ "${gdm:-}" != 'true' && "${revert:-}" == 'true' && "$UID" -eq "$ROOT_UID" 
   revert_gdm
 fi
 
+# copy snap desktop files.
+if [[ "${snap:-}" == 'true' ]]; then
+  echo
+  echo "Install custome snap pakage icons..."
+  cp -r "${REPO_DIR}/icons/snap"/*.desktop "${APP_DIR}"
+fi
+
 # Install cursors
 echo
 echo "Installing cursors..."
@@ -451,7 +397,7 @@ fi
 
 cd "${REPO_DIR}/cursors"
 cp --recursive dist "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors"
-echo "Installing Cursor icons... DONE"
+echo "Installing cursors ... DONE"
 
 # Install Icons
 echo
@@ -459,6 +405,8 @@ echo "Installing icons..."
 
 cd "${REPO_DIR}/icons"
 ./install.sh
+
+echo "Installing icons ... DONE"
 
 echo
 echo "Done."
