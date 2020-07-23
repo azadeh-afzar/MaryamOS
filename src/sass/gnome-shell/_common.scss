@@ -2081,6 +2081,12 @@ StWidget.focused .app-well-app-running-dot {
   background-color: $light_divider_color;
 }
 
+.show-apps .show-apps-icon {
+  color: transparent;
+  background-image: url("assets/startup@2.svg");
+  background-size: contain;
+}
+
 .show-apps .overview-icon {
   color: $light_fg_color;
 }
