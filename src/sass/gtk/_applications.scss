@@ -1,19 +1,24 @@
+/************
+* Terminal *
+************/
 
-//
-// GNOME Terminal, MATE Terminal
-//
-
-.mate-terminal {
-  notebook {
-    > header.top {
-      > tabs > tab {
-        border-top: 1px solid transparent;
-      }
-    }
-  }
-}
+$_terminal_bg_color: if($variant == 'light', darken($solid_bg_color, 15%), darken($solid_bg_color, 25%));
+$_terminal_fg_color: $fg_color;
+$backdrop_selected_fg_color: $disabled_fg_color;
 
 terminal-window {
+
+  .terminal-screen {
+    // inherits from .background
+    background-color: $_terminal_bg_color;
+    color: $_terminal_fg_color;
+
+    &:backdrop {
+        background-color: if($variant == 'light', lighten($_terminal_bg_color, 5%), lighten($_terminal_bg_color, 5%));
+        color: $backdrop_selected_fg_color;
+    }
+  }
+
   &.background.csd {
     border-radius: 0 0 0 0;
   }
@@ -28,12 +33,70 @@ terminal-window {
       min-width: 28px;
       margin: -2px;
     }
+
+    scrollbar {
+        // inherits from scrollbar
+        background-color: transparent;
+        border-color: transparent;
+
+        &:backdrop {
+            background-color: transparent;
+            border-color: transparent
+        }
+
+        slider {
+            // avoids scrollbar protruding from the terminal window on wayland session
+            // workaround for https://bugs.launchpad.net/ubuntu/+source/gnome-terminal/+bug/1720651
+            margin: 0;
+            border-width: 3px;
+
+            &:backdrop {
+              background-color: gtkalpha(currentColor, 0.1);
+            }
+
+            &:disabled {
+                background-color: transparent;
+            }
+        }
+
+        &.dragging,
+        &.hovering {
+            background-color: transparent;
+        }
+    }
   }
 
   &.background.csd.maximized { border-radius: 0 0 0 0; } // Fixed gnome 3.32 issue: Unable to restore window size after maximization
+
+  headerbar.titlebar.default-decoration {
+    background-color: $header_bg;
+    border-bottom: 1px solid $header_border;
+    box-shadow: inset 0 1px $highlight_color;
+
+    &:backdrop {
+      transition: $backdrop_transition;
+      color: transparentize($header_fg, 0.3);
+      background-image: none;
+      background-color: $header_bg_backdrop;
+      border-color: if($variant == 'light', lighten($header_border, 15%), darken($header_border, 3%));
+    }
+  }
+
+  .search-bar {
+    background-color: $bg_color;
+    border-bottom: 1px solid $solid_borders_color;
+  }
+
+  .dynamic-notebook {
+    notebook > header { 
+      border-color: $solid_borders_color; 
+    }
+  }
+
 }
 
-window.background.csd { // gnome-terminal 3.32 setting
+// gnome-terminal 3.32 setting
+window.background.csd { 
   > box.vertical > box.horizontal > frame {
     > border {
       border-width: 0 1px 0 0;
@@ -57,69 +120,36 @@ window.background.csd { // gnome-terminal 3.32 setting
   }
 }
 
-//
-// Nautilus
-//
 
-.nautilus-window headerbar {
-  .path-bar-box {
-    color: transparent;
-    background: none;
-    padding: 0 12px;
-
-    .linked.nautilus-path-bar { // for ≥ 3.31.90
-      > button:not(:only-child):last-child {
-        @include button(header-checked);
+// MATE specific terminal (I don't use MATE so I have no idea)
+.mate-terminal {
+  notebook {
+    > header.top {
+      > tabs > tab {
+        border-top: 1px solid transparent;
       }
     }
-
-    // workaround for 3.30.1
-    &.background.frame {
-      border: none;
-      background-color: transparent;
-    }
   }
 }
 
-.nautilus-canvas-item { border-radius: 5px; }
+/***********
+* Nautilus *
+***********/
 
-// .view.nautilus-desktop,
-%nautilus-desktop-canvas-item,
-.nautilus-desktop.nautilus-canvas-item {
-  color: white;
-  text-shadow: 1px 1px transparentize(black, 0.4);
-
-  &:active {
-    color: white;
-  }
-
-  &:selected {
-    color: $selected_fg_color;
-    text-shadow: none;
-  }
-}
-
-.nautilus-canvas-item.dim-label,
-.nautilus-list-dim-label {
-  // color of the items (files, folders)
-  color: mix($fg_color, $bg_color, 50%);
-
-  // color when selected.
-  &:selected,
-  &:selected:focus {
-    color: mix($selected_fg_color, $selected_bg_color, 80%);
-  }
-}
-
+// size of nautlilus rounded corners
 $nautilus_radius: $wm_radius + 2px;
 $nautilus_sidebar_size: 180px;
+
 // color of nautilus side bar and top bar
 $titlebar_image: image(darken($dark_sidebar_bg, 5%));
 $sidebar_image: image($dark_sidebar_bg);
 
 .nautilus-window {
+
+  // nautilus rounded borders (intrestingly it doesn't seem to do anything).
   border-radius: $wm_radius $wm_radius $nautilus_radius $nautilus_radius;
 
+  // set nautlus background color and image.
   &.background.csd {
     background-color: transparent;
     background-image: $sidebar_image;
@@ -134,33 +164,63 @@ $sidebar_image: image($dark_sidebar_bg);
     }
   }
 
-  notebook {
-    margin-left: -1px;
-    margin-right: -1px;
+  .nautilus-canvas-item.dim-label,
+  .nautilus-list-dim-label {
 
-    &.background.csd { background-color: transparent; }
+    // color of the text below items (files, folders).
+    color: mix($fg_color, $bg_color, 50%);
 
-    tab { margin-left: -1px; }
+    // no idea what this is! copied from yaru theme.
+    &:backdrop {
+      color: transparentize(mix($fg_color, $base_color), 0.2);
+    }
 
-    scrolledwindow {
-      .view:not(:hover):not(:active):not(:selected) {
-        background-color: transparent;
-        // @extend %view;
+    // color of the text below items when selected.
+    &:selected {
+      color: mix($selected_fg_color, $selected_bg_color, 80%);
+      &:focus {
+        color: mix($selected_fg_color, $selected_bg_color, 80%);
+      }
+      &:backdrop {
+        color: transparentize(mix($selected_fg_color, $selected_bg_color), 0.4);
       }
     }
+  }
 
-    &, > stack {
-      border-radius: 0 0 $nautilus_radius $nautilus_radius;
+// This is the Icon + Text beneath - it's one widget
+.nautilus-canvas-item { 
+  border-radius: 5px;
+  outline-width: 0;
+  // First, remove the background
+  background-color: rgba(255, 255, 255, 0.1);
+  // Then bring it back for when it receives a direction
+  &:selected:not(:backdrop) {
+    &:dir(ltr) { background-color: $selected_bg_color; }
+    &:not(:dir(ltr)) { background-color: rgba(175, 175, 175, 0.5); }
+  }
+
+  &:backdrop {
+    background-color: transparentize($fg_color, 0.8);
+    color: $disabled_fg_color;
+  }
+}
+
+  // .view.nautilus-desktop,
+  %nautilus-desktop-canvas-item,
+  .nautilus-desktop.nautilus-canvas-item {
+    color: white;
+    text-shadow: 1px 1px transparentize(black, 0.4);
+
+    &:active {
+      color: white;
     }
 
-    > stack {
-      background-color: $base_color;
-    }
-
-    > stack:not(:only-child) {
-      searchbar { background-color: transparent; }
+    &:selected {
+      color: $selected_fg_color;
+      text-shadow: none;
     }
   }
+
 
   // Floating Bar
   .floating-bar {
@@ -191,6 +251,68 @@ $sidebar_image: image($dark_sidebar_bg);
       }
     }
   }
+
+  headerbar {
+    .path-bar-box {
+      color: transparent;
+      background: none;
+      padding: 0 12px;
+      transition: border 200ms;
+
+      .linked.nautilus-path-bar { // for ≥ 3.31.90
+        > button:not(:only-child):last-child {
+          @include button(header-checked);
+        }
+      }
+
+      // workaround for 3.30.1
+      &.background.frame {
+        border: none;
+        background-color: transparent;
+      }
+    }
+  }
+
+  // separator between sidebar and main window view
+  paned > separator {
+    background-image: image(if($variant=='light', transparentize($borders_color, 0.6), darken($borders_color, 1%)));
+    
+    &:backdrop { 
+      background-image: image(transparentize($borders_color, 0.7)); 
+    }
+  }
+
+  notebook {
+    background: $bg_color;
+    margin-left: -1px;
+    margin-right: -1px;
+
+    &.background.csd { 
+      background-color: transparent; 
+    }
+
+    tab { 
+      margin-left: -1px; 
+    }
+
+    scrolledwindow {
+      .view:not(:hover):not(:active):not(:selected) {
+        background-color: transparent;
+      }
+    }
+
+    &, > stack {
+      border-radius: 0 0 $nautilus_radius $nautilus_radius;
+    }
+
+    > stack {
+      background-color: $base_color;
+    }
+
+    > stack:not(:only-child) {
+      searchbar { background-color: transparent; }
+    }
+  }
 }
 
 .nautilus-list-view {
@@ -200,7 +322,6 @@ $sidebar_image: image($dark_sidebar_bg);
   treeview.view:not(:hover):not(:active):not(:selected) {
     background-color: transparent;
     border-radius: 0;
-    // @extend %view;
   }
 }
 
@@ -405,13 +526,10 @@ $disk_space_free: darken($bg_color, 3%);
   }
 }
 
-// Cinnamon setting
-.view.cs-category-view { border-bottom-right-radius: $wm_radius; }
-
-
 //
 // Gedit
 //
+
 window.org-gnome-gedit {
   > paned.titlebar {
     > headerbar {
@@ -1467,20 +1585,6 @@ entry.contacts-postal-entry:focus + entry.contacts-postal-entry { border-top-col
 stack#titlebar_container.titlebar {
   > stack > headerbar {
     border: none;
-
-    entry.suggestion.url_entry {
-      box-shadow: inset 0 0 0 2px transparent;
-
-      &:hover {
-        box-shadow: inset 0 0 0 1px rgba($borders_color, 0.03), inset 0 0 0 2px transparent;
-        transition-duration: 200ms;
-      }
-
-      &:focus {
-        box-shadow: inset 0 0 0 2px $entry_highlight;
-        transition-duration: 300ms;
-      }
-    }
   }
 }
 
@@ -1488,9 +1592,13 @@ notebook.main-notebook {
   > header.top {
     margin-top: 0;
 
-    tabs > tab {
+    > tabs > tab {
       &:checked {
         border-top-color: $header_bg;
+      }
+
+      &:first-child { //Not use
+        border-left-width: 0;
       }
     }
   }
@@ -2890,10 +2998,47 @@ window.background.csd {
   }
 }
 
-//
-// Pamac
-//
+// /************
+//  * Inkscape *
+//  ************/
+toolbar#SubToolBox {
+  min-height: 36px;
 
+  entry, button {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  > toolbutton > button.flat {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+}
+
+widget#ToolboxCommon {
+  button.flat {
+    &:active {
+      background-color: rgba($fg_color, 0.25);
+    }
+
+    &:checked {
+      background-color: rgba($fg_color, 0.15);
+    }
+  }
+
+  // > toolbar > toolitem > button.flat, // Left side
+  > toolbar > toolbutton > button.flat { // Right side
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+box#DesktopStatusBar {
+  spinbutton, button.combo {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
 
 // /************
 //  * Synaptic *
@@ -3352,28 +3497,4 @@ scale.warmth trough {
   box-shadow: inset 0 0 0 1px rgba(black, 0.25);
 }
 
-// Terminal
-.terminal-window {
-  headerbar.titlebar.default-decoration {
-    background-color: $header_bg;
-    border-bottom: 1px solid $header_border;
-    box-shadow: inset 0 1px $highlight_color;
 
-    &:backdrop {
-      transition: $backdrop_transition;
-      color: transparentize($header_fg, 0.3);
-      background-image: none;
-      background-color: $header_bg_backdrop;
-      border-color: if($variant=='light', lighten($header_border, 15%), darken($header_border, 3%));
-    }
-  }
-
-  .search-bar {
-    background-color: $bg_color;
-    border-bottom: 1px solid $solid_borders_color;
-  }
-
-  .dynamic-notebook {
-    notebook > header { border-color: $solid_borders_color; }
-  }
-}

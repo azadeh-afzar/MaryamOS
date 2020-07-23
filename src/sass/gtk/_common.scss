@@ -246,6 +246,10 @@ entry {
     }
   }
 
+  &:hover {
+    @include entry(hover);
+  }
+
   &:focus {
     @include entry(focus);
   }
@@ -887,9 +891,10 @@ button:link, button:visited {
   > label { text-decoration-line: underline; }
 }
 
-//
-// Spinbuttons
-//
+/**************
+* Spinbuttons *
+***************/
+
 spinbutton {
   &:drop(active) { box-shadow: none; }
 
@@ -897,8 +902,6 @@ spinbutton {
   &:disabled { color: $disabled_fg_color; }
 
   entry {
-    padding-top: 2px;
-    padding-bottom: 2px;
     @extend %Linked_entrys;
     border: 1px solid $borders_color;
 
@@ -922,7 +925,7 @@ spinbutton {
       min-width: 28px;
     }
 
-    button, entry { @extend %linked; }
+    button, entry { @extend %linked; min-height: 20px; }
 
     &:dir(ltr) entry,
     &:dir(rtl) button.up { border-radius: $bt_radius 0 0 $bt_radius; }
@@ -1109,20 +1112,6 @@ combobox {
     &.bottom { border-width: 1px 0 0 0; }
     &.left { border-width: 0 1px 0 0; }
     &.right { border-width: 0 0 0 1px; }
-  }
-
-  &:not(.inline-toolbar) {
-    switch,
-    scale,
-    entry,
-    spinbutton,
-    button {
-      margin-right: 1px;
-      margin-bottom: 1px;
-    }
-
-    .linked > button,
-    .linked > entry { margin-right:0; }
   }
 }
 
@@ -1547,6 +1536,10 @@ headerbar, .titlebar {
   @include entry(header-normal);
 
   &:backdrop { opacity: 0.65; background-image: none; }
+
+  &:hover {
+    @include entry(header-hover);
+  }
 
   &:focus {
     @include entry(header-focus);
@@ -2060,24 +2053,6 @@ notebook {
 
   &.frame {
     border: 1px solid $solid_borders_color;
-
-    > header {
-      &.top,
-      &.bottom {
-        tabs > tab {
-          &:first-child { border-left-style: none; }
-          &:last-child { border-right-style: solid; }
-        }
-      }
-
-      &.left,
-      &.right {
-        tabs > tab {
-          &:first-child { border-top-style: none; }
-          &:last-child { border-bottom-style: solid; }
-        }
-      }
-    }
   }
 
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
@@ -2217,10 +2192,6 @@ notebook {
         &:first-child { border-top-style: none; }
         &:last-child { border-bottom-style: none; }
       }
-    }
-
-    &.top {
-
     }
 
     tabs > tab {

@@ -109,15 +109,15 @@ install() {
 
   glib-compile-resources --sourcedir="${THEME_DIR}/gtk-3.0" --target="${THEME_DIR}/gtk-3.0/gtk.gresource" "${SRC_DIR}/main/gtk-3.0/gtk.gresource.xml"
   rm --recursive --force                                                                                  "${THEME_DIR}/gtk-3.0/{assets,windows-assets,gtk.css,gtk-dark.css}"
-  echo '@import url("resource:///org/gnome/Mcata-theme/gtk.css");' >>                                     "${THEME_DIR}/gtk-3.0/gtk.css"
-  echo '@import url("resource:///org/gnome/Mcata-theme/gtk-dark.css");' >>                                "${THEME_DIR}/gtk-3.0/gtk-dark.css"
+  echo '@import url("resource:///org/gnome/theme/gtk.css");' >>                                           "${THEME_DIR}/gtk-3.0/gtk.css"
+  echo '@import url("resource:///org/gnome/theme/gtk-dark.css");' >>                                      "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
   # install plank dock theme.
   mkdir --parents                                                                                         "${THEME_DIR}/plank"
   cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                  "${THEME_DIR}/plank"
 
   mkdir --parents                                                                                         "${PLANK_DIR}/${2}${3}"
-  cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                   "${PLANK_DIR}/${2}${3}"
+  cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                  "${PLANK_DIR}/${2}${3}"
 }
 
 # Backup and install files related to GDM theme
