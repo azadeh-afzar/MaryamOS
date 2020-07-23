@@ -92,3 +92,4 @@ Usage:  `./Install`  **[OPTIONS...]**
 ![shell](preview-shell.png)
 ![cursors](preview-cursors.png)
 ![icons](preview-icons.png)
+![icons cicle style](preview-icons-circle.png)
