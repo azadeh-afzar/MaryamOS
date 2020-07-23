@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ROOT_UID=0
 DEST_DIR=
@@ -47,7 +47,7 @@ install() {
 
   echo "Installing '${THEME_DIR}'..."
 
-  mkdir --parents                                                                                   "${THEME_DIR}"
+  mkdir --parents                                                                                     "${THEME_DIR}"
   cp --recursive "${SRC_DIR}/src/index.theme"                                                         "${THEME_DIR}"
 
   if [[ "${DESKTOP_SESSION}" == '/usr/share/xsessions/plasma' && "${color}" == '' ]]; then
