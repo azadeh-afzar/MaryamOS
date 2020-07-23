@@ -4,31 +4,22 @@ MaryamOS Gtk Theme
 MaryamOS is a MacOS Big Sur like theme for GTK 3 and Gnome-Shell which supports GTK 3 based desktop environments like Gnome.
 
 MaryamOS includes an x-cursor theme inspired by macOS and
-based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors) and also 
+based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors) and also
 icludes MacOSX Mojave like circle icon theme for linux desktops.
 
 ## Info
 
-### GTK+ 3.20 or later
-
-Fedora/RedHat distros:
-
-    dnf install gtk-murrine-engine gtk2-engines
-
-Ubuntu/Mint/Debian distros:
-
-    sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf
-
-ArchLinux:
-
-    pacman -S gtk-engine-murrine gtk-engines
-
+- All-in-One theme for GTK, Gnome Shell, Icons, Cursors and Grub menu.
+- Intended only for Gnome desktops with GTK+ 3.20 or later.
+- Supports Nautilus, Nemo, LibreOffice and etc.
+- Minimus support for Budgie and UNity desktops [not tested].
+- Minimum support for lightdm [not tested].
+- High resolution wallpapers included.
 
 ### Installation Depends requirment
+
 - sassc.
 - optipng.
-- libglib2.0-dev. `ubuntu 18.04` `debian 10.03` `linux mint 19`
-- libxml2-utils. `ubuntu 18.04` `debian 10.03` `linux mint 19`
 
 Fedora/RedHat distros:
 
@@ -45,6 +36,27 @@ Debian 10:
 ArchLinux:
 
     pacman -S sassc optipng
+
+for `ubuntu 18.04` `debian 10.03` `linux mint 19` and below versions you also need these:
+
+- libglib2.0-dev.
+- libxml2-utils.
+
+Fedora/RedHat distros:
+
+    dnf install sassc optipng libglib2.0-dev libxml2-utils
+
+Ubuntu/Mint/Debian distros:
+
+    sudo apt install sassc optipng libglib2.0-dev libxml2-utils
+
+Debian 10:
+
+    sudo apt install sassc optipng libcanberra-gtk-module libglib2.0-dev libxml2-utils
+
+ArchLinux:
+
+    pacman -S sassc optipng  libglib2.0-dev libxml2-utils
 
 Other:
 Search for the depends in your distributions repository or install the depends from source.
