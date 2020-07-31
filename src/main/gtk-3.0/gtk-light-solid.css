@@ -5106,6 +5106,9 @@ window.background.csd > box.vertical > box.horizontal > stack > widget > noteboo
   background-color: #357ef8;
 }
 
+/********
+ * Nemo *
+ ********/
 .nemo-window .nemo-places-sidebar.frame {
   border-width: 0;
 }
@@ -5221,6 +5224,9 @@ window.background.csd > box.vertical > box.horizontal > stack > widget > noteboo
   -gtk-icon-shadow: none;
 }
 
+/*********
+ * Gedit *
+ *********/
 window.org-gnome-gedit > paned.titlebar > headerbar button.flat.toggle.popup:not(.image-button) box > .title, window.org-gnome-gedit > paned.titlebar > headerbar .raven .raven-header:not(.top) button.toggle.popup:not(.image-button) box > .title, .raven .raven-header:not(.top) window.org-gnome-gedit > paned.titlebar > headerbar button.toggle.popup:not(.image-button) box > .title {
   padding: 0;
   margin: -2px 0;
@@ -6134,6 +6140,9 @@ gf-candidate-box:hover, gf-candidate-box:selected {
   border-radius: 2px;
 }
 
+/***************
+* Rhythmbox *
+***************/
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.12);
   padding: 4px;
@@ -6141,9 +6150,6 @@ gf-candidate-box:hover, gf-candidate-box:selected {
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button:active, .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button:checked {
-  background-image: none;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
   border-color: rgba(0, 0, 0, 0.12);
 }
 
@@ -6175,19 +6181,6 @@ window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem >
   margin-bottom: 8px;
 }
 
-window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button:active, window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button:checked,
-window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button:active,
-window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button:checked,
-window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button:active,
-window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button:checked,
-window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button:active,
-window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button:checked {
-  background-image: none;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 0, 0, 0.12);
-}
-
 window.csd > box.vertical > box.vertical > frame,
 window.solid-csd > box.vertical > box.vertical > frame {
   margin: -1px 0;
@@ -6204,13 +6197,6 @@ window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked 
   min-width: 36px;
   padding: 0;
   margin: 0;
-}
-
-window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised:active, window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised:checked {
-  background-image: none;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 0, 0, 0.12);
 }
 
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised > widget > box > image {
@@ -6233,18 +6219,9 @@ window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked 
   margin: 0;
 }
 
-window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle:active, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle:checked,
-window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat):active,
-window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat):checked {
-  background-image: none;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 0, 0, 0.12);
-}
-
 /********************
-  * Gnome Calculator *
-  ********************/
+* Gnome Calculator *
+********************/
 window.background > headerbar.titlebar > button.flat.popup.toggle.text-button.title, .raven .raven-header:not(.top) window.background > headerbar.titlebar > button.popup.toggle.text-button.title {
   margin: 6px 0;
 }
