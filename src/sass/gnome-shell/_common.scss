@@ -658,7 +658,13 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 }
 
 /* Popovers/Menus */
+
 $dialog_bg_color: if($variant == 'light', $bg_color, $base_color);
+
+@if $trans == 'true' {
+  $dialog_bg_color: if($variant == 'light', rgba($bg_color, 0.95), rgba($base_color, 0.95));
+}
+
 $popop_menuitem_radius: $wm_radius - 4px;
 
 // sets popup menu color
