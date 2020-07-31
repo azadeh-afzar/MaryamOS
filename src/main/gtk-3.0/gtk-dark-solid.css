@@ -4879,7 +4879,7 @@ filechooser placessidebar.sidebar.frame {
 .nautilus-window placessidebar.sidebar {
   border: none;
   background-color: transparent;
-  min-width: 180px;
+  min-width: 200px;
 }
 
 
@@ -4921,8 +4921,8 @@ label:disabled .nautilus-window placessidebar.sidebar selection.sidebar-row imag
   background-repeat: no-repeat;
   background-color: transparent;
   background-position: left center;
-  background-size: 180px 28px;
-  background-image: -gtk-scaled(url("assets/sidebar-view-hover-180px-dark.png"), url("assets/sidebar-view-hover-180px-dark@2.png"));
+  background-size: 200px 28px;
+  background-image: -gtk-scaled(url("assets/sidebar-view-hover-200px-dark.png"), url("assets/sidebar-view-hover-200px-dark@2.png"));
 }
 
 
@@ -4932,8 +4932,8 @@ label:disabled .nautilus-window placessidebar.sidebar selection.sidebar-row imag
   background-repeat: no-repeat;
   background-color: transparent;
   background-position: left center;
-  background-size: 180px 28px;
-  background-image: -gtk-scaled(url("assets/sidebar-view-active-180px-dark.png"), url("assets/sidebar-view-active-180px-dark@2.png"));
+  background-size: 200px 28px;
+  background-image: -gtk-scaled(url("assets/sidebar-view-active-200px-dark.png"), url("assets/sidebar-view-active-200px-dark@2.png"));
 }
 
 
@@ -4944,9 +4944,9 @@ label:disabled .nautilus-window placessidebar.sidebar selection.sidebar-row imag
   transition: background-image ease-out 200ms;
   background-repeat: no-repeat;
   background-position: left center;
-  background-size: 180px 28px;
+  background-size: 200px 28px;
   background-color: transparent;
-  background-image: -gtk-scaled(url("assets/sidebar-view-checked-180px-dark.png"), url("assets/sidebar-view-checked-180px-dark@2.png"));
+  background-image: -gtk-scaled(url("assets/sidebar-view-checked-200px-dark.png"), url("assets/sidebar-view-checked-200px-dark@2.png"));
 }
 
 
@@ -5052,7 +5052,7 @@ filechooser box.vertical > paned > separator:dir(rtl) {
 }
 
 .nautilus-window.background.csd > headerbar.titlebar > .linked.raised > button:first-child {
-  margin-left: 108px;
+  margin-left: 128px;
 }
 
 .nautilus-window .nautilus-canvas-item.dim-label,
