@@ -32,7 +32,7 @@ done
 
 echo "Rendering gtk-3.0 assets"
 cd "$ASRC_DIR/gtk-3.0/common-assets" && ./render-assets.sh
-cd "$ASRC_DIR/gtk-3.0/windows-assets" && ./render-assets.sh && ./render-alt-assets.sh && ./render-small-assets.sh && ./render-alt-small-assets.sh
+cd "$ASRC_DIR/gtk-3.0/windows-assets" && ./render-assets.sh && ./render-alt-assets.sh
 
 echo "Rendering Cursor assets"
 cd "$CURSOR_DIR" && ./build.sh
