@@ -257,18 +257,18 @@ install_dialog() {
 run_dialog() {
   if [[ -x /usr/bin/dialog ]]; then
     tui=$(dialog --backtitle "${THEME_NAME} gtk theme installer" \
-    --radiolist "Choose your nautilus sidebar size (default is 180px width): " 15 40 5 \
-      1 "180px" on  \
-      2 "200px" off \
-      3 "220px" off  \
-      4 "240px" off  \
-      5 "260px" off --output-fd 1 )
+    --radiolist "Choose your nautilus sidebar size (default is 200px width): " 15 40 5 \
+      1 "200px" on  \
+      2 "220px" off \
+      3 "240px" off  \
+      4 "260px" off  \
+      5 "280px" off --output-fd 1 )
       case "$tui" in
-        1) sidebar_size="180px" ;;
-        2) sidebar_size="200px" ;;
-        3) sidebar_size="220px" ;;
-        4) sidebar_size="240px" ;;
-        5) sidebar_size="260px" ;;
+        1) sidebar_size="200px" ;;
+        2) sidebar_size="220px" ;;
+        3) sidebar_size="240px" ;;
+        4) sidebar_size="260px" ;;
+        5) sidebar_size="280px" ;;
         *) operation_canceled ;;
      esac
   fi
@@ -277,7 +277,7 @@ run_dialog() {
 change_size() {
   cd "${SRC_DIR}/sass/gtk"
   cp --archive --no-clobber _applications.scss _applications.scss.bak
-  sed --in-place "s/180px/$sidebar_size/g" _applications.scss
+  sed --in-place "s/200px/$sidebar_size/g" _applications.scss
   prompt --warning "Change nautilus sidebar size ..."
 }
 
@@ -455,7 +455,7 @@ done
 if [[ "${size:-}" == 'true' ]]; then
   install_dialog && run_dialog
 
-  if [[ "$sidebar_size" != '180px' ]]; then
+  if [[ "$sidebar_size" != '200px' ]]; then
     change_size
   fi
 fi
