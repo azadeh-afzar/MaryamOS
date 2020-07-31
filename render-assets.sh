@@ -20,12 +20,9 @@ render_thumbnail() {
     echo
     echo "Rendering $ASRC_DIR/$1/thumbnail$2.png"
     inkscape --export-id="thumbnail$2" \
-              --export-id-only \
-              --export-type=png "$ASRC_DIR/$1/thumbnail$2.png" "$ASRC_DIR/$1/thumbnail.svg" >/dev/null \
-    || inkscape --export-id="thumbnail$2" \
                  --export-id-only \
-                 --export-png="$ASRC_DIR/$1/thumbnail$2.png" "$ASRC_DIR/$1/thumbnail.svg" >/dev/null \
-    && $OPTIPNG -o7 --quiet "$ASRC_DIR/$1/thumbnail$2.png"
+                 --export-filename="$ASRC_DIR/$1/thumbnail$2.png" "$ASRC_DIR/$1/thumbnail.svg" > /dev/null 2>&1
+    $OPTIPNG -o7 --quiet "$ASRC_DIR/$1/thumbnail$2.png"
   fi
 }
 
