@@ -32,7 +32,7 @@ CDEF=" \033[0m"                                     # default color
 CCIN=" \033[0;36m"                                  # info color
 CGSC=" \033[0;32m"                                  # success color
 CRER=" \033[0;31m"                                  # error color
-CWAR=" \033[0;33m"                                  # waring color
+CWAR=" \033[0;33m"                                  # warning color
 b_CDEF=" \033[1;37m"                                # bold default color
 b_CCIN=" \033[1;36m"                                # bold info color
 b_CGSC=" \033[1;32m"                                # bold success color
@@ -63,7 +63,7 @@ function has_command() {
 
 operation_canceled() {
   clear
-  prompt  -i "\n Operation canceled by user, Bye!"
+  prompt  --info "\n Operation canceled by user, Bye!"
   exit 1
 }
 
@@ -76,6 +76,7 @@ usage() {
   printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [light|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-a, --alt VARIANTS" "Specify theme titilebutton variant(s) [standard|alt] (Default: All variants)"
   printf "  %-25s%s\n" "-i, --icon VARIANTS" "Specify activities icon variant(s) for gnome-shell [standard|normal|gnome|ubuntu|arch|manjaro|fedora|debian|void] (Default: standard variant)"
+  printf "  %-25s%s\n" "-s, --size VARIANTS" "Run a dialg to change the nautilus sidebar width size (Default: 200px)"
   printf "  %-25s%s\n"     "--snap"          "Install modifed Snap application .desktop files to apply custom theme."
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
   printf "  %-25s%s\n" "-r, --revert" "revert GDM theme, this option need root user authority! please run this with sudo"
@@ -493,8 +494,9 @@ fi
 # copy snap desktop files.
 if [[ "${snap:-}" == 'true' ]]; then
   echo
-  prompt --info "Install custome snap pakage icons..."
+  prompt --info "Installing custome snap pakage icons..."
   cp --recursive "${REPO_DIR}/icons/snap"/*.desktop "${APP_DIR}"
+  prompt --success "Installing custome snap pakage icons ... DONE"
 fi
 
 # Install cursors
