@@ -1,20 +1,27 @@
-MaryamOS Gtk Theme
+MaryamOS Theme
 ======
 
-MaryamOS is a MacOS Big Sur like theme for GTK 3 and Gnome-Shell which supports GTK 3 based desktop environments like Gnome.
-
-MaryamOS includes an x-cursor theme inspired by macOS and
-based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors) and also
-icludes MacOSX Mojave like circle icon theme for linux desktops.
+MaryamOS is a Complete Desktop Theme for Gnome and GTK 3, it looks like Apple MacOS Big Sur.
+MaryamOS includes gnome-shell theme, icons and cursor themes alongside with grub themes.
 
 ## Info
 
-- All-in-One theme for GTK, Gnome Shell, Icons, Cursors and Grub menu.
+- All-in-One theme for GTK 3, Gnome Shell, Icons, Cursors and GRUB menu.
 - Intended only for Gnome desktops with GTK+ 3.20 or later.
 - Supports Nautilus, Nemo, LibreOffice and etc.
-- Minimus support for Budgie and UNity desktops [not tested].
-- Minimum support for lightdm [not tested].
+- Theme for Plank dock.
 - High resolution wallpapers included.
+
+## Preview
+
+#### Light theme
+![light](preview-light.png)
+
+#### Dark theme
+![dark](preview-dark.png)
+
+#### Cursors
+![cursors](preview-cursors.png)
 
 ### Installation Depends requirment
 
@@ -61,9 +68,11 @@ ArchLinux:
 Other:
 Search for the depends in your distributions repository or install the depends from source.
 
-## Installation
+for developers who wish to modify this theme, you ned to install `inkscape` from flatpak.
 
-### From source
+    flatpak install flathub org.inkscape.Inkscape
+
+## Installation
 
 After depends all installed you can Run
 
@@ -80,16 +89,16 @@ Usage:  `./Install`  **[OPTIONS...]**
 |-c, --color          | Specify theme color variant(s) **[light/dark]** (Default: All variants)|
 |-o, --opacity        | Specify theme opacity variant(s) **[standard/solid]** (Default: All variants)|
 |-a, --alt            | Specify titlebutton variant(s) **[standard/alt]** (Default: All variants)|
-|-s, --small          | Specify titlebutton size variant(s) **[standard/small]** (Default: standard variants)|
+|-s, --size           | Run a dialg to change the nautilus sidebar width size (Default: 200px)|
+|    --snap           | Install modifed Snap application .desktop files to apply custom theme. (exprimental)|
 |-i, --icon           | activities icon variant(s) **[standard/normal/gnome/ubuntu/arch/manjaro/fedora/debian/void]** (Default: standard variant)|
 |-g, --gdm            | Install GDM theme, you should run this with sudo!|
 |-r, --revert         | revert GDM theme, you should run this with sudo!|
 |-h, --help           | Show this help|
 
-## Preview
+## Credits
 
-![gtk](preview-gtk.png)
-![shell](preview-shell.png)
-![cursors](preview-cursors.png)
-![icons](preview-icons.png)
-![icons cicle style](preview-icons-circle.png)
+- WhiteSur gtk theme (https://github.com/vinceliuice/WhiteSur-gtk-theme)
+- WhiteSur icon theme (https://github.com/vinceliuice/WhiteSur-icon-theme)
+- McMojave-circle icon theme (https://github.com/vinceliuice/McMojave-circle)
+- McMojave-cursors theme (https://github.com/vinceliuice/McMojave-cursors)
