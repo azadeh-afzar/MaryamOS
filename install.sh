@@ -78,8 +78,6 @@ usage() {
   printf "  %-25s%s\n" "-i, --icon VARIANTS" "Specify activities icon variant(s) for gnome-shell [standard|normal|gnome|ubuntu|arch|manjaro|fedora|debian|void] (Default: standard variant)"
   printf "  %-25s%s\n" "-s, --size VARIANTS" "Run a dialg to change the nautilus sidebar width size (Default: 200px)"
   printf "  %-25s%s\n"     "--snap"          "Install modifed Snap application .desktop files to apply custom theme."
-  printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
-  printf "  %-25s%s\n" "-r, --revert" "revert GDM theme, this option need root user authority! please run this with sudo"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
@@ -164,80 +162,6 @@ install() {
   cp --update --recursive "${SRC_DIR}/other/plank/theme${color}"/*.theme                                  "${PLANK_DIR}/${2}${3}"
 }
 
-# Backup and install files related to GDM theme
-
-GS_THEME_FILE="/usr/share/gnome-shell/gnome-shell-theme.gresource"
-SHELL_THEME_FOLDER="/usr/share/gnome-shell/theme"
-ETC_THEME_FOLDER="/etc/alternatives"
-ETC_THEME_FILE="/etc/alternatives/gdm3.css"
-UBUNTU_THEME_FILE="/usr/share/gnome-shell/theme/ubuntu.css"
-UBUNTU_NEW_THEME_FILE="/usr/share/gnome-shell/theme/gnome-shell.css"
-
-install_gdm() {
-  local GDM_THEME_DIR="${1}/${2}${3}${4}"
-
-  echo
-  prompt --info "Installing ${2}${3}${4} gdm theme..."
-
-  if [[ -f "$GS_THEME_FILE" ]] && command -v glib-compile-resources >/dev/null ; then
-    prompt --info "Installing '$GS_THEME_FILE'..."
-    cp --archive --no-clobber "$GS_THEME_FILE" "$GS_THEME_FILE.bak"
-    glib-compile-resources \
-      --sourcedir="$GDM_THEME_DIR/gnome-shell" \
-      --target="$GS_THEME_FILE" \
-      "${SRC_DIR}/main/gnome-shell/gnome-shell-theme.gresource.xml"
-  fi
-
-  if [[ -f "$UBUNTU_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
-    prompt --info "Installing '$UBUNTU_THEME_FILE'..."
-    cp --archive --no-clobber "$UBUNTU_THEME_FILE" "$UBUNTU_THEME_FILE.bak"
-    cp --archive --force "$GDM_THEME_DIR/gnome-shell/gnome-shell.css" "$UBUNTU_THEME_FILE"
-  fi
-
-  if [[ -f "$UBUNTU_NEW_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
-    prompt --info "Installing '$UBUNTU_NEW_THEME_FILE'..."
-    cp --archive --no-clobber "$UBUNTU_NEW_THEME_FILE" "$UBUNTU_NEW_THEME_FILE.bak"
-    cp --archive --force "$GDM_THEME_DIR"/gnome-shell/* "$SHELL_THEME_FOLDER"
-  fi
-
-  if [[ -f "$ETC_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
-    prompt --info "Installing Ubuntu gnome-shell theme..."
-    cp --archive --no-clobber "$ETC_THEME_FILE" "$ETC_THEME_FILE.bak"
-    [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm --recursive --force $SHELL_THEME_FOLDER/$THEME_NAME
-    cp --update --recursive "$GDM_THEME_DIR/gnome-shell" "$SHELL_THEME_FOLDER/$THEME_NAME"
-    cd "$ETC_THEME_FOLDER"
-    ln --symbolic "$SHELL_THEME_FOLDER/$THEME_NAME/gnome-shell.css" gdm3.css
-  fi
-}
-
-revert_gdm() {
-  if [[ -f "$GS_THEME_FILE.bak" ]]; then
-    prompt --warning "reverting '$GS_THEME_FILE'..."
-    rm --recursive --force "$GS_THEME_FILE"
-    mv "$GS_THEME_FILE.bak" "$GS_THEME_FILE"
-  fi
-
-  if [[ -f "$UBUNTU_THEME_FILE.bak" ]]; then
-    prompt --warning "reverting '$UBUNTU_THEME_FILE'..."
-    rm --recursive --force "$UBUNTU_THEME_FILE"
-    mv "$UBUNTU_THEME_FILE.bak" "$UBUNTU_THEME_FILE"
-  fi
-
-  if [[ -f "$UBUNTU_NEW_THEME_FILE.bak" ]]; then
-    prompt --warning "reverting '$UBUNTU_NEW_THEME_FILE'..."
-    rm --recursive --force "$UBUNTU_NEW_THEME_FILE" "$SHELL_THEME_FOLDER"/{assets,no-events.svg,process-working.svg,no-notifications.svg}
-    mv "$UBUNTU_NEW_THEME_FILE.bak" "$UBUNTU_NEW_THEME_FILE"
-  fi
-
-  if [[ -f "$ETC_THEME_FILE.bak" ]]; then
-    prompt --warning "reverting Ubuntu gnome-shell theme..."
-    rm --recursive --force "$ETC_THEME_FILE"
-    mv "$ETC_THEME_FILE.bak" "$ETC_THEME_FILE"
-    [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm --recursive --force $SHELL_THEME_FOLDER/$THEME_NAME
-  fi
-}
-
-
 install_dialog() {
   if [ ! "$(which dialog 2> /dev/null)" ]; then
     prompt -w "\n 'dialog' needs to be installed for this shell"
@@ -308,16 +232,8 @@ while [[ $# -gt 0 ]]; do
       snap='true'
       shift 1
       ;;
-    -g|--gdm)
-      gdm='true'
-      shift 1
-      ;;
     -s|--size)
       size='true'
-      shift 1
-      ;;
-    -r|--revert)
-      revert='true'
       shift 1
       ;;
     -a|--alt)
@@ -474,24 +390,15 @@ for opacity in "${opacities[@]-${OPACITY_VARIANTS[@]}}"; do
 done
 }
 
-if [[ "${gdm:-}" != 'true' && "${revert:-}" != 'true' ]]; then
-  install_theme
-fi
-
-if [[ "${gdm:-}" == 'true' && "${revert:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
-  install_theme && install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${opacity}"
-fi
-
-if [[ "${gdm:-}" != 'true' && "${revert:-}" == 'true' && "$UID" -eq "$ROOT_UID" ]]; then
-  revert_gdm
-fi
+# Install theme.
+install_theme
 
 # Revert size change.
 if [[ -f "${SRC_DIR}"/sass/gtk/_applications.scss.bak ]]; then
   restore_file && parse_sass
 fi
 
-# copy snap desktop files.
+# Copy snap desktop files.
 if [[ "${snap:-}" == 'true' ]]; then
   echo
   prompt --info "Installing custome snap pakage icons..."

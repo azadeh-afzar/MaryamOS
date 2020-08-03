@@ -92,8 +92,6 @@ Usage:  `./Install`  **[OPTIONS...]**
 |-s, --size           | Run a dialg to change the nautilus sidebar width size (Default: 200px)|
 |    --snap           | Install modifed Snap application .desktop files to apply custom theme. (exprimental)|
 |-i, --icon           | activities icon variant(s) **[standard/normal/gnome/ubuntu/arch/manjaro/fedora/debian/void]** (Default: standard variant)|
-|-g, --gdm            | Install GDM theme, you should run this with sudo!|
-|-r, --revert         | revert GDM theme, you should run this with sudo!|
 |-h, --help           | Show this help|
 
 ## Credits
