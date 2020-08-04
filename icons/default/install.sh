@@ -37,14 +37,6 @@ install() {
   mkdir --parents                                                                                       "${THEME_DIR}"                                                   ${THEME_DIR}
   cp --recursive "${SRC_DIR}/src/index.theme"                                                           "${THEME_DIR}"
 
-  if [[ "${DESKTOP_SESSION}" == '/usr/share/xsessions/plasma' && "${color}" == '' ]]; then
-    sed --in-place "s/Adwaita/breeze/g" "${THEME_DIR}/index.theme"
-  fi
-
-  if [[ $DESKTOP_SESSION == '/usr/share/xsessions/plasma' && ${color} == '-dark' ]]; then
-    sed --in-place "s/Adwaita/breeze-dark/g" "${THEME_DIR}/index.theme"
-  fi
-
   cd ${THEME_DIR}
   sed --in-place "s/${name}/${name}${color}/g" index.theme
 
@@ -53,10 +45,6 @@ install() {
     cp --recursive "${SRC_DIR}/src"/{actions,animations,apps,categories,devices,emblems,mimes,places} "${THEME_DIR}"
     cp --recursive "${SRC_DIR}/src/status"/{16,22,24,32,symbolic}                                     "${THEME_DIR}/status"
     cp --recursive "${SRC_DIR}/links"/{actions,apps,devices,emblems,mimes,places,status}              "${THEME_DIR}"
-  fi
-
-  if [[ "${color}" == '' && "${DESKTOP_SESSION}" == '/usr/share/xsessions/budgie-desktop' ]]; then
-    cp --recursive "${SRC_DIR}/src/status/symbolic-budgie"/*.svg                                      "${THEME_DIR}/status/symbolic"
   fi
 
   if [[ ${color} == '-dark' ]]; then
