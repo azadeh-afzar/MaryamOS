@@ -1,7 +1,6 @@
-/************
+/***********
 * Terminal *
 ************/
-
 $_terminal_bg_color: if($variant == 'light', darken($solid_bg_color, 15%), darken($solid_bg_color, 25%));
 $_terminal_fg_color: $fg_color;
 $backdrop_selected_fg_color: $disabled_fg_color;
@@ -66,7 +65,10 @@ terminal-window {
     }
   }
 
-  &.background.csd.maximized { border-radius: 0 0 0 0; } // Fixed gnome 3.32 issue: Unable to restore window size after maximization
+  &.background.csd.maximized { 
+    // Fixed gnome 3.32 issue: Unable to restore window size after maximization
+    border-radius: 0 0 0 0; 
+  }
 
   headerbar.titlebar.default-decoration {
     background-color: $header_bg;
@@ -135,7 +137,6 @@ window.background.csd {
 /***********
 * Nautilus *
 ***********/
-
 // size of nautlilus rounded corners
 $nautilus_radius: $wm_radius + 2px;
 $nautilus_sidebar_size: 200px;
@@ -529,7 +530,6 @@ $disk_space_free: darken($bg_color, 3%);
 /********
  * Nemo *
  ********/
-
 .nemo-desktop.nemo-canvas-item {
   @extend %nautilus-desktop-canvas-item;
 }
@@ -667,7 +667,6 @@ $disk_space_free: darken($bg_color, 3%);
 /*********
  * Gedit *
  *********/
-
 window.org-gnome-gedit {
   > paned.titlebar {
     > headerbar {
@@ -825,10 +824,9 @@ window.org-gnome-gedit {
   }
 }
 
-
-//
-// Pluma
-//
+/*********
+ * Pluma *
+ *********/
 .pluma-window statusbar frame > border {
     border: none;
 }
@@ -846,9 +844,9 @@ window.org-gnome-gedit {
     border-radius: 0;
 }
 
-//
-// Gnome Builder
-//
+/*****************************
+ * TransmissionGnome Builder *
+ *****************************/
 // TODO: Merge this with the upstream stylesheet
 .gb-search-entry-occurrences-tag {
   background: none;
@@ -1020,7 +1018,8 @@ omnibar.linked > entry:not(:only-child) {
   }
 }
 
-entry.search.preferences-search { // preferences-search
+entry.search.preferences-search { 
+  // preferences-search
   box-shadow: none;
 
   &:focus {
@@ -1042,10 +1041,6 @@ preferencesbin {
 
     button {
       border-width: 0 0 0 1px;
-
-      // &:first-child {
-      //   border-left: 1px solid $borders_color;
-      // }
     }
   }
 
@@ -1106,9 +1101,9 @@ window.org-gnome-Builder.workspace > stack#titlebar_container.titlebar {
   }
 }
 
-//
-//  Gnome-Logs
-//
+/**************
+ * Gnome Logs *
+ **************/
 window.background > box.vertical box.horizontal {
   list.categories { border-radius: 0 0 0 $wm_radius; } // side-pane
     > box.vertical > scrolledwindow > viewport.frame > list {
@@ -1173,10 +1168,9 @@ window.background > box.vertical box.horizontal {
   }
 }
 
-//
-// Gnome-Usage
-//
-
+/****************
+ *  Gnome Usage *
+ ****************/
 // FIXME: why was 'adwaita.css' used for all user-themes? :/
 widget {
   &#PROCESSOR,
@@ -1259,10 +1253,9 @@ box.speedometer {
   }
 }
 
-//
-// Gnome Documents
-//
-
+/*******************
+ * Gnome Documents *
+ *******************/
 .documents-scrolledwin.frame {
   border-width: 0;
 }
@@ -1319,9 +1312,9 @@ button.documents-favorite:active:hover {
   border-image: url("assets/thumbnail-frame.png") 3 3 6 4;
 }
 
-//
-// Gnome Photos
-//
+/****************
+ * Gnome Photos *
+ ****************/
 .photos-entry-tag {
   @extend %documents-entry-tag;
 }
@@ -1404,15 +1397,14 @@ $list_shadow: if($variant == 'light',
   border-radius: $wm_radius - 4px;
 }
 
-//
-// Gnome Tweak Tool ( Gnome tweaks )
-//
-
+/********************
+ * Gnome Tweak Tool *
+ ********************/
 hdyleaflet {
   frame > border { border: none; }
 
   frame:not(.view) list:not(.contacts-contact-list) { 
-    // Don't set this to Gnome-Contacts
+    // Don't set this to Gnome Contacts
     @extend %circular_list;
 
     row.activatable {
@@ -1526,9 +1518,9 @@ row#AutostartTitle.tweak {
   }
 }
 
-//
-//  Gnome Control Center
-//
+/************************
+ * Gnome Control Center *
+ ************************/
 window.background.csd {
   > box.titlebar.horizontal {
     > headerbar:first-child {
@@ -1621,9 +1613,9 @@ hdyleaflet > separator.sidebar { // reset
   @extend %side_separator;
 }
 
-//
-//  Gnome system monitor
-//
+/************************
+ * Gnome system monitor *
+ ************************/
 window#gnome-system-monitor.background.csd {
   > box.vertical > stack {
     background-color: $base_color;
@@ -1637,9 +1629,9 @@ window#gnome-system-monitor.background.csd {
   }
 }
 
-//
-// gnome-sound-recorder
-//
+/************************
+ * Gnome Sound Recorder *
+ ************************/
 stack {
   > grid.vertical {
     > scrolledwindow {
@@ -1657,9 +1649,9 @@ stack {
   }
 }
 
-//
-// Gnome Contacts
-//
+/******************
+ * Gnome Contacts *
+ ******************/
 window.background.csd {
   > headerbar.titlebar.selection-mode {
     > hdyleaflet > headerbar {
@@ -1707,7 +1699,6 @@ window.background.csd {
 }
 
 entry.contacts-postal-entry {
-  // background-color: transparent;
   @extend %Linked_entrys;
 
   &:focus {
@@ -1718,9 +1709,9 @@ entry.contacts-postal-entry {
 
 entry.contacts-postal-entry:focus + entry.contacts-postal-entry { border-top-color: $entry_highlight; }
 
-//
-// Gnome Web
-//
+/*************
+ * Gnome Web *
+ *************/
 stack#titlebar_container.titlebar {
   > stack > headerbar {
     border: none;
@@ -1743,9 +1734,9 @@ notebook.main-notebook {
   }
 }
 
-//
-// Polari
-//
+/**********
+ * Polari *
+ **********/
 stack.view.polari-entry-area {
   background-color: $bg_color;
   border-top: 1px solid $borders_color;
@@ -1767,24 +1758,25 @@ stack.view.polari-entry-area {
 
 stack:disabled.view.polari-entry-area { background-image: image($bg_color); }
 
-//
-// Transmission
-//
+
+/****************
+ * Transmission *
+ ****************/
 .tr-workarea undershoot,
 .tr-workarea overshoot {
   border-color: transparent; // Remove black border on over- and undershoot
 }
 
-//
-// Atril (MATE pdf viewer)
-//
+/***************************
+ * Atril (MATE pdf viewer) *
+ ***************************/
 .atril-window .primary-toolbar toolbar {
   background: none;
 }
 
-//
-// Gnome Flashback
-//
+/*******************
+ * Gnome Flashback *
+ *******************/
 #gf-bubble,
 #gf-osd-window,
 #gf-input-source-popup,
@@ -2089,9 +2081,9 @@ flowboxchild.bookmark-tag-widget {
   &-selected { color: $selected_fg_color; } // checked
 }
 
-//
-// documents-scrolledwi (Totem, Documents, EvView)
-//
+/***************************************************
+ * documents-scrolledwi (Totem, Documents, EvView) *
+ ***************************************************/
 .documents-scrolledwin {
   background-color: transparent;
 
@@ -2112,9 +2104,9 @@ flowboxchild.bookmark-tag-widget {
   }
 }
 
-//
-// Document Viewer
-//
+/*******************
+ * Document Viewer *
+ *******************/
 window.background.csd {
   > box.vertical {
     > scrolledwindow {
@@ -2131,9 +2123,9 @@ window.background.csd {
   }
 }
 
-//
-// Archive Manager
-//
+/*******************
+ * Archive Manager *
+ *******************/
 .background.csd {
   > grid.horizontal > paned.horizontal {
     > scrolledwindow {
@@ -2158,9 +2150,9 @@ window.background.csd {
   }
 }
 
-//
-// Eye of GNOME Image Viewer
-//
+/*****************************
+ * Eye of GNOME Image Viewer *
+ *****************************/
 box.vertical > box.vertical > box.vertical{
   > paned.horizontal {
     background-image: none;
@@ -2168,9 +2160,9 @@ box.vertical > box.vertical > box.vertical{
   }
 }
 
-//
-// Gnome-Disk
-//
+/**************
+ * Gnome Disk *
+ **************/
 window.background.csd {
   > box.vertical > paned.horizontal {
     > scrolledwindow {
@@ -2181,9 +2173,9 @@ window.background.csd {
   }
 }
 
-//
-// Dialogs
-//
+/***********
+ * Dialogs *
+ ***********/
 dialog.background.csd {
   > headerbar.titlebar {
     > label:not(.title):not(.subtitle) { // wallpaper set dialog
@@ -2307,9 +2299,9 @@ dialog.background.csd {
   }
 }
 
-//
-// Mate OSD Window
-//
+/*******************
+ * Mate OSD Window *
+ *******************/
 MsdOsdWindow.background.osd {
   border-radius: 2px;
   border: 1px solid darken($osd_bg_color, 8%);
@@ -2327,9 +2319,9 @@ MsdOsdWindow.background.osd {
   }
 }
 
-//
-// Mate/Gnome Flashback Panel
-//
+/******************************
+ * Mate/Gnome Flashback Panel *
+ ******************************/
 .mate-panel-menu-bar,
 panel-toplevel.background {
   &, menubar {
@@ -2373,9 +2365,9 @@ panel-toplevel.background {
   }
 }
 
-//
-// Caja
-//
+/********
+ * Caja *
+ ********/
 .caja-desktop {
   @extend %nautilus-desktop-canvas-item;
 }
@@ -2437,10 +2429,6 @@ panel-toplevel.background {
   scrollbar {
     background: none;
   }
-
-  // notebook .view > box.vertical {
-  //   border-bottom-left-radius: $wm_radius;
-  // }
 }
 
 .caja-notebook .frame {
@@ -2449,17 +2437,16 @@ panel-toplevel.background {
 
 .caja-search-bar {
   entry {
-    // margin: 2px 0;
-
+    margin: 2px 0;
     &:focus {
       box-shadow: none;
     }
   }
 }
 
-//
-// Xfce4
-//
+/*********
+ * Xfce4 *
+ *********/
 $text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
               0 1px 2px rgba(0, 0, 0, 0.32),
               0 2px 3px rgba(0, 0, 0, 0.12);
@@ -2608,10 +2595,9 @@ window#whiskermenu-window {
   }
 }
 
-//
-//  * Thunar *
-//
-
+/**********
+ * Thunar *
+ **********/
 window.background.csd.thunar {
   > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane {
     border-bottom-left-radius: $wm_radius;
@@ -2695,9 +2681,9 @@ window.thunar {
   }
 }
 
- /*********
-  * Geary *
-  *********/
+/*********
+ * Geary *
+ *********/
 .geary-main-window.background.csd,
 window#GearyMainWindow.background.csd {
   > overlay > box.vertical {
@@ -2790,10 +2776,9 @@ window#GearyMainWindow.background.csd {
   }
 }
 
-//
-// * Firefox and Thunderbird *
-//
-
+/***************************
+ * Firefox and Thunderbird *
+ ***************************/
 window.background:not(.csd) {
   > widget {
     // for the bookmark toolbar's separators
@@ -2876,7 +2861,8 @@ window.background:not(.csd) {
 
   > window > menu {
     menuitem {
-      transition: none; // Fixed plank menu background issue
+      // Fixed plank menu background issue
+      transition: none;
     }
   }
 }
@@ -3013,36 +2999,6 @@ window.background.chromium {
   }
 
   > menubar { background-color: $header_bg; }
-
-  // > menu {
-  //   border: 1px solid $solid_borders_color;
-  //   color: $chrome_menu_fg_color;
-  //   background-color: $chrome_menu_bg_color;
-  //
-  //   > separator, .separator {
-  //     margin: 2px 0;
-  //     min-height: 0;
-  //     border-bottom: 2px solid $menu_bd;
-  //     background: none;
-  //   }
-  //
-  //   > menuitem {
-  //     color: $chrome_menu_fg_color;
-  //
-  //     &:hover {
-  //       color: $selected_fg_color;
-  //       background-color: $selected_bg_color;
-  //     }
-  //
-  //     &:disabled {
-  //       color: rgba($chrome_menu_fg_color, 0.45);
-  //     }
-  //
-  //     // label { &:disabled { color: rgba($chrome_menu_fg_color, 0.45); } }
-  //
-  //     accelerator { color: rgba($chrome_menu_fg_color, 0.45); }
-  //   }
-  // }
 }
 
 /****************
@@ -3092,9 +3048,9 @@ window.background:not(.solid-csd) {
   }
 }
 
-// /*********
-//  * Tilix *
-//  *********/
+/********
+ * Tilix *
+ *********/
 
 // in-line titlebars
 widget > box.terminal-titlebar {
@@ -3159,9 +3115,9 @@ window.background.csd {
   }
 }
 
-// /************
-//  * Inkscape *
-//  ************/
+/************
+ * Inkscape *
+ ************/
 toolbar#SubToolBox {
   min-height: 36px;
 
@@ -3201,9 +3157,9 @@ box#DesktopStatusBar {
   }
 }
 
-// /************
-//  * Synaptic *
-//  ************/
+/************
+ * Synaptic *
+ ************/
 window > box.vertical > box.horizontal {
   > toolbar {
     background-color: transparent;
@@ -3225,9 +3181,9 @@ window > box.vertical > box.horizontal {
   > widget { background-color: transparent; }
 }
 
-//
-// vala-panel
-//
+/**************
+ * vala-panel *
+ **************/
 window#ValaPanel.background {
   // background-image: linear-gradient(0deg, $panel_bottom_color 0%, $panel_top_color 100%);
   // border: 1px solid $header_border;
@@ -3242,10 +3198,7 @@ window#ValaPanel.background {
 
 button.flat.-panel-button,
 button#tasklist-button.toggle.flat,
-// tasklist-arrow-button.toggle.flat.-panel-flat-button, // xfce tasklist button
 button.flat.-panel-icon-button {
-  // @extend %budgie_icon_tasklist_button;
-
   &:hover {
     box-shadow: inset 0 -2px rgba($selected_bg_color, 0.5);
     background: none;
@@ -3288,7 +3241,7 @@ button.flat.-panel-icon-button {
 }
 
 // vala-panel-appmenu
-menubar.-vala-panel-appmenu-private, // xfce4 appmenu plugin
+menubar.-vala-panel-appmenu-private,
 menubar.-vala-panel-background {
   background: none;
   border: none;
@@ -3306,9 +3259,6 @@ menubar.-vala-panel-background {
     &:disabled {
       color: transparentize($panel_fg, 0.6);
     }
-
-    // > window.background.popup > decoration,
-    // > window.background.popup > menu { border-radius: 0 0 $wm_radius $wm_radius; }
   }
 }
 

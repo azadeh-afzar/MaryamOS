@@ -4729,7 +4729,7 @@ button.emoji-section:last-child {
   transition: none;
 }
 
-/************
+/***********
 * Terminal *
 ************/
 terminal-window .terminal-screen {
@@ -5510,6 +5510,9 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
   border-right-width: 1px;
 }
 
+/*********
+ * Pluma *
+ *********/
 .pluma-window statusbar frame > border {
   border: none;
 }
@@ -5526,6 +5529,9 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
   border-radius: 0;
 }
 
+/*****************************
+ * TransmissionGnome Builder *
+ *****************************/
 .gb-search-entry-occurrences-tag {
   background: none;
 }
@@ -5761,6 +5767,9 @@ window.org-gnome-Builder.workspace > stack#titlebar_container.titlebar > headerb
   min-height: 0;
 }
 
+/**************
+ * Gnome Logs *
+ **************/
 window.background > box.vertical box.horizontal list.categories {
   border-radius: 0 0 0 14px;
 }
@@ -5823,6 +5832,9 @@ window.background > box.vertical box.horizontal > box.vertical > scrolledwindow 
   transition-duration: 0s;
 }
 
+/****************
+ *  Gnome Usage *
+ ****************/
 widget#PROCESSOR list row, widget#MEMORY list row {
   margin: -1px;
   border: 1px solid #474747;
@@ -5889,6 +5901,9 @@ box.speedometer-content-area {
   box-shadow: 0 0 0 4px rgba(8, 96, 242, 0.2);
 }
 
+/*******************
+ * Gnome Documents *
+ *******************/
 .documents-scrolledwin.frame {
   border-width: 0;
 }
@@ -5950,6 +5965,9 @@ button.documents-favorite:active:hover {
   border-image: url("assets/thumbnail-frame.png") 3 3 6 4;
 }
 
+/****************
+ * Gnome Photos *
+ ****************/
 .photos-fade-in {
   opacity: 1.0;
   transition: opacity 0.2s ease-out;
@@ -6026,6 +6044,9 @@ hdyleaflet list > row.activatable {
   border-radius: 10px;
 }
 
+/********************
+ * Gnome Tweak Tool *
+ ********************/
 hdyleaflet frame > border {
   border: none;
 }
@@ -6081,6 +6102,9 @@ row#AutostartTitle.tweak {
   background: none;
 }
 
+/************************
+ * Gnome Control Center *
+ ************************/
 window.background.csd > stack {
   border-radius: 0 0 14px 14px;
 }
@@ -6136,6 +6160,9 @@ window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > vi
   background-color: transparent;
 }
 
+/************************
+ * Gnome system monitor *
+ ************************/
 window#gnome-system-monitor.background.csd > box.vertical > stack {
   background-color: #242424;
   border-radius: 0 0 14px 14px;
@@ -6145,6 +6172,9 @@ window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical
   background: none;
 }
 
+/************************
+ * Gnome Sound Recorder *
+ ************************/
 stack > grid.vertical > scrolledwindow {
   border: none;
   border-radius: 0 0 14px 14px;
@@ -6158,6 +6188,9 @@ stack > grid.vertical scrolledwindow.frame.emptyGrid {
   border: none;
 }
 
+/******************
+ * Gnome Contacts *
+ ******************/
 window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar {
   color: #FDFDFD;
 }
@@ -6189,6 +6222,9 @@ entry.contacts-postal-entry:focus + entry.contacts-postal-entry {
   border-top-color: rgba(104, 135, 205, 0.75);
 }
 
+/*************
+ * Gnome Web *
+ *************/
 stack#titlebar_container.titlebar > stack > headerbar {
   border: none;
 }
@@ -6205,6 +6241,9 @@ notebook.main-notebook > header.top > tabs > tab:first-child {
   border-left-width: 0;
 }
 
+/**********
+ * Polari *
+ **********/
 stack.view.polari-entry-area {
   background-color: #333333;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -6226,15 +6265,24 @@ stack:disabled.view.polari-entry-area {
   background-image: image(#333333);
 }
 
+/****************
+ * Transmission *
+ ****************/
 .tr-workarea undershoot,
 .tr-workarea overshoot {
   border-color: transparent;
 }
 
+/***************************
+ * Atril (MATE pdf viewer) *
+ ***************************/
 .atril-window .primary-toolbar toolbar {
   background: none;
 }
 
+/*******************
+ * Gnome Flashback *
+ *******************/
 #gf-bubble, #gf-bubble.solid,
 #gf-osd-window,
 #gf-osd-window.solid,
@@ -6550,6 +6598,9 @@ flowboxchild.bookmark-tag-widget-selected {
   color: white;
 }
 
+/***************************************************
+ * documents-scrolledwi (Totem, Documents, EvView) *
+ ***************************************************/
 .documents-scrolledwin {
   background-color: transparent;
 }
@@ -6572,6 +6623,9 @@ flowboxchild.bookmark-tag-widget-selected {
   border: none;
 }
 
+/*******************
+ * Document Viewer *
+ *******************/
 window.background.csd > box.vertical > scrolledwindow > iconview.view.content-view:not(:hover):not(:selected) {
   background-color: transparent;
   border-radius: 14px;
@@ -6582,6 +6636,9 @@ window.background.csd evview.view.content-view {
   border-radius: 0 0 14px 14px;
 }
 
+/*******************
+ * Archive Manager *
+ *******************/
 .background.csd > grid.horizontal > paned.horizontal > scrolledwindow {
   border-radius: 0 0 14px 14px;
   background-color: #242424;
@@ -6600,15 +6657,24 @@ window.background.csd evview.view.content-view {
   background-color: transparent;
 }
 
+/*****************************
+ * Eye of GNOME Image Viewer *
+ *****************************/
 box.vertical > box.vertical > box.vertical > paned.horizontal {
   background-image: none;
   background-color: #0e0e0e;
 }
 
+/**************
+ * Gnome Disk *
+ **************/
 window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view:not(:selected):not(:hover) {
   border-bottom-left-radius: 14px;
 }
 
+/***********
+ * Dialogs *
+ ***********/
 dialog.background.csd > headerbar.titlebar > label:not(.title):not(.subtitle) {
   font-weight: 700;
 }
@@ -6713,6 +6779,9 @@ dialog.background.csd > .dialog-vbox > .dialog-action-box > .dialog-action-area 
   margin: 0 6px 6px;
 }
 
+/*******************
+ * Mate OSD Window *
+ *******************/
 MsdOsdWindow.background.osd {
   border-radius: 2px;
   border: 1px solid #161616;
@@ -6731,6 +6800,9 @@ MsdOsdWindow.background.osd .trough {
   border-radius: 5px;
 }
 
+/******************************
+ * Mate/Gnome Flashback Panel *
+ ******************************/
 .mate-panel-menu-bar, .mate-panel-menu-bar menubar,
 panel-toplevel.background,
 panel-toplevel.background menubar {
@@ -6779,6 +6851,9 @@ panel-toplevel.background na-tray-applet {
   -NaTrayApplet-icon-size: 16px;
 }
 
+/********
+ * Caja *
+ ********/
 .caja-notebook {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -6842,10 +6917,17 @@ panel-toplevel.background na-tray-applet {
   border-width: 0 0 1px;
 }
 
+.caja-search-bar entry {
+  margin: 2px 0;
+}
+
 .caja-search-bar entry:focus {
   box-shadow: none;
 }
 
+/*********
+ * Xfce4 *
+ *********/
 .xfce4-panel button, .xfce4-panel button.flat, .xfce4-panel .raven .raven-header:not(.top) button, .raven .raven-header:not(.top) .xfce4-panel button, .xfce4-panel.panel button, .xfce4-panel.panel button.flat, .mate-panel-menu-bar button:not(#tasklist-button),
 panel-toplevel.background button:not(#tasklist-button) {
   color: white;
@@ -6988,6 +7070,9 @@ window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
   color: #dedede;
 }
 
+/**********
+ * Thunar *
+ **********/
 window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane {
   border-bottom-left-radius: 14px;
   background-color: #333333;
@@ -7129,8 +7214,8 @@ window.thunar notebook header.top tab.reorderable-page > box > label {
 }
 
 /*********
-  * Geary *
-  *********/
+ * Geary *
+ *********/
 .geary-main-window.background.csd > overlay > box.vertical > paned > .sidebar,
 window#GearyMainWindow.background.csd > overlay > box.vertical > paned > .sidebar {
   border-bottom-left-radius: 14px;
@@ -7227,6 +7312,9 @@ window#GearyMainWindow.background.csd paned.geary-sidebar-pane-separator frame.g
   background: none;
 }
 
+/***************************
+ * Firefox and Thunderbird *
+ ***************************/
 window.background:not(.csd) > widget > separator {
   padding-top: 1px;
   margin-top: 1px;
@@ -7472,6 +7560,9 @@ window.background:not(.solid-csd) > notebook:not(.frame) > stack {
   box-shadow: none;
 }
 
+/********
+ * Tilix *
+ *********/
 widget > box.terminal-titlebar {
   padding: 0 6px;
 }
@@ -7538,6 +7629,9 @@ window.background.csd > box.horizontal > stack > box.vertical > notebook > stack
   border-bottom-right-radius: 14px;
 }
 
+/************
+ * Inkscape *
+ ************/
 toolbar#SubToolBox {
   min-height: 36px;
 }
@@ -7570,6 +7664,9 @@ box#DesktopStatusBar spinbutton, box#DesktopStatusBar button.combo {
   margin-bottom: 6px;
 }
 
+/************
+ * Synaptic *
+ ************/
 window > box.vertical > box.horizontal > toolbar {
   background-color: transparent;
   box-shadow: none;
@@ -7591,6 +7688,9 @@ window > box.vertical > box.horizontal > widget {
   background-color: transparent;
 }
 
+/**************
+ * vala-panel *
+ **************/
 window#ValaPanel.background widget.-vala-panel-background > separator {
   background: none;
 }
