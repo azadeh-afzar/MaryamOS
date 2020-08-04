@@ -24,30 +24,30 @@ usage() {
 }
 
 install() {
-  local dest="${1}"
-  local name="${2}"
-  local color="${3}"
+  local dest=${1}
+  local name=${2}
+  local color=${3}
 
-  local THEME_DIR="${dest}/${name}${theme}${color}"
+  local THEME_DIR="${dest}/${name}${color}"
 
   [[ -d "${THEME_DIR}" ]] && rm -rf "${THEME_DIR}"
 
   echo "Installing '${THEME_DIR}'..."
 
-  mkdir --parents                                                                                     "${THEME_DIR}"
-  cp --recursive "${SRC_DIR}/src/index.theme"                                                         "${THEME_DIR}"
+  mkdir --parents                                                                                       "${THEME_DIR}"                                                   ${THEME_DIR}
+  cp --recursive "${SRC_DIR}/src/index.theme"                                                           "${THEME_DIR}"
 
-  cd "${THEME_DIR}"
-  sed --in-place "s/${name}/${name}${theme}${color}/g" "index.theme"
+  cd ${THEME_DIR}
+  sed --in-place "s/${name}/${name}${color}/g" index.theme
 
-  if [[ "${color}" == '' ]]; then
+  if [[ ${color} == '' ]]; then
     mkdir --parents                                                                                   "${THEME_DIR}/status"
     cp --recursive "${SRC_DIR}/src"/{actions,animations,apps,categories,devices,emblems,mimes,places} "${THEME_DIR}"
     cp --recursive "${SRC_DIR}/src/status"/{16,22,24,32,symbolic}                                     "${THEME_DIR}/status"
-    cp --recursive "${SRC_DIR}/links"/{actions,apps,categories,devices,emblems,mimes,places,status}   "${THEME_DIR}"
+    cp --recursive "${SRC_DIR}/links"/{actions,apps,devices,emblems,mimes,places,status}              "${THEME_DIR}"
   fi
 
-  if [[ "${color}" == '-dark' ]]; then
+  if [[ ${color} == '-dark' ]]; then
     mkdir --parents                                                                                   "${THEME_DIR}"/{apps,categories,emblems,devices,mimes,places,status}
 
     cp --recursive "${SRC_DIR}/src/actions"                                                           "${THEME_DIR}"
@@ -60,31 +60,33 @@ install() {
     cp --recursive "${SRC_DIR}/src/status"/{16,22,24,symbolic}                                        "${THEME_DIR}/status"
 
     # Change icon color for dark theme
-    sed --in-place "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,devices,places,status}/{16,22,24}/*
-    sed --in-place "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,apps,categories,emblems,devices,mimes,places,status}/symbolic/*
+    sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,devices,places}/16/*
+    sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,devices,places}/22/*
+    sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,devices,places}/24/*
+    sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/actions/32/*
+    sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,apps,categories,emblems,devices,mimes,places,status}/symbolic/*
 
-    cp --recursive "${SRC_DIR}/links/actions"/{16,22,24,symbolic}                                     "${THEME_DIR}/actions"
-    cp --recursive "${SRC_DIR}/links/devices"/{16,22,24,symbolic}                                     "${THEME_DIR}/devices"
-    cp --recursive "${SRC_DIR}/links/places"/{16,22,24,symbolic}                                      "${THEME_DIR}/places"
-    cp --recursive "${SRC_DIR}/links/status"/{16,22,24,symbolic}                                      "${THEME_DIR}/status"
-    cp --recursive "${SRC_DIR}/links/apps/symbolic"                                                   "${THEME_DIR}/apps"
-    cp --recursive "${SRC_DIR}/links/categories/symbolic"                                             "${THEME_DIR}/categories"
-    cp --recursive "${SRC_DIR}/links/mimes/symbolic"                                                  "${THEME_DIR}/mimes"
+    cp --recursive "${SRC_DIR}/links/actions"/{16,22,24,32,symbolic}                                 "${THEME_DIR}/actions"
+    cp --recursive "${SRC_DIR}/links/devices"/{16,22,24,symbolic}                                    "${THEME_DIR}/devices"
+    cp --recursive "${SRC_DIR}/links/places"/{16,22,24,symbolic}                                     "${THEME_DIR}/places"
+    cp --recursive "${SRC_DIR}/links/status"/{16,22,24,symbolic}                                     "${THEME_DIR}/status"
+    cp --recursive "${SRC_DIR}/links/apps/symbolic"                                                  "${THEME_DIR}/apps"
+    cp --recursive "${SRC_DIR}/links/mimes/symbolic"                                                 "${THEME_DIR}/mimes"
 
     cd ${dest}
-    ln --symbolic "../${name}${theme}/animations"                                                     "${name}${theme}-dark/animations"
-    ln --symbolic "../../${name}${theme}/categories/32"                                               "${name}${theme}-dark/categories/32"
-    ln --symbolic "../../${name}${theme}/emblems/16"                                                  "${name}${theme}-dark/emblems/16"
-    ln --symbolic "../../${name}${theme}/emblems/22"                                                  "${name}${theme}-dark/emblems/22"
-    ln --symbolic "../../${name}${theme}/emblems/24"                                                  "${name}${theme}-dark/emblems/24"
-    ln --symbolic "../../${name}${theme}/mimes/48"                                                    "${name}${theme}-dark/mimes/48"
-    ln --symbolic "../../${name}${theme}/apps/scalable"                                               "${name}${theme}-dark/apps/scalable"
-    ln --symbolic "../../${name}${theme}/devices/scalable"                                            "${name}${theme}-dark/devices/scalable"
-    ln --symbolic "../../${name}${theme}/places/48"                                                   "${name}${theme}-dark/places/48"
-    ln --symbolic "../../${name}${theme}/status/32"                                                   "${name}${theme}-dark/status/32"
+    ln --symbolic "../${name}/animations"                                                            "${name}-dark/animations"
+    ln --symbolic "../../${name}/categories/32"                                                      "${name}-dark/categories/32"
+    ln --symbolic "../../${name}/emblems/16"                                                         "${name}-dark/emblems/16"
+    ln --symbolic "../../${name}/emblems/22"                                                         "${name}-dark/emblems/22"
+    ln --symbolic "../../${name}/emblems/24"                                                         "${name}-dark/emblems/24"
+    ln --symbolic "../../${name}/mimes/scalable"                                                     "${name}-dark/mimes/scalable"
+    ln --symbolic "../../${name}/apps/scalable"                                                      "${name}-dark/apps/scalable"
+    ln --symbolic "../../${name}/devices/scalable"                                                   "${name}-dark/devices/scalable"
+    ln --symbolic "../../${name}/places/scalable"                                                    "${name}-dark/places/scalable"
+    ln --symbolic "../../${name}/status/32"                                                          "${name}-dark/status/32"
 
-    cd "${THEME_DIR}"
-    sed --in-place "s/Numix-Circle-Light/Numix-Circle/g" index.theme
+    cd ${THEME_DIR}
+    sed --in-place "s/Numix-Circle-Light/Numix-Circle/g" "index.theme"
   fi
 
   cd "${THEME_DIR}"
@@ -98,9 +100,8 @@ install() {
   ln --symbolic --force places places@2x
   ln --symbolic --force status status@2x
 
-  cd "${dest}"
-  gtk-update-icon-cache "${name}${theme}${color}"
-
+  cd ${dest}
+  gtk-update-icon-cache "${name}${color}"
 }
 
 while [[ $# -gt 0 ]]; do
