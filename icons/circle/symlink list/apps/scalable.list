@@ -1,10 +1,10 @@
-./accessories-dictionary.svg kbabeldict.svg
-./leafpad.svg krename.svg
-./preferences-desktop-accessibility.svg preferences-desktop-assistive-technology.svg
-./preferences-system-network.svg package_utilities_web.svg
-./software-properties.svg package.svg
-./software-properties.svg package_applications.svg
-./synaptic.svg appset.svg
+accessories-dictionary.svg kbabeldict.svg
+leafpad.svg krename.svg
+preferences-desktop-accessibility.svg preferences-desktop-assistive-technology.svg
+preferences-system-network.svg package_utilities_web.svg
+software-properties.svg package.svg
+software-properties.svg package_applications.svg
+synaptic.svg appset.svg
 2048.svg 2048-qt.svg
 2048.svg chrome-clgddkicplcbgjfobecebadodeggpghp-Default.svg
 2048.svg chrome-jcjbnkncddbeomhaacaeokhfnefibpde-Default.svg
