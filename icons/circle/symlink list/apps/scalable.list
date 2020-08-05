@@ -1,10 +1,3 @@
-accessories-dictionary.svg kbabeldict.svg
-leafpad.svg krename.svg
-preferences-desktop-accessibility.svg preferences-desktop-assistive-technology.svg
-preferences-system-network.svg package_utilities_web.svg
-software-properties.svg package.svg
-software-properties.svg package_applications.svg
-synaptic.svg appset.svg
 2048.svg 2048-qt.svg
 2048.svg chrome-clgddkicplcbgjfobecebadodeggpghp-Default.svg
 2048.svg chrome-jcjbnkncddbeomhaacaeokhfnefibpde-Default.svg
@@ -49,6 +42,7 @@ accessories-dictionary.svg dictionary.svg
 accessories-dictionary.svg flegita.svg
 accessories-dictionary.svg gaiksaurus.svg
 accessories-dictionary.svg gnome-dictionary.svg
+accessories-dictionary.svg kbabeldict.svg
 accessories-dictionary.svg kthesaurus.svg
 accessories-dictionary.svg org.gnome.Dictionary.svg
 accessories-dictionary.svg verbiste.svg
@@ -1231,6 +1225,7 @@ lastfm.svg lastfm-valut.svg
 lastfm.svg lastfm-www.last.fm.svg
 lastfm.svg unity-webapps-lastfm.svg
 lastfm.svg web-lastfm.svg
+leafpad.svg krename.svg
 libreoffice-base.svg libreoffice3-base.svg
 libreoffice-base.svg libreoffice34-base.svg
 libreoffice-base.svg libreoffice4.2-base.svg
@@ -1695,6 +1690,7 @@ preferences-desktop-accessibility.svg accessibility-directory.svg
 preferences-desktop-accessibility.svg accessibility.svg
 preferences-desktop-accessibility.svg accessibility_section.svg
 preferences-desktop-accessibility.svg kaccess.svg
+preferences-desktop-accessibility.svg preferences-desktop-assistive-technology.svg
 preferences-desktop-baloo.svg baloo.svg
 preferences-desktop-baloo.svg nepomuk.svg
 preferences-desktop-display.svg XrendrMixer.svg
@@ -1833,6 +1829,7 @@ preferences-system-network-ldap.svg yast-ldap-kerberos.svg
 preferences-system-network-sharing.svg preferences-system-network-share.svg
 preferences-system-network-sharing.svg yast-nfs.svg
 preferences-system-network.svg network-wired.svg
+preferences-system-network.svg package_utilities_web.svg
 preferences-system-network.svg yast-network-group.svg
 preferences-system-notifications.svg appointment-soon.svg
 preferences-system-notifications.svg cs-notifications.svg
@@ -2088,6 +2085,8 @@ software-properties.svg gpk-repo.svg
 software-properties.svg mintsources-mint.svg
 software-properties.svg mintsources.svg
 software-properties.svg muon.svg
+software-properties.svg package.svg
+software-properties.svg package_applications.svg
 software-properties.svg pk-package-sources.svg
 software-properties.svg software-sources.svg
 software-properties.svg x-system-software-sources.svg
@@ -2148,6 +2147,7 @@ supertux.svg org.supertux.SuperTux.svg
 supertux.svg org.supertuxproject.SuperTux.svg
 swell-foop.svg gnome-swell-foop.svg
 swell-foop.svg org.gnome.SwellFoop.svg
+synaptic.svg appset.svg
 synaptic.svg dnfdragora.svg
 synaptic.svg gnome-app-install.svg
 synaptic.svg kynaptic.svg

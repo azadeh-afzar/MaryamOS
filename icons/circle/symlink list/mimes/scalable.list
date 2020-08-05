@@ -1,8 +1,3 @@
-../apps/wine.svg application-x-ms-wim.svg
-./application-vnd.sun.xml.impress.svg application-vnd.sun.xml.impress.png.svg
-./application-vnd.sun.xml.writer.svg application-vnd.sun.xml.writer.png.svg
-./application-x-bittorrent.svg torrent.svg
-./text-plain.svg text-x-rsrc.svg
 android-package-archive.svg application-vnd.android.package-archive.svg
 application-7zip.svg 7zip.svg
 application-7zip.svg application-archive-zip.svg
@@ -160,9 +155,11 @@ application-vnd.sun.xml.calc.svg application-x-gunmeric.svg
 application-vnd.sun.xml.calc.svg application-x-siag.svg
 application-vnd.sun.xml.draw.svg svg.svg
 application-vnd.sun.xml.draw.template.svg libreoffice-drawing-template.svg
+application-vnd.sun.xml.impress.svg application-vnd.sun.xml.impress.png.svg
 application-vnd.sun.xml.writer.svg application-vnd.sun.xml.writer-global.svg
 application-vnd.sun.xml.writer.svg application-vnd.sun.xml.writer-rtl.svg
 application-vnd.sun.xml.writer.svg application-vnd.sun.xml.writer-template.svg
+application-vnd.sun.xml.writer.svg application-vnd.sun.xml.writer.png.svg
 application-vnd.sun.xml.writer.svg application-wps-office.dot.svg
 application-vnd.sun.xml.writer.svg application-wps-office.dotx.svg
 application-x-7z-compressed.svg application-7zip.svg
@@ -198,6 +195,7 @@ application-x-archive.svg gnome-mime-application-x-tarz.svg
 application-x-arj.svg application-x-7z-arj.svg
 application-x-bittorrent.svg application-x-kgetlist.svg
 application-x-bittorrent.svg gnome-mime-application-x-bittorrent.svg
+application-x-bittorrent.svg torrent.svg
 application-x-blender.svg application-x-model.svg
 application-x-blender.svg image-x-3ds.svg
 application-x-blender.svg model.svg
@@ -294,6 +292,7 @@ application-x-lzma-compressed-tar.svg application-x-lzma.svg
 application-x-lzma-compressed-tar.svg gnome-mime-application-x-lzma-compressed-tar.svg
 application-x-lzop.svg gnome-mime-application-x-lzop.svg
 application-x-macbinary.svg application-mac-binhex40.svg
+application-x-ms-dos-executable.svg application-x-ms-wim.svg
 application-x-ms-dos-executable.svg application-x-msdownload.svg
 application-x-ms-dos-executable.svg application-x-msi.svg
 application-x-ms-dos-executable.svg gnome-exe-thumbnailer-generic-x.svg
@@ -629,6 +628,7 @@ text-plain.svg gnome-mime-text.svg
 text-plain.svg text-sqml.svg
 text-plain.svg text-x-nfo.svg
 text-plain.svg text-x-plain.svg
+text-plain.svg text-x-rsrc.svg
 text-rdf.svg application-rdf+xml.svg
 text-richtext.svg application-vnd.sun.xml.wordperfect.svg
 text-richtext.svg application-x-lyx.svg
