@@ -10,8 +10,6 @@ application-atom+xml.svg gnome-mime-application-atom+xml.svg
 application-atom+xml.svg gnome-mime-application-rss+xml.svg
 application-certificate.svg application-pkix-cerl.svg
 application-certificate.svg application-pkix-cert.svg
-application-certificate.svg application-x-pkcs12.svg
-application-certificate.svg application-x-pkcs7-certificates.svg
 application-certificate.svg application-x-x509-ca-cert.svg
 application-certificate.svg application-x-x509-user-cert.svg
 application-certificate.svg stock_certificate.svg
@@ -180,13 +178,6 @@ application-x-7z-compressed.svg application-x-7zip.svg
 application-x-7zip.svg gnome-mime-application-x-7zip.svg
 application-x-ace.svg application-x-7z-ace.svg
 application-x-ace.svg gnome-mime-application-x-ace.svg
-application-x-apple-diskimage.svg application-vnd.nintendo.snes.rom.svg
-application-x-apple-diskimage.svg application-x-gameboy-rom.svg
-application-x-apple-diskimage.svg application-x-gamecube-rom.svg
-application-x-apple-diskimage.svg application-x-gba-rom.svg
-application-x-apple-diskimage.svg application-x-n64-rom.svg
-application-x-apple-diskimage.svg application-x-nes-rom.svg
-application-x-apple-diskimage.svg application-x-nintendo-ds-rom.svg
 application-x-archive.svg application-x-compressed.svg
 application-x-archive.svg application-x-cpio.svg
 application-x-archive.svg application-x-gzdvi.svg
@@ -206,6 +197,7 @@ application-x-archive.svg gnome-mime-application-x-lhz.svg
 application-x-archive.svg gnome-mime-application-x-stuffit.svg
 application-x-archive.svg gnome-mime-application-x-tarz.svg
 application-x-arj.svg application-x-7z-arj.svg
+application-x-audacity.svg application-x-audacity-project.svg
 application-x-bittorrent.svg application-x-kgetlist.svg
 application-x-bittorrent.svg gnome-mime-application-x-bittorrent.svg
 application-x-bittorrent.svg torrent.svg
@@ -219,7 +211,6 @@ application-x-cd-image.svg application-x-bin.svg
 application-x-cd-image.svg application-x-brasero.svg
 application-x-cd-image.svg application-x-cda.svg
 application-x-cd-image.svg application-x-cue.svg
-application-x-cd-image.svg application-x-genesis-rom.svg
 application-x-cd-image.svg application-x-img.svg
 application-x-cd-image.svg application-x-iso.svg
 application-x-cd-image.svg application-x-k3b.svg
@@ -252,7 +243,6 @@ application-x-designer.svg application-x-glade.svg
 application-x-designer.svg gnome-mime-application-x-designer.svg
 application-x-desktop.svg gnome-mime-application-x-gnome-app-info.svg
 application-x-desktop.svg gnome-mime-text-x-gtkrc.svg
-application-x-executable.svg application-x-python-bytecode.svg
 application-x-executable.svg binary.svg
 application-x-executable.svg exec.svg
 application-x-executable.svg gnome-fs-executable.svg
@@ -260,7 +250,6 @@ application-x-executable.svg gnome-mime-application-x-executable.svg
 application-x-executable.svg opera-widget.svg
 application-x-executable.svg playlist-automatic.svg
 application-x-executable.svg source-smart-playlist.svg
-application-x-executable.svg text-x-makefile.svg
 application-x-fictionbook+xml.svg application-x-zip-compressed-fb2.svg
 application-x-flash-video.svg application-x-shockwave-flash.svg
 application-x-flash-video.svg gnome-mime-application-x-shockwave-flash.svg
@@ -286,7 +275,6 @@ application-x-glade.svg application-x-dgn.svg
 application-x-glade.svg application-x-gtk-builder.svg
 application-x-gzip.svg application-gzip.svg
 application-x-gzip.svg gnome-mime-application-x-gzip.svg
-application-x-iso.svg application-vnd.squashfs.svg
 application-x-iso.svg application-x-amiga-disk-format.svg
 application-x-iso.svg gnome-mime-application-x-nero-disc-image.svg
 application-x-iso.svg nero-disc-image.svg
@@ -316,6 +304,8 @@ application-x-ms-dos-executable.svg x-content-win32-software.svg
 application-x-mswinurl.svg application-x-maff.svg
 application-x-mswinurl.svg application-x-webarchive.svg
 application-x-mswinurl.svg openoffice4-oasis-web-template.svg
+application-x-musescore3.svg application-x-musescore+xml.svg
+application-x-musescore3.svg application-x-musescore.svg
 application-x-osm+xml.svg application-geo+json.svg
 application-x-osm+xml.svg application-gml+xml.svg
 application-x-osm+xml.svg application-gpx+xml.svg
@@ -339,7 +329,9 @@ application-x-pem-key.svg application-pkcs7-mime.svg
 application-x-perl.svg text-x-perl.svg
 application-x-php.svg gnome-mime-application-x-php.svg
 application-x-php.svg source-php.svg
+application-x-pkcs7-certificates.svg application-x-pkcs12.svg
 application-x-plasma.svg application-x-ktheme.svg
+application-x-python-bytecode.svg gnome-mime-application-x-python-bytecode.svg
 application-x-rar.svg gnome-mime-application-x-rar.svg
 application-x-rar.svg rar.svg
 application-x-remote-connection.svg application-x-vnc.svg
@@ -426,7 +418,6 @@ audio-x-flac.svg audio-x-ofr.svg
 audio-x-flac.svg audio-x-pn-realaudio.svg
 audio-x-flac.svg audio-x-tta.svg
 audio-x-generic.svg application-vnd.apple.mpegurl.svg
-audio-x-generic.svg application-x-audacity-project.svg
 audio-x-generic.svg application-x-jokosher.svg
 audio-x-generic.svg audio-aac.svg
 audio-x-generic.svg audio-ac3.svg
@@ -632,8 +623,19 @@ package-x-generic.svg tgz.svg
 playlist.svg application-vnd.ms-asf.svg
 playlist.svg application-vnd.ms-wpl.svg
 playlist.svg application-xspf+xml.svg
+rom.svg application-vnd.nintendo.snes.rom.svg
+rom.svg application-x-gameboy-rom.svg
+rom.svg application-x-gamecube-rom.svg
+rom.svg application-x-gba-rom.svg
+rom.svg application-x-genesis-32x-rom.png
+rom.svg application-x-genesis-rom.png
+rom.svg application-x-genesis-rom.svg
+rom.svg application-x-n64-rom.svg
+rom.svg application-x-nes-rom.png
+rom.svg application-x-nes-rom.svg
+rom.svg application-x-nintendo-ds-rom.svg
+rom.svg application-x-sms-rom.png
 stock_addressbook.svg x-office-address-book.svg
-stock_script.svg gnome-mime-text-x-makefile.svg
 text-css.svg gnome-mime-text-css.svg
 text-css.svg text-x-css.svg
 text-html.svg application-relaxng.svg
@@ -681,7 +683,7 @@ text-x-c.svg text-x-csrc.svg
 text-x-changelog.svg gnome-mime-text-x-changelog.svg
 text-x-chdr.svg gnome-mime-text-x-chdr.svg
 text-x-chdr.svg text-x-objchdr.svg
-text-x-cmake.svg text-x-meson.svg
+text-x-cmake.svg application-x-cmakecache.svg
 text-x-copying.svg gnome-mime-text-x-copying.svg
 text-x-cpp.svg text-x-c++.svg
 text-x-csharp.svg gnome-mime-text-x-csharp.svg
@@ -719,8 +721,6 @@ text-x-generic.svg text-plain.svg
 text-x-generic.svg text-x-asm.svg
 text-x-generic.svg text-x-katefilelist.svg
 text-x-generic.svg text-x-kvc.svg
-text-x-generic.svg text-x-lilypond.svg
-text-x-generic.svg text-x-log.svg
 text-x-generic.svg text2.svg
 text-x-gettext-translation.svg application-x-gettext-translation.svg
 text-x-gettext-translation.svg application-x-xliff.svg
@@ -750,14 +750,15 @@ text-x-javascript.svg application-x-javascript.svg
 text-x-javascript.svg gnome-mime-application-javascript.svg
 text-x-javascript.svg gnome-mime-application-x-javascript.svg
 text-x-javascript.svg gnome-mime-text-x-javascript.svg
+text-x-jupyter.svg application-vnd.jupyter.cells.svg
+text-x-jupyter.svg application-vnd.jupyter.dragindex.svg
+text-x-jupyter.svg application-vnd.jupyter.svg
+text-x-jupyter.svg application-x-ipynb+json.svg
 text-x-lilypond.svg application-vnd.recordare.musicxml+xml.svg
 text-x-lilypond.svg application-vnd.recordare.musicxml.svg
 text-x-lilypond.svg application-x-ardour.svg
-text-x-lilypond.svg application-x-lmms-project.svg
-text-x-lilypond.svg application-x-musescore+xml.svg
-text-x-lilypond.svg application-x-musescore.svg
 text-x-lilypond.svg application-x-rosegarden-composition.svg
-text-x-makefile.svg application-x-cmakecache.svg
+text-x-makefile.svg gnome-mime-text-x-makefile.svg
 text-x-opml+xml.svg text-x-opml.svg
 text-x-patch.svg application-x-patch.svg
 text-x-perl.svg gnome-mime-application-x-perl.svg
@@ -766,7 +767,6 @@ text-x-preview.svg application-vnd.cups-pdf-banner.svg
 text-x-preview.svg application-x-generic.svg
 text-x-preview.svg empty.svg
 text-x-preview.svg stock_new-template.svg
-text-x-python.svg gnome-mime-application-x-python-bytecode.svg
 text-x-python.svg gnome-mime-text-x-python.svg
 text-x-python.svg text-x-python3.svg
 text-x-qml.svg qgis-qml.svg
