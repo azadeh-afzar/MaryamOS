@@ -23,7 +23,6 @@ $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
  * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-
 /* GLOBALS */
 
 stage {
@@ -42,10 +41,18 @@ stage {
   border-radius: $bt_radius;
   @include font(button);
   @include button(flat-normal);
-  &:hover { @include button(flat-hover); }
-  &:active { @include button(flat-active); }
-  &:insensitive { @include button(flat-insensitive); }
-  &:focus { @include button(flat-focus); }
+  &:hover {
+    @include button(flat-hover);
+  }
+  &:active {
+    @include button(flat-active);
+  }
+  &:insensitive {
+    @include button(flat-insensitive);
+  }
+  &:focus {
+    @include button(flat-focus);
+  }
 }
 
 /* Entries */
@@ -60,9 +67,15 @@ StEntry {
   selection-background-color: $primary_color;
   selected-color: $light_alt_fg_color;
   @include entry(normal);
-  &:hover { @include entry(hover);}
-  &:focus { @include entry(focus);}
-  &:insensitive { @include entry(insensitive);}
+  &:hover {
+    @include entry(hover);
+  }
+  &:focus {
+    @include entry(focus);
+  }
+  &:insensitive {
+    @include entry(insensitive);
+  }
   StIcon.capslock-warning {
     icon-size: 16px;
     warning-color: $warning_color;
@@ -78,12 +91,15 @@ StEntry {
   }
 }
 
-
 /* Scrollbars */
 
 StScrollView {
-  &.vfade { -st-vfade-offset: 32px; }
-  &.hfade { -st-hfade-offset: 32px; }
+  &.vfade {
+    -st-vfade-offset: 32px;
+  }
+  &.hfade {
+    -st-hfade-offset: 32px;
+  }
 }
 
 StScrollBar {
@@ -100,13 +116,18 @@ StScrollBar {
     background-color: $divider_color;
   }
 
-  StButton#vhandle, StButton#hhandle {
+  StButton#vhandle,
+  StButton#hhandle {
     border-radius: 100px;
     background-color: $hint_fg_color;
     //border: 4px solid transparent; //would be nice to margin or at least to transparent
     margin: 6px;
-    &:hover { background-color: $alt_fg_color; }
-    &:active { background-color: $fg_color; }
+    &:hover {
+      background-color: $alt_fg_color;
+    }
+    &:active {
+      background-color: $fg_color;
+    }
   }
 }
 
@@ -115,19 +136,24 @@ StScrollBar {
     background-color: $light_divider_color;
   }
 
-  StButton#vhandle, StButton#hhandle {
+  StButton#vhandle,
+  StButton#hhandle {
     background-color: $light_hint_fg_color;
-    &:hover { background-color: $light_alt_fg_color; }
-    &:active { background-color: $light_alt_fg_color; }
+    &:hover {
+      background-color: $light_alt_fg_color;
+    }
+    &:active {
+      background-color: $light_alt_fg_color;
+    }
   }
 }
 
 /* Slider */
 
-$slider_color: if($variant == 'light', black, white);
-$barlevel_bg_color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1)); // the empty part.
-$barlevel_active_bg_color: if($variant == 'light', rgba(black, 0.35), rgba(white, 0.35)); // the filled part.
-$barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.12)); // border of slider.
+$slider_color: if($variant == "light", black, white);
+$barlevel_bg_color: if($variant == "light", rgba(black, 0.1), rgba(white, 0.1)); // the empty part.
+$barlevel_active_bg_color: if($variant == "light", rgba(black, 0.35), rgba(white, 0.35)); // the filled part.
+$barlevel_boder_color: if($variant == "light", rgba(black, 0.12), rgba(white, 0.12)); // border of slider.
 
 .slider {
   height: 20px;
@@ -165,7 +191,9 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
     padding: 8px 0;
   }
 
-  StBoxLayout { spacing: 8px; }
+  StBoxLayout {
+    spacing: 8px;
+  }
   StBin {
     width: 24px;
     height: 24px;
@@ -203,19 +231,25 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
   background-size: contain;
   background-image: url("assets/toggle-off.svg");
 
-  &:checked { background-image: url("assets/toggle-on.svg"); }
+  &:checked {
+    background-image: url("assets/toggle-on.svg");
+  }
 
   .popup-menu-item.selected & {
     background-image: url("assets/toggle-off.svg");
 
-    &:checked { background-image: url("assets/toggle-on.svg"); }
+    &:checked {
+      background-image: url("assets/toggle-on.svg");
+    }
   }
 }
 
 @each $v in us, intl {
   .toggle-switch-#{$v} {
     background-image: url("assets/toggle-off.svg");
-    &:checked { background-image: url("assets/toggle-on.svg"); }
+    &:checked {
+      background-image: url("assets/toggle-on.svg");
+    }
   }
 }
 
@@ -235,9 +269,15 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 
 /* Modal Dialogs */
 
-.headline { @include font(title); }
-.lightbox { background-color: black; }
-.flashspot { background-color: white; }
+.headline {
+  @include font(title);
+}
+.lightbox {
+  background-color: black;
+}
+.flashspot {
+  background-color: white;
+}
 
 .modal-dialog {
   color: $fg_color;
@@ -252,16 +292,27 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
     border-radius: $bt_radius;
     @include font(button);
     @include button(flat-normal);
-    &:hover { @include button(flat-hover); }
-    &:active { @include button(flat-active); }
-    &:insensitive { @include button(flat-insensitive); }
-    &:focus { @include button(flat-focus); }
+    &:hover {
+      @include button(flat-hover);
+    }
+    &:active {
+      @include button(flat-active);
+    }
+    &:insensitive {
+      @include button(flat-insensitive);
+    }
+    &:focus {
+      @include button(flat-focus);
+    }
   }
 
   .modal-dialog-content-box {
     padding: 24px;
   }
-  .run-dialog-entry { width: 20em; margin-bottom: 6px; }
+  .run-dialog-entry {
+    width: 20em;
+    margin-bottom: 6px;
+  }
   .run-dialog-error-box {
     padding-top: 16px;
     spacing: 6px;
@@ -273,14 +324,15 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
     font-size: 1em;
     font-weight: normal;
     color: $hint_fg_color;
-    padding-bottom: .4em;
+    padding-bottom: 0.4em;
   }
 }
 
-  .mount-dialog-subject,
-  .end-session-dialog-subject { //this should be a generic header class
-    @include font(title);
-  }
+.mount-dialog-subject,
+.end-session-dialog-subject {
+  //this should be a generic header class
+  @include font(title);
+}
 
 /* Message Dialog */
 .message-dialog-main-layout {
@@ -303,7 +355,9 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
     }
   }
 
-  .message-dialog-description { text-align: center; }
+  .message-dialog-description {
+    text-align: center;
+  }
 }
 
 .message-dialog-icon {
@@ -325,14 +379,18 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
     font-weight: bold;
   }
 
-  .dialog-list-scrollview { max-height: 200px; }
+  .dialog-list-scrollview {
+    max-height: 200px;
+  }
   .dialog-list-box {
     spacing: 1em;
 
     .dialog-list-item {
       spacing: 1em;
 
-      .dialog-list-item-title { font-weight: bold; }
+      .dialog-list-item-title {
+        font-weight: bold;
+      }
       .dialog-list-item-description {
         color: $alt_fg_color;
         @include font(title);
@@ -347,7 +405,9 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
     margin-top: 24px;
     margin-bottom: 14px;
   }
-  .run-dialog-entry { width: 20em; }
+  .run-dialog-entry {
+    width: 20em;
+  }
   .run-dialog-description {
     text-align: center;
     color: $alt_fg_color;
@@ -362,12 +422,14 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 }
 
 .end-session-dialog-list {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .end-session-dialog-layout {
   padding-left: 17px;
-  &:rtl { padding-right: 17px; }
+  &:rtl {
+    padding-right: 17px;
+  }
 }
 
 .end-session-dialog-description {
@@ -414,7 +476,9 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 
 .end-session-dialog-list-header {
   font-weight: bold;
-  &:rtl { text-align: right; }
+  &:rtl {
+    text-align: right;
+  }
 }
 
 .end-session-dialog-app-list-item,
@@ -433,7 +497,9 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 }
 
 /* ShellMountOperation Dialogs */
-.shell-mount-operation-icon { icon-size: 48px; }
+.shell-mount-operation-icon {
+  icon-size: 48px;
+}
 
 .mount-dialog {
   spacing: 24px;
@@ -475,20 +541,29 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 
 .mount-dialog-app-list-item {
   color: $fg_color;
-  &:hover { color: $fg_color; }
-  &:ltr { padding-right: 1em; }
-  &:rtl { padding-left: 1em; }
+  &:hover {
+    color: $fg_color;
+  }
+  &:ltr {
+    padding-right: 1em;
+  }
+  &:rtl {
+    padding-left: 1em;
+  }
 }
 
 .mount-dialog-app-list-item-icon {
-  &:ltr { padding-right: 17px; }
-  &:rtl { padding-left: 17px; }
+  &:ltr {
+    padding-right: 17px;
+  }
+  &:rtl {
+    padding-left: 17px;
+  }
 }
 
 .mount-dialog-app-list-item-name {
   font-size: 1em;
 }
-
 
 /* Password or Authentication Dialog */
 
@@ -501,9 +576,17 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
     margin-bottom: 24px;
   }
 
-  .message-dialog-main-layout { spacing: 24px; padding: 10px; }
-  .message-dialog-content { spacing: 16px; }
-  .message-dialog-title { @include font(title); color: $fg_color; }
+  .message-dialog-main-layout {
+    spacing: 24px;
+    padding: 10px;
+  }
+  .message-dialog-content {
+    spacing: 16px;
+  }
+  .message-dialog-title {
+    @include font(title);
+    color: $fg_color;
+  }
 }
 
 .prompt-dialog-password-grid {
@@ -514,8 +597,12 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
     width: auto;
 
     // 4px (spacing) + 16px (spinner-width)
-    &:ltr { margin-left: 20px; }
-    &:rtl { margin-right: 20px; }
+    &:ltr {
+      margin-left: 20px;
+    }
+    &:rtl {
+      margin-right: 20px;
+    }
   }
 }
 
@@ -561,7 +648,7 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 }
 
 .hidden {
-  color: rgba(0,0,0,0);
+  color: rgba(0, 0, 0, 0);
 }
 
 .prompt-dialog-null-label {
@@ -569,7 +656,6 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
   padding-bottom: 8px;
   color: $hint_fg_color;
 }
-
 
 /* Polkit Dialog */
 
@@ -591,8 +677,12 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 
 /* Audio selection dialog */
 .audio-device-selection-dialog {
-  .modal-dialog-content-box { margin-bottom: 28px; }
-  .audio-selection-box { spacing: 20px; }
+  .modal-dialog-content-box {
+    margin-bottom: 28px;
+  }
+  .audio-selection-box {
+    spacing: 20px;
+  }
 }
 
 .audio-selection-content {
@@ -608,7 +698,10 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 .audio-selection-device {
   border: 1px solid $borders_color;
   border-radius: $bt_radius;
-  &:hover, &:focus { background-color: $visit_color; }
+  &:hover,
+  &:focus {
+    background-color: $visit_color;
+  }
   &:active {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
@@ -636,8 +729,13 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 
 /* Extension Dialog */
 .extension-dialog {
-  .message-dialog-main-layout { spacing: 24px; padding: 10px; }
-  .message-dialog-title { color: $alt_fg_color; }
+  .message-dialog-main-layout {
+    spacing: 24px;
+    padding: 10px;
+  }
+  .message-dialog-title {
+    color: $alt_fg_color;
+  }
 }
 
 /* Inhibit-Shortcuts Dialog */
@@ -659,10 +757,10 @@ $barlevel_boder_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.
 
 /* Popovers/Menus */
 
-$dialog_bg_color: if($variant == 'light', $bg_color, $base_color);
+$dialog_bg_color: if($variant == "light", $bg_color, $base_color);
 
-@if $trans == 'true' {
-  $dialog_bg_color: if($variant == 'light', rgba($bg_color, 0.95), rgba($base_color, 0.95));
+@if $trans == "true" {
+  $dialog_bg_color: if($variant == "light", rgba($bg_color, 0.95), rgba($base_color, 0.95));
 }
 
 $popop_menuitem_radius: $wm_radius - 4px;
@@ -679,11 +777,12 @@ $popop_menuitem_radius: $wm_radius - 4px;
   color: $alt_fg_color;
   padding: 0 0;
 
-  .popup-menu-arrow { } //defined globally in the TOP BAR
+  .popup-menu-arrow {
+  } //defined globally in the TOP BAR
 
   .popup-sub-menu {
     // color of sub menu background.
-    background-color: if($variant == 'light', rgba(white, 0.75), rgba(white, 0.15));
+    background-color: if($variant == "light", rgba(white, 0.75), rgba(white, 0.15));
     border-radius: 0 0 $popop_menuitem_radius $popop_menuitem_radius;
     border: none;
     box-shadow: none;
@@ -727,16 +826,22 @@ $popop_menuitem_radius: $wm_radius - 4px;
     margin: 0 6px;
     transition-duration: 0ms;
 
-    &:ltr { padding-right: 1.5em; padding-left: 0; }
-    &:rtl { padding-right: 0; padding-left: 1.5em; }
+    &:ltr {
+      padding-right: 1.5em;
+      padding-left: 0;
+    }
+    &:rtl {
+      padding-right: 0;
+      padding-left: 1.5em;
+    }
 
-    // rules for when an item in menu is selected 
+    // rules for when an item in menu is selected
     &:checked {
       font-weight: normal;
       border-radius: $popop_menuitem_radius $popop_menuitem_radius 0 0;
       border: none;
       box-shadow: none;
-      background-color: if($variant == 'light', rgba(white, 0.75), rgba(white, 0.15));
+      background-color: if($variant == "light", rgba(white, 0.75), rgba(white, 0.15));
 
       &.selected {
         color: $selected_fg_color;
@@ -748,7 +853,9 @@ $popop_menuitem_radius: $wm_radius - 4px;
         background-color: mix($fg_color, $selected_bg_color, 5%);
       }
 
-      &:insensitive { color: $disabled_fg_color; }
+      &:insensitive {
+        color: $disabled_fg_color;
+      }
     }
 
     &.selected {
@@ -757,19 +864,25 @@ $popop_menuitem_radius: $wm_radius - 4px;
       transition: none;
     }
 
-    &:active, &.selected:active {
+    &:active,
+    &.selected:active {
       color: $selected_fg_color;
       background-color: mix($fg_color, $selected_bg_color, 5%);
       transition-duration: 100ms;
     }
 
-    &:insensitive { color: $disabled_fg_color; }
+    &:insensitive {
+      color: $disabled_fg_color;
+    }
   }
 
-  .popup-inactive-menu-item { //all icons and other graphical elements
+  .popup-inactive-menu-item {
+    //all icons and other graphical elements
     color: $alt_fg_color;
 
-    &:insensitive { color: $disabled_fg_color; }
+    &:insensitive {
+      color: $disabled_fg_color;
+    }
   }
 
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
@@ -848,7 +961,9 @@ $popop_menuitem_radius: $wm_radius - 4px;
   spinner-image: url("process-working.svg");
   spacing: 4px;
 
-  .label-shadow { color: transparent; }
+  .label-shadow {
+    color: transparent;
+  }
 }
 
 // system status popover menu
@@ -863,10 +978,16 @@ $popop_menuitem_radius: $wm_radius - 4px;
   }
 
   .popup-sub-menu .popup-menu-item > :first-child {
-    &:ltr { /* 12px spacing + 2*4px padding */
-            padding-left: 16px; margin-left: 1em; }
-    &:rtl { /* 12px spacing + 2*4px padding */
-            padding-right: 16px; margin-right: 1em; }
+    &:ltr {
+      /* 12px spacing + 2*4px padding */
+      padding-left: 16px;
+      margin-left: 1em;
+    }
+    &:rtl {
+      /* 12px spacing + 2*4px padding */
+      padding-right: 16px;
+      margin-right: 1em;
+    }
   }
 }
 
@@ -877,20 +998,29 @@ $popop_menuitem_radius: $wm_radius - 4px;
   border: none;
   -st-icon-style: symbolic; // >= 3.29.90
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $divider_color;
     color: $fg_color;
     border: none;
     padding: ($large_size - 20px) / 2;
   }
 
-  &:active { background-color: $track_color; color: $fg_color; }
+  &:active {
+    background-color: $track_color;
+    color: $fg_color;
+  }
 
-  & > StIcon { icon-size: 16px; }
+  & > StIcon {
+    icon-size: 16px;
+  }
 }
 
 // Background menu
-.background-menu { -boxpointer-gap: 4px; -arrow-rise: 0; }
+.background-menu {
+  -boxpointer-gap: 4px;
+  -arrow-rise: 0;
+}
 
 /* fallback menu
 - odd thing for styling App menu when apparently not running under shell. Light Adwaita styled
@@ -899,7 +1029,9 @@ $popop_menuitem_radius: $wm_radius - 4px;
 
 // not really top bar only
 .popup-menu-arrow,
-.popup-menu-icon { icon-size: em(16px); }
+.popup-menu-icon {
+  icon-size: em(16px);
+}
 
 /* OSD */
 .osd-window {
@@ -910,7 +1042,9 @@ $popop_menuitem_radius: $wm_radius - 4px;
   min-width: 64px;
   min-height: 64px;
 
-  .osd-monitor-label { @include font(display-2); }
+  .osd-monitor-label {
+    @include font(display-2);
+  }
 
   .level {
     height: 4px;
@@ -941,8 +1075,12 @@ $popop_menuitem_radius: $wm_radius - 4px;
   padding: 32px;
   background-color: $dark_bg_color;
 
-  .pad-osd-title-box { spacing: 12px; }
-  .pad-osd-title-menu-box { spacing: 6px; }
+  .pad-osd-title-box {
+    spacing: 12px;
+  }
+  .pad-osd-title-menu-box {
+    spacing: 6px;
+  }
 }
 
 .combo-box-label {
@@ -961,85 +1099,92 @@ $popop_menuitem_radius: $wm_radius - 4px;
   @extend %osd-panel;
 }
 
-  .switcher-list-item-container { spacing: 8px; }
+.switcher-list-item-container {
+  spacing: 8px;
+}
 
-  .switcher-list .item-box {
-    padding: 8px;
-    border-radius: $bt_radius;
-  }
+.switcher-list .item-box {
+  padding: 8px;
+  border-radius: $bt_radius;
+}
 
-  .switcher-list .item-box:outlined {
-    padding: 8px;
-    border: none;
-    background-color: $divider_color;
-    color: $fg_color; // for Ubuntu session
-  }
+.switcher-list .item-box:outlined {
+  padding: 8px;
+  border: none;
+  background-color: $divider_color;
+  color: $fg_color; // for Ubuntu session
+}
 
-  .switcher-list .item-box:selected {
-    background-color: $primary_color;
-    color: $light_alt_fg_color;
-  }
+.switcher-list .item-box:selected {
+  background-color: $primary_color;
+  color: $light_alt_fg_color;
+}
 
-  .switcher-list .thumbnail-box {
-    padding: 2px;
-    spacing: 4px;
-  }
+.switcher-list .thumbnail-box {
+  padding: 2px;
+  spacing: 4px;
+}
 
-  .switcher-list .thumbnail {
-    width:  256px;
-  }
+.switcher-list .thumbnail {
+  width: 256px;
+}
 
-  .switcher-list .separator {
-    width: 1px;
-    background: $borders_color;
-  }
+.switcher-list .separator {
+  width: 1px;
+  background: $borders_color;
+}
 
-  .switcher-arrow {
-    border-color: rgba(0,0,0,0);
-    color: $hint_fg_color;
-    &:highlighted {
-      color: $fg_color;
-    }
+.switcher-arrow {
+  border-color: rgba(0, 0, 0, 0);
+  color: $hint_fg_color;
+  &:highlighted {
+    color: $fg_color;
   }
+}
 
-  .input-source-switcher-symbol {
-    @include font(display-2);
-    width: 96px;
-    height: 96px;
-  }
+.input-source-switcher-symbol {
+  @include font(display-2);
+  width: 96px;
+  height: 96px;
+}
 
 /* Window Cycler */
-.cycler-highlight { border: 4px solid $primary_color; }
+.cycler-highlight {
+  border: 4px solid $primary_color;
+}
 
 /* Workspace Switcher */
-.workspace-switcher-group { padding: 8px; }
+.workspace-switcher-group {
+  padding: 8px;
+}
 
-  .workspace-switcher-container {
-    @extend %osd-panel;
-  }
+.workspace-switcher-container {
+  @extend %osd-panel;
+}
 
-  .workspace-switcher {
-    background: transparent;
-    border: 0px;
-    border-radius: 0px;
-    padding: 0px;
-    spacing: 8px;
-  }
+.workspace-switcher {
+  background: transparent;
+  border: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  spacing: 8px;
+}
 
-  .ws-switcher-active-up, .ws-switcher-active-down {
-    height: 48px;
-    background-color: $primary_color;
-    color: $light_alt_fg_color;
-    background-size: 32px;
-    border-radius: $bt_radius;
-  }
+.ws-switcher-active-up,
+.ws-switcher-active-down {
+  height: 48px;
+  background-color: $primary_color;
+  color: $light_alt_fg_color;
+  background-size: 32px;
+  border-radius: $bt_radius;
+}
 
-  .ws-switcher-box {
-    height: 48px;
-    border: none;
-    background: $divider_color;
-    border-radius: $bt_radius;
-  }
+.ws-switcher-box {
+  height: 48px;
+  border: none;
+  background: $divider_color;
+  border-radius: $bt_radius;
+}
 
 %osd-panel {
   color: $fg_color;
@@ -1056,21 +1201,25 @@ $popop_menuitem_radius: $wm_radius - 4px;
   border: 1px solid $primary_color;
 }
 
-  .tile-preview-left.on-primary {
-    border-radius: $panel-corner-radius 0 0 0;
-  }
+.tile-preview-left.on-primary {
+  border-radius: $panel-corner-radius 0 0 0;
+}
 
-  .tile-preview-right.on-primary {
-    border-radius: 0 $panel-corner-radius 0 0;
-  }
+.tile-preview-right.on-primary {
+  border-radius: 0 $panel-corner-radius 0 0;
+}
 
-  .tile-preview-left.tile-preview-right.on-primary {
-    border-radius: $panel-corner-radius $panel-corner-radius 0 0;
-  }
+.tile-preview-left.tile-preview-right.on-primary {
+  border-radius: $panel-corner-radius $panel-corner-radius 0 0;
+}
 
 /* TOP BAR */
-$panel_bg_color: if($trans == 'true', if($variant == 'light', rgba(white, 0.15), rgba(black, 0.15)), if($variant == 'light', rgba(white, 0.75), rgba(black, 0.75)));
-$panel_fg_color: if($variant == 'light', if($trans == "true", white, black), white);
+$panel_bg_color: if(
+  $trans == "true",
+  if($variant == "light", rgba(white, 0.15), rgba(black, 0.15)),
+  if($variant == "light", rgba(white, 0.75), rgba(black, 0.75))
+);
+$panel_fg_color: if($variant == "light", if($trans == "true", white, black), white);
 $panel_shadow: 0 2px 3px rgba(black, 0.03), 0 3px 5px rgba(black, 0.03), 0 5px 10px rgba(black, 0.02);
 $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
 
@@ -1089,7 +1238,9 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
     background-color: $panel_bg_color;
   }
 
-  #panelLeft, #panelCenter { // spacing between activities<>app menu and such
+  #panelLeft,
+  #panelCenter {
+    // spacing between activities<>app menu and such
     spacing: 0;
   }
 
@@ -1099,17 +1250,23 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
     -panel-corner-border-width: 2px;
     -panel-corner-border-color: transparent;
 
-    &:active, &:overview, &:focus {
+    &:active,
+    &:overview,
+    &:focus {
       -panel-corner-border-color: $panel_fg_color;
     }
 
-    &.lock-screen, &.login-screen, &.unlock-screen {
+    &.lock-screen,
+    &.login-screen,
+    &.unlock-screen {
       -panel-corner-radius: 0;
       -panel-corner-background-color: transparent;
       -panel-corner-border-color: transparent;
     }
 
-    StLabel { padding: 0 4px; }
+    StLabel {
+      padding: 0 4px;
+    }
   }
 
   .panel-button {
@@ -1122,9 +1279,16 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
     // margin-top: 2px;
     // margin-bottom: 2px;
 
-    StLabel { padding: 0 2px; }
+    StLabel {
+      padding: 0 2px;
+    }
 
-    &, &:hover, &:active, &:overview, &:focus, &:checked {
+    &,
+    &:hover,
+    &:active,
+    &:overview,
+    &:focus,
+    &:checked {
       text-shadow: $panel_asset_shadow;
 
       .system-status-icon,
@@ -1143,32 +1307,49 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
       //dimensions of the icon are hardcoded
     }
 
-    .popup-menu-arrow { width: 0; height: 0; } // Remove arrow on panel button
+    .popup-menu-arrow {
+      width: 0;
+      height: 0;
+    } // Remove arrow on panel button
 
     &:hover {
       color: $panel_fg_color;
       background-color: $light_divider_color;
     }
 
-    &:active, &:overview, &:focus, &:checked {
-      &, &:hover {
+    &:active,
+    &:overview,
+    &:focus,
+    &:checked {
+      &,
+      &:hover {
         background-color: $light_track_color;
         color: $panel_fg_color;
         box-shadow: none;
       }
     }
 
-    .system-status-icon { icon-size: em(16px); padding: 0 4px; }
+    .system-status-icon {
+      icon-size: em(16px);
+      padding: 0 4px;
+    }
     .unlock-screen &,
     .login-screen &,
     .lock-screen & {
       color: $panel_fg_color;
-      &:focus, &:hover, &:active { color: $panel_fg_color; }
+      &:focus,
+      &:hover,
+      &:active {
+        color: $panel_fg_color;
+      }
     }
   }
 
   .panel-button.clock-display {
-    &:active, &:overview, &:focus, &:checked {
+    &:active,
+    &:overview,
+    &:focus,
+    &:checked {
       .clock {
         background: none;
         box-shadow: none;
@@ -1186,8 +1367,12 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
     spacing: 0;
   }
 
-  .screencast-indicator { color: $error_color; }
-  .remote-access-indicator { color: $warning_color; } // > 3.29.4
+  .screencast-indicator {
+    color: $error_color;
+  }
+  .remote-access-indicator {
+    color: $warning_color;
+  } // > 3.29.4
 
   &.solid {
     background-color: $panel_bg;
@@ -1196,7 +1381,9 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
     background-gradient-direction: none; // for Ubuntu session
     text-shadow: none; // for Ubuntu session
 
-    &:overview { background-color: transparent; } // for Ubuntu session
+    &:overview {
+      background-color: transparent;
+    } // for Ubuntu session
 
     .panel-corner {
       -panel-corner-background-color: $panel_bg;
@@ -1206,7 +1393,10 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
       color: $panel_fg;
       text-shadow: none;
 
-      &:active, &:overview, &:focus, &:checked {
+      &:active,
+      &:overview,
+      &:focus,
+      &:checked {
         color: $light_alt_fg_color;
         text-shadow: 0 1px rgba(black, 0.45);
       }
@@ -1217,7 +1407,10 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
     .popup-menu-arrow {
       icon-shadow: none;
 
-      &:active, &:overview, &:focus, &:checked {
+      &:active,
+      &:overview,
+      &:focus,
+      &:checked {
         icon-shadow: 0 1px rgba(black, 0.45);
       }
     }
@@ -1226,9 +1419,8 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
 
 // Activities button
 #panel #panelActivities.panel-button {
-
   > * {
-    @if $variant == 'light' and $trans == 'false' {
+    @if $variant == "light" and $trans == "false" {
       background-image: url("assets/activities#{$icon_logo}-solid.svg");
     } @else {
       background-image: url("assets/activities#{$icon_logo}.svg");
@@ -1242,7 +1434,10 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
     color: transparent;
   }
 
-  &:active, &:overview, &:focus, &:checked {
+  &:active,
+  &:overview,
+  &:focus,
+  &:checked {
     background-color: transparent;
     border: none;
   }
@@ -1277,15 +1472,23 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   margin: 0 8px;
 }
 
-.datemenu-displays-section { padding-bottom: 0; }
-.datemenu-displays-box { spacing: 8px; }
+.datemenu-displays-section {
+  padding-bottom: 0;
+}
+.datemenu-displays-box {
+  spacing: 8px;
+}
 
 .datemenu-calendar-column {
   spacing: 8px;
   border: none;
   padding: 0 0;
-  &:ltr { border-left-width: 0; }
-  &:rtl { border-right-width: 0; }
+  &:ltr {
+    border-left-width: 0;
+  }
+  &:rtl {
+    border-right-width: 0;
+  }
 }
 
 .datemenu-today-button {
@@ -1316,7 +1519,11 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   text-shadow: none;
   color: $alt_fg_color;
 
-  &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
+  &:hover,
+  &:focus {
+    color: $fg_color;
+    background-color: $divider_color;
+  }
   &:active {
     color: $fg_color;
     background-color: $track_color;
@@ -1408,7 +1615,9 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   color: $fg_color;
   font-weight: bold;
   text-align: center;
-  &:focus { background-color: $divider_color; }
+  &:focus {
+    background-color: $divider_color;
+  }
 }
 
 .pager-button {
@@ -1418,19 +1627,30 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   border-radius: 100px;
   background-color: transparent;
   color: $fg_color;
-  &:hover, &:focus { background-color: $divider_color; }
-  &:active { background-color: $track_color; }
+  &:hover,
+  &:focus {
+    background-color: $divider_color;
+  }
+  &:active {
+    background-color: $track_color;
+  }
 }
 
-.calendar-change-month-back { //arrow back
+.calendar-change-month-back {
+  //arrow back
   padding: 0 2px;
   background-image: url("assets/calendar-arrow-left.svg");
-  &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
+  &:rtl {
+    background-image: url("assets/calendar-arrow-right.svg");
+  }
 }
-.calendar-change-month-forward { //arrow foreward
+.calendar-change-month-forward {
+  //arrow foreward
   padding: 0 2px;
   background-image: url("assets/calendar-arrow-right.svg");
-  &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
+  &:rtl {
+    background-image: url("assets/calendar-arrow-left.svg");
+  }
 }
 
 // prev/next month icons
@@ -1449,7 +1669,10 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   border-radius: 1000px;
   color: $alt_fg_color;
   font-feature-settings: "tnum";
-  &:hover, &:focus { background-color: $divider_color; }
+  &:hover,
+  &:focus {
+    background-color: $divider_color;
+  }
   &:active {
     color: inherit;
     background-color: $track_color;
@@ -1460,8 +1683,10 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
     background-color: $primary_color;
     border-color: transparent; //avoid jumparound due to today
   }
-  &.calendar-day-heading {  //day of week heading
-    width: $menuitem_size; height: $menuitem_size - 7px;
+  &.calendar-day-heading {
+    //day of week heading
+    width: $menuitem_size;
+    height: $menuitem_size - 7px;
     margin-top: 2px;
     padding: 7px 0 0;
     border-radius: 100px;
@@ -1473,11 +1698,16 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   }
 }
 
-.calendar-day { //border collapse hack - see calendar.js
+.calendar-day {
+  //border collapse hack - see calendar.js
   border-width: 0;
 }
-.calendar-day-top { border-top-width: 0; }
-.calendar-day-left { border-left-width: 0; }
+.calendar-day-top {
+  border-top-width: 0;
+}
+.calendar-day-left {
+  border-left-width: 0;
+}
 .calendar-nonwork-day {
   color: $fg_color;
 }
@@ -1488,17 +1718,20 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   background-color: $primary_color;
   border: none;
 
-  &:hover, &:focus {
-    background-color:lighten($primary_color, 3%);
+  &:hover,
+  &:focus {
+    background-color: lighten($primary_color, 3%);
     color: $light_alt_fg_color;
   }
 
-  &:active, &:selected {
+  &:active,
+  &:selected {
     background-color: $primary_color;
     color: $light_alt_fg_color;
 
-    &:hover, &:focus {
-      background-color:lighten($primary_color, 3%);
+    &:hover,
+    &:focus {
+      background-color: lighten($primary_color, 3%);
       color: $light_alt_fg_color;
     }
   }
@@ -1520,7 +1753,8 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   opacity: 0.5;
 }
 .calendar-week-number {
-  width: $menuitem_size; height: $menuitem_size - 7px;
+  width: $menuitem_size;
+  height: $menuitem_size - 7px;
   margin: 2px;
   padding: 7px 0 0;
   border-radius: 100px;
@@ -1537,13 +1771,20 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   padding: 0 12px;
   text-shadow: none;
 
-  .message-list-placeholder { spacing: 12px; }
+  .message-list-placeholder {
+    spacing: 12px;
+  }
 }
 
 .message-list-clear-button.button {
   background-color: transparent;
-  &:hover, &:focus { background-color: $divider_color; }
-  &:active { background-color: $track_color; }
+  &:hover,
+  &:focus {
+    background-color: $divider_color;
+  }
+  &:active {
+    background-color: $track_color;
+  }
   margin: 8px 8px 0;
 }
 
@@ -1561,7 +1802,7 @@ $panel_asset_shadow: 0 1px 3px 3px rgba(black, 0.15);
   spacing: 16px;
 }
 
-$message_bg: if($variant == 'light', #ffffff, #383838);
+$message_bg: if($variant == "light", #ffffff, #383838);
 
 .message {
   border-radius: $bt_radius;
@@ -1572,7 +1813,8 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   box-shadow: none;
   text-shadow: none;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: $fg_color;
     background-color: $message_bg;
   }
@@ -1586,7 +1828,9 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   .message-icon-bin {
     margin: 8px 0;
     padding: 8px 0px 8px 8px;
-    &:rtl { padding: 8px 8px 8px 0px; }
+    &:rtl {
+      padding: 8px 8px 8px 0px;
+    }
 
     // icon size and color
     > StIcon {
@@ -1637,9 +1881,17 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
     width: 24px;
     border-radius: 100px;
 
-    &:hover, &:active { color: $fg_color; }
-    &:hover, &:focus { background-color: $divider_color; }
-    &:active { background-color: $track_color; }
+    &:hover,
+    &:active {
+      color: $fg_color;
+    }
+    &:hover,
+    &:focus {
+      background-color: $divider_color;
+    }
+    &:active {
+      background-color: $track_color;
+    }
   }
 
   // body
@@ -1658,18 +1910,35 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   padding: 8px;
   border-radius: 100px;
   color: $alt_fg_color;
-  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
-  &:active { color: $fg_color; background-color: $track_color; }
-  &:insensitive { color: $disabled_fg_color; }
+  &:hover,
+  &:focus {
+    color: $fg_color;
+    background-color: $divider_color;
+  }
+  &:active {
+    color: $fg_color;
+    background-color: $track_color;
+  }
+  &:insensitive {
+    color: $disabled_fg_color;
+  }
 
-  &:last-child:ltr { margin-right: 16px; padding-right: 8px; }
-  &:last-child:rtl { margin-left: 16px; padding-left: 8px; }
+  &:last-child:ltr {
+    margin-right: 16px;
+    padding-right: 8px;
+  }
+  &:last-child:rtl {
+    margin-left: 16px;
+    padding-left: 8px;
+  }
 }
 
 .media-message-cover-icon {
   icon-size: 32px !important;
   margin: 0 0px 0 4px !important;
-  &:rtl { margin: 0 4px 0 0px !important; }
+  &:rtl {
+    margin: 0 4px 0 0px !important;
+  }
   &.fallback {
     icon-size: 16px !important;
     padding: 8px;
@@ -1679,7 +1948,6 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
     color: $hint_fg_color;
   }
 }
-
 
 //Activities Ripples
 .ripple-box {
@@ -1708,7 +1976,9 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   background-color: transparent;
   color: transparent;
   box-shadow: none;
-  StIcon { icon-size: 26px; } // for safety
+  StIcon {
+    icon-size: 26px;
+  } // for safety
   background-image: url("assets/window-close.svg");
 
   &:hover {
@@ -1738,23 +2008,33 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   spacing: 20px;
   padding: 24px;
 }
-.nm-dialog-header-hbox { spacing: 10px; }
-.nm-dialog-airplane-box { spacing: 12px; }
+.nm-dialog-header-hbox {
+  spacing: 10px;
+}
+.nm-dialog-airplane-box {
+  spacing: 12px;
+}
 
 .nm-dialog-airplane-headline {
   font-weight: bold;
   text-align: center;
 }
 
-.nm-dialog-airplane-text { color: $fg_color; }
-.nm-dialog-header-icon { icon-size: 32px; }
+.nm-dialog-airplane-text {
+  color: $fg_color;
+}
+.nm-dialog-header-icon {
+  icon-size: 32px;
+}
 .nm-dialog-scroll-view {
   border: 1px solid $borders_color;
   padding: 0;
-  background-color: if($variant == 'light', rgba(black, 0.05), rgba(black, 0.1));
+  background-color: if($variant == "light", rgba(black, 0.05), rgba(black, 0.1));
   border-radius: $bt_radius;
 }
-.nm-dialog-header { @include font(title); }
+.nm-dialog-header {
+  @include font(title);
+}
 
 .nm-dialog-item {
   font-size: 1em;
@@ -1762,8 +2042,13 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   border-radius: $bt_radius;
   padding: 12px;
   spacing: 20px;
-  &:hover, &:focus { background-color: $divider_color; }
-  &:active { background-color: $track_color; }
+  &:hover,
+  &:focus {
+    background-color: $divider_color;
+  }
+  &:active {
+    background-color: $track_color;
+  }
 }
 
 .nm-dialog-item:selected {
@@ -1771,28 +2056,41 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   color: $light_alt_fg_color;
 }
 
-.nm-dialog-icons { spacing: .5em; }
-.nm-dialog-icon { icon-size: 16px; }
-.no-networks-label { color: $hint_fg_color; }
-.no-networks-box { spacing: 12px; }
+.nm-dialog-icons {
+  spacing: 0.5em;
+}
+.nm-dialog-icon {
+  icon-size: 16px;
+}
+.no-networks-label {
+  color: $hint_fg_color;
+}
+.no-networks-box {
+  spacing: 12px;
+}
 
 /* OVERVIEW */
 
 #overview {
   spacing: 24px; //
-  StScrollBar { @extend %overview_scrollbar; }
+  StScrollBar {
+    @extend %overview_scrollbar;
+  }
 }
 
 .overview-controls {
   padding-bottom: 32px;
 }
 
-.window-picker { //container around window thumbnails
+.window-picker {
+  //container around window thumbnails
   -horizontal-spacing: 16px;
   -vertical-spacing: 16px;
   padding: 0 16px 32px;
 
-  &.external-monitor { padding: 16px; }
+  &.external-monitor {
+    padding: 16px;
+  }
 }
 
 .window-clone-border {
@@ -1816,7 +2114,8 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
 }
 
 //search entry
-%search-entry, .search-entry {
+%search-entry,
+.search-entry {
   width: 320px - 8px * 2;
   padding: 0 8px;
   border: none;
@@ -1824,10 +2123,10 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   caret-color: $light_alt_fg_color;
   selection-background-color: $light_track_color;
   selected-color: $light_alt_fg_color;
-  @include search_entry(normal, $fc:$light_track_color);
+  @include search_entry(normal, $fc: $light_track_color);
 
   &:focus {
-    @include search_entry(focus, $fc:$light_alt_fg_color);
+    @include search_entry(focus, $fc: $light_alt_fg_color);
     padding: 0 8px;
     border: none;
     color: $light_alt_fg_color;
@@ -1839,8 +2138,11 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
     color: $light_hint_fg_color;
   }
 
-  &:hover, &:focus {
-    .search-entry-icon { color: $light_alt_fg_color; }
+  &:hover,
+  &:focus {
+    .search-entry-icon {
+      color: $light_alt_fg_color;
+    }
   }
 
   &:insensitive {
@@ -1866,7 +2168,8 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   spacing: 16px;
 }
 
-.search-section {  // This should be equal to #searchResultsContent spacing
+.search-section {
+  // This should be equal to #searchResultsContent spacing
   spacing: 16px;
 
   .search-section-separator {
@@ -1875,7 +2178,8 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   }
 }
 
-.search-section-content {  // This is the space between the provider icon and the results container
+.search-section-content {
+  // This is the space between the provider icon and the results container
   spacing: 32px;
   border-radius: 0;
   border: none;
@@ -1885,7 +2189,8 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   color: $light_alt_fg_color;
 }
 
-.search-statustext { // "no results"
+.search-statustext {
+  // "no results"
   @extend %status_text;
 }
 
@@ -1912,15 +2217,32 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   }
 }
 
-.list-search-results { spacing: 3px; }
+.list-search-results {
+  spacing: 3px;
+}
 
-.list-search-result-content { spacing: 30px; }
-.list-search-result-title { @include font(subheading); color: $light_alt_fg_color; spacing: 12px; }
-.list-search-result-description { color: $light_alt_fg_color; }
-.list-search-provider-details { width: 150px; color: $light_alt_fg_color; margin-top: 0.24em; }
-.list-search-provider-content { spacing: 20px; }
-.search-provider-icon { padding: 15px; }
-
+.list-search-result-content {
+  spacing: 30px;
+}
+.list-search-result-title {
+  @include font(subheading);
+  color: $light_alt_fg_color;
+  spacing: 12px;
+}
+.list-search-result-description {
+  color: $light_alt_fg_color;
+}
+.list-search-provider-details {
+  width: 150px;
+  color: $light_alt_fg_color;
+  margin-top: 0.24em;
+}
+.list-search-provider-content {
+  spacing: 20px;
+}
+.search-provider-icon {
+  padding: 15px;
+}
 
 /* DASHBOARD */
 
@@ -1934,7 +2256,7 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   border-radius: 0px ($bd_radius * 1.5) ($bd_radius * 1.5) 0px;
 
   &:rtl {
-    border-radius: ($bd_radius * 1.5)  0 0 ($bd_radius * 1.5);
+    border-radius: ($bd_radius * 1.5) 0 0 ($bd_radius * 1.5);
   }
 
   .placeholder {
@@ -1947,14 +2269,14 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
     width: 24px;
     height: 24px;
   }
-
 }
 
 .dash-item-container > StWidget {
   padding: 3px 6px;
 }
 
-.dash-label { //osd tooltip
+.dash-label {
+  //osd tooltip
   // min-height: 32px - 6px * 2;
   border-radius: $bt_radius;
   padding: 7px 8px;
@@ -1972,7 +2294,9 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   -shell-grid-horizontal-item-size: 136px;
   -shell-grid-vertical-item-size: 136px;
 
-  .overview-icon { icon-size: 96px; }
+  .overview-icon {
+    icon-size: 96px;
+  }
 }
 //.app-display { spacing: 20px; }
 
@@ -1984,12 +2308,14 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   icon-size: 48px;
 }
 
-.app-view-controls { //favorties | all toggle container
+.app-view-controls {
+  //favorties | all toggle container
   width: 320px;
   padding-bottom: 32px;
   margin: 0 0;
 }
-.app-view-control { //favorties | all toggle button
+.app-view-control {
+  //favorties | all toggle button
   padding: 0 16px;
   margin: 0 0;
   font-weight: bold;
@@ -2011,11 +2337,11 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   &:first-child {
     border-right-width: 0;
     border-radius: $bt_radius 0 0 $bt_radius;
-//      &:checked { border-radius: 0; }
+    //      &:checked { border-radius: 0; }
   }
   &:last-child {
     border-radius: 0 $bt_radius $bt_radius 0;
-//      &:checked { border-radius: 0; }
+    //      &:checked { border-radius: 0; }
   }
 }
 
@@ -2023,11 +2349,14 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
 .search-provider-icon,
 .list-search-result {
   @extend %icon_tile;
-  &:focus, &:selected, &:hover {
+  &:focus,
+  &:selected,
+  &:hover {
     background-color: $light_divider_color;
     transition-duration: 0ms;
   }
-  &:active, &:checked {
+  &:active,
+  &:checked {
     background-color: $light_track_color;
     transition-duration: $longer_duration;
   }
@@ -2041,7 +2370,8 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   & .overview-icon {
     @extend %icon_tile;
 
-    &, & > StIcon {
+    &,
+    & > StIcon {
       icon-shadow: $panel_asset_shadow;
     }
   }
@@ -2063,8 +2393,10 @@ $message_bg: if($variant == 'light', #ffffff, #383838);
   }
 }
 
-.app-well-app-running-dot { //running apps indicator
-  width: 5px; height: 5px;
+.app-well-app-running-dot {
+  //running apps indicator
+  width: 5px;
+  height: 5px;
   border-radius: 3px;
   background-color: $light_alt_fg_color;
   margin-bottom: 0;
@@ -2106,13 +2438,16 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 // Collections
-.app-folder-popup { //expanded collection
+.app-folder-popup {
+  //expanded collection
   -arrow-border-radius: $bd_radius * 2;
   -arrow-background-color: $light_divider_color;
   -arrow-base: 0;
   -arrow-rise: 12px;
 }
-.app-folder-popup-bin { padding: 5px; }
+.app-folder-popup-bin {
+  padding: 5px;
+}
 .app-folder-icon {
   padding: 5px;
   spacing-rows: 5px;
@@ -2152,10 +2487,14 @@ StWidget.focused .app-well-app-running-dot {
     background-color: $light_alt_fg_color;
     transition-duration: 0ms;
   }
-  &:checked:active { background-image: none; }
+  &:checked:active {
+    background-image: none;
+  }
 }
 
-.no-frequent-applications-label { @extend %status_text; }
+.no-frequent-applications-label {
+  @extend %status_text;
+}
 
 .app-well-app > .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
@@ -2191,7 +2530,10 @@ StWidget.focused .app-well-app-running-dot {
     }
 
     /* FIXME: this is to keep the label in sync with the entry */
-    & .folder-name-label { padding: 5px 7px; color: $light_alt_fg_color; }
+    & .folder-name-label {
+      padding: 5px 7px;
+      color: $light_alt_fg_color;
+    }
 
     & .edit-folder-button {
       background-color: $light_divider_color;
@@ -2203,16 +2545,25 @@ StWidget.focused .app-well-app-running-dot {
       height: 36px;
       border-radius: 18px;
 
-      & > StIcon { icon-size: 16px }
+      & > StIcon {
+        icon-size: 16px;
+      }
 
-      &:hover { background-color: $light_divider_color; }
-      &:checked, &:active { background-color: $light_track_color; }
+      &:hover {
+        background-color: $light_divider_color;
+      }
+      &:checked,
+      &:active {
+        background-color: $light_track_color;
+      }
     }
   }
 
   & StButton#vhandle,
   & StButton#vhandle:hover,
-  & StButton#vhandle:active { background-color: transparent; }
+  & StButton#vhandle:active {
+    background-color: transparent;
+  }
 }
 .app-folder-dialog-container {
   padding: 12px;
@@ -2226,31 +2577,32 @@ StWidget.focused .app-well-app-running-dot {
   spacing-columns: $container_padding;
 }
 
-  // Workspace pager
-  .workspace-thumbnails { //container ala dash
-    @extend %overview-panel;
-    visible-width: 32px; //amount visible before hover
-    spacing: 12px;
-    padding: 16px;
-    border-radius: $bt_radius;
-    margin: 6px;
-    // border-width: 0; //fixme: can't have non unoform borders :(
-    // &:rtl { border-radius: $bt_radius; }
-  }
-  .workspace-thumbnail-indicator {
-    border: 0 solid $primary_color;
-    border-width: 2px;
-    padding: 6px;
-    border-radius: 2px;
-  }
+// Workspace pager
+.workspace-thumbnails {
+  //container ala dash
+  @extend %overview-panel;
+  visible-width: 32px; //amount visible before hover
+  spacing: 12px;
+  padding: 16px;
+  border-radius: $bt_radius;
+  margin: 6px;
+  // border-width: 0; //fixme: can't have non unoform borders :(
+  // &:rtl { border-radius: $bt_radius; }
+}
+.workspace-thumbnail-indicator {
+  border: 0 solid $primary_color;
+  border-width: 2px;
+  padding: 6px;
+  border-radius: 2px;
+}
 
-  //Some hacks I don't even
-  .search-display > StBoxLayout,
-  .all-apps,
-  .frequent-apps > StBoxLayout {
-    // horizontal padding to make sure scrollbars or dash don't overlap content
-    padding: 0px 88px 10px 88px;
-  }
+//Some hacks I don't even
+.search-display > StBoxLayout,
+.all-apps,
+.frequent-apps > StBoxLayout {
+  // horizontal padding to make sure scrollbars or dash don't overlap content
+  padding: 0px 88px 10px 88px;
+}
 
 %overview-panel {
   color: $light_alt_fg_color;
@@ -2265,7 +2617,9 @@ StWidget.focused .app-well-app-running-dot {
 
 /* NOTIFICATIONS & MESSAGE TRAY */
 
-.url-highlighter { link-color: $link_color; }
+.url-highlighter {
+  link-color: $link_color;
+}
 
 // Banners
 .notification-banner {
@@ -2278,12 +2632,23 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba($base_color, 0.92);
   border: none;
   box-shadow: $shadow_2;
-  &:hover { background-color: rgba($base_color, 0.95); }
-  &:focus { background-color: $base_color; }
+  &:hover {
+    background-color: rgba($base_color, 0.95);
+  }
+  &:focus {
+    background-color: $base_color;
+  }
 
-  .notification-icon { padding: 5px; }
-  .notification-content { padding: 5px; spacing: 5px; }
-  .secondary-icon { icon-size: em(16px); }
+  .notification-icon {
+    padding: 5px;
+  }
+  .notification-content {
+    padding: 5px;
+    spacing: 5px;
+  }
+  .secondary-icon {
+    icon-size: em(16px);
+  }
   .notification-actions {
     background-color: transparent;
     padding-top: 0;
@@ -2296,47 +2661,78 @@ StWidget.focused .app-well-app-running-dot {
     background-color: transparent;
     color: $alt_fg_color;
     font-weight: 500;
-    &:first-child { border-radius: 0 0 0 2px; }
-    &:last-child { border-radius: 0 0 2px 0; }
-    &:hover, &focus { background-color: $divider_color; color: $fg_color; }
-    &:active { background-color: $track_color; color: $fg_color; }
+    &:first-child {
+      border-radius: 0 0 0 2px;
+    }
+    &:last-child {
+      border-radius: 0 0 2px 0;
+    }
+    &:hover,
+    &focus {
+      background-color: $divider_color;
+      color: $fg_color;
+    }
+    &:active {
+      background-color: $track_color;
+      color: $fg_color;
+    }
   }
 }
 
 .summary-source-counter {
   font-size: 1em;
   font-weight: bold;
-  height: 1.6em; width: 1.6em;
+  height: 1.6em;
+  width: 1.6em;
   -shell-counter-overlap-x: 3px;
   -shell-counter-overlap-y: 3px;
   background-color: $primary_color;
   color: $light_alt_fg_color;
   border: 2px solid $primary_color;
-  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 0.9em; // should be 0.8 but whatever; wish I could do 50%;
 }
 
-.secondary-icon { icon-size: em(16px); }
+.secondary-icon {
+  icon-size: em(16px);
+}
 
 //chat bubbles
-.chat-body { spacing: 5px; }
-.chat-response { margin: 5px; }
-.chat-log-message { color: $fg_color; }
-.chat-new-group { padding-top: 1em; }
+.chat-body {
+  spacing: 5px;
+}
+.chat-response {
+  margin: 5px;
+}
+.chat-log-message {
+  color: $fg_color;
+}
+.chat-new-group {
+  padding-top: 1em;
+}
 .chat-received {
   padding-left: 4px;
-  &:rtl { padding-left: 0px; padding-right: 4px; }
+  &:rtl {
+    padding-left: 0px;
+    padding-right: 4px;
+  }
 }
 .chat-sent {
   padding-left: 18pt;
   color: $alt_fg_color;
-  &:rtl { padding-left: 0; padding-right: 18pt; }
+  &:rtl {
+    padding-left: 0;
+    padding-right: 18pt;
+  }
 }
 .chat-meta-message {
   padding-left: 4px;
   @include font(caption);
   color: $hint_fg_color;
-  &:rtl { padding-left: 0; padding-right: 4px; }
+  &:rtl {
+    padding-left: 0;
+    padding-right: 4px;
+  }
 }
 
 //hotplug
@@ -2347,7 +2743,9 @@ StWidget.focused .app-well-app-running-dot {
 
 .hotplug-notification-item {
   padding: 2px 10px;
-  &:focus { padding: 1px 71px 1px 11px; }
+  &:focus {
+    padding: 1px 71px 1px 11px;
+  }
 }
 
 .hotplug-notification-item-icon {
@@ -2355,13 +2753,19 @@ StWidget.focused .app-well-app-running-dot {
   padding: 2px 5px;
 }
 
-.hotplug-resident-box { spacing: 8px; }
+.hotplug-resident-box {
+  spacing: 8px;
+}
 
 .hotplug-resident-mount {
   spacing: 8px;
   border-radius: $bt_radius;
-  &:hover { background-color: $divider_color; }
-  &:active { background-color: $track_color; }
+  &:hover {
+    background-color: $divider_color;
+  }
+  &:active {
+    background-color: $track_color;
+  }
 }
 
 .hotplug-resident-mount-label {
@@ -2390,7 +2794,9 @@ StWidget.focused .app-well-app-running-dot {
 
 .magnifier-zoom-region {
   border: 2px solid $primary_color;
-  &.full-screen { border-width: 0; }
+  &.full-screen {
+    border-width: 0;
+  }
 }
 
 //Keyboard
@@ -2434,9 +2840,18 @@ StWidget.focused .app-well-app-running-dot {
   color: inherit;
   background-color: $solid_bg_color;
   box-shadow: 0 1px rgba(black, 0.2);
-  &:focus, &:hover { color: $light_fg_color; background-color: $primary_color; }
-  &:checked, &:active { color: $light_fg_color; background-color: darken($primary_color, 6%); }
-  &:grayed { //FIXME
+  &:focus,
+  &:hover {
+    color: $light_fg_color;
+    background-color: $primary_color;
+  }
+  &:checked,
+  &:active {
+    color: $light_fg_color;
+    background-color: darken($primary_color, 6%);
+  }
+  &:grayed {
+    //FIXME
     background-color: $alt_dark_bg_color;
     color: $light_alt_fg_color;
     border-color: $alt_dark_bg_color;
@@ -2451,15 +2866,31 @@ StWidget.focused .app-well-app-running-dot {
   &.layout-key {
     background-color: $alt_solid_bg_color;
     box-shadow: 0 1px rgba(black, 0.2);
-    &:focus, &:hover { color: $fg_color; background-color: $solid_bg_color; }
-    &:checked, &:active { color: $fg_color; background-color: darken($solid_bg_color, 6%); }
+    &:focus,
+    &:hover {
+      color: $fg_color;
+      background-color: $solid_bg_color;
+    }
+    &:checked,
+    &:active {
+      color: $fg_color;
+      background-color: darken($solid_bg_color, 6%);
+    }
   }
   &.enter-key {
     color: $light_fg_color;
     background-color: $primary_color;
     // background-image: url("assets/key-enter.svg");
-    &:focus, &:hover { color: $light_fg_color; background-color: lighten($primary_color, 5%); }
-    &:checked, &:active { color: $light_fg_color; background-color: darken($primary_color, 10%); }
+    &:focus,
+    &:hover {
+      color: $light_fg_color;
+      background-color: lighten($primary_color, 5%);
+    }
+    &:checked,
+    &:active {
+      color: $light_fg_color;
+      background-color: darken($primary_color, 10%);
+    }
   }
   // &.shift-key-lowercase {
   //   background-image: url("assets/key-shift.svg");
@@ -2477,10 +2908,13 @@ StWidget.focused .app-well-app-running-dot {
   //   background-image: url("assets/key-layout.svg");
   // }
 
-  StIcon { icon-size: 1.125em; }
+  StIcon {
+    icon-size: 1.125em;
+  }
 }
 
-.keyboard-subkeys { //long press on a key popup
+.keyboard-subkeys {
+  //long press on a key popup
   color: inherit;
   -arrow-border-radius: $bt_radius;
   -arrow-background-color: rgba(black, 0.45);
@@ -2502,7 +2936,9 @@ StWidget.focused .app-well-app-running-dot {
 .candidate-index {
   padding: 0 4px 0 0;
   color: $hint_fg_color;
-  .candidate-box:selected & { color: $light_hint_fg_color; }
+  .candidate-box:selected & {
+    color: $light_hint_fg_color;
+  }
 }
 
 .candidate-box {
@@ -2510,15 +2946,28 @@ StWidget.focused .app-well-app-running-dot {
   min-height: $menuitem_size;
   padding: 0 8px;
   border-radius: $bt_radius;
-  &:hover { background-color: $divider_color; color: $fg_color; }
-  &:active { background-color: $track_color; color: $fg_color; }
-  &:selected { background-color: $primary_color; color: $light_alt_fg_color; }
+  &:hover {
+    background-color: $divider_color;
+    color: $fg_color;
+  }
+  &:active {
+    background-color: $track_color;
+    color: $fg_color;
+  }
+  &:selected {
+    background-color: $primary_color;
+    color: $light_alt_fg_color;
+  }
 }
 
 .candidate-page-button-box {
   height: $menuitem_size;
-  .vertical & { padding-top: 0; }
-  .horizontal & { padding-left: 0; }
+  .vertical & {
+    padding-top: 0;
+  }
+  .horizontal & {
+    padding-left: 0;
+  }
 }
 
 .candidate-page-button {
@@ -2527,9 +2976,16 @@ StWidget.focused .app-well-app-running-dot {
   padding: 0;
 }
 
-.candidate-page-button-previous { border-radius: $bt_radius; border-right-width: 0; }
-.candidate-page-button-next { border-radius: $bt_radius;  }
-.candidate-page-button-icon { icon-size: em(16px); }
+.candidate-page-button-previous {
+  border-radius: $bt_radius;
+  border-right-width: 0;
+}
+.candidate-page-button-next {
+  border-radius: $bt_radius;
+}
+.candidate-page-button-icon {
+  icon-size: em(16px);
+}
 
 /* Auth Dialogs & Screen Shield */
 
@@ -2552,7 +3008,7 @@ StWidget.focused .app-well-app-running-dot {
   max-width: 23em;
 }
 
-$login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
+$login_entry_bg: if($variant == "dark", rgba(black, 0.1), rgba(white, 0.1));
 
 .login-dialog {
   //reset
@@ -2566,25 +3022,45 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
     padding: 4px 8px;
     min-height: $small_size;
     @include entry(normal, $bc: $login_entry_bg);
-    &:focus { @include entry(focus); }
-    &:insensitive { @include entry(insensitive); }
+    &:focus {
+      @include entry(focus);
+    }
+    &:insensitive {
+      @include entry(insensitive);
+    }
     border-radius: $circular_radius;
   }
 
-  .modal-dialog-button-box { spacing: 3px; }
+  .modal-dialog-button-box {
+    spacing: 3px;
+  }
 
   .modal-dialog-button {
     padding: 0 16px;
     @include button(flat-normal, $tc: $light_fg_color);
-    &:hover,&:focus { @include button(flat-hover, $tc: $light_fg_color); }
-    &:active { @include button(flat-active, $tc: $light_fg_color); }
-    &:insensitive { @include button(flat-insensitive, $tc: $light_fg_color); }
+    &:hover,
+    &:focus {
+      @include button(flat-hover, $tc: $light_fg_color);
+    }
+    &:active {
+      @include button(flat-active, $tc: $light_fg_color);
+    }
+    &:insensitive {
+      @include button(flat-insensitive, $tc: $light_fg_color);
+    }
 
     &:default {
       @include button(normal, $c: $suggested_color, $tc: $light_fg_color);
-      &:hover,&:focus { @include button(hover, $c: $suggested_color, $tc: $light_fg_color); }
-      &:active { @include button(active, $c: $suggested_color, $tc: $light_fg_color); }
-      &:insensitive { @include button(insensitive, $c: $light_divider_color, $tc: $light_disabled_fg_color); }
+      &:hover,
+      &:focus {
+        @include button(hover, $c: $suggested_color, $tc: $light_fg_color);
+      }
+      &:active {
+        @include button(active, $c: $suggested_color, $tc: $light_fg_color);
+      }
+      &:insensitive {
+        @include button(insensitive, $c: $light_divider_color, $tc: $light_disabled_fg_color);
+      }
     }
   }
 
@@ -2598,7 +3074,9 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
     border-color: transparentize($bg_color, 0.7);
     background-color: transparentize($bg_color, 0.7);
 
-    StIcon { icon-size: 16px; }
+    StIcon {
+      icon-size: 16px;
+    }
   }
 
   .login-dialog-message-warning {
@@ -2613,12 +3091,25 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
   color: $warning_color;
 }
 
-.login-dialog-logo-bin { padding: 24px 0px; }
-.login-dialog-banner { color: $light_alt_fg_color; }
-.login-dialog-button-box { spacing: 5px; }
-.login-dialog-message-warning { color: $warning_color; }
-.login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
-.login-dialog-user-selection-box { padding: 100px 0px; }
+.login-dialog-logo-bin {
+  padding: 24px 0px;
+}
+.login-dialog-banner {
+  color: $light_alt_fg_color;
+}
+.login-dialog-button-box {
+  spacing: 5px;
+}
+.login-dialog-message-warning {
+  color: $warning_color;
+}
+.login-dialog-message-hint {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+.login-dialog-user-selection-box {
+  padding: 100px 0px;
+}
 .login-dialog-not-listed-label {
   padding-left: 2px;
   .login-dialog-not-listed-button:focus &,
@@ -2632,35 +3123,64 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
   font-weight: bold;
   color: $light_alt_fg_color;
   padding-top: 1em;
-  &:hover { color: $light_alt_fg_color; }
-  &:focus { background-color: $light_divider_color; }
+  &:hover {
+    color: $light_alt_fg_color;
+  }
+  &:focus {
+    background-color: $light_divider_color;
+  }
 }
 
-.login-dialog-user-list-view { -st-vfade-offset: 1em; }
+.login-dialog-user-list-view {
+  -st-vfade-offset: 1em;
+}
 .login-dialog-user-list {
   spacing: 12px;
-  padding: .2em;
+  padding: 0.2em;
   width: 23em;
-  &:expanded .login-dialog-user-list-item:selected { background-color: $light_divider_color; color: $light_alt_fg_color; }
-  &:expanded .login-dialog-user-list-item:hover { background-color: $light_divider_color; color: $light_alt_fg_color; }
-  &:expanded .login-dialog-user-list-item:active { background-color: $light_track_color; color: $light_alt_fg_color; }
-  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $selected_bg_color; }
+  &:expanded .login-dialog-user-list-item:selected {
+    background-color: $light_divider_color;
+    color: $light_alt_fg_color;
+  }
+  &:expanded .login-dialog-user-list-item:hover {
+    background-color: $light_divider_color;
+    color: $light_alt_fg_color;
+  }
+  &:expanded .login-dialog-user-list-item:active {
+    background-color: $light_track_color;
+    color: $light_alt_fg_color;
+  }
+  &:expanded .login-dialog-user-list-item:logged-in {
+    border-right: 2px solid $selected_bg_color;
+  }
 }
 
 .login-dialog-user-list-item {
   border-radius: $bt_radius;
   padding: 6px;
   color: $light_alt_fg_color;
-  &:ltr .user-widget { padding-right: 1em; }
-  &:rtl .user-widget { padding-left: 1em; }
-  &:hover { background-color: $light_divider_color; color: $light_alt_fg_color; }
-  &:active { background-color: $light_track_color; color: $light_alt_fg_color; }
+  &:ltr .user-widget {
+    padding-right: 1em;
+  }
+  &:rtl .user-widget {
+    padding-left: 1em;
+  }
+  &:hover {
+    background-color: $light_divider_color;
+    color: $light_alt_fg_color;
+  }
+  &:active {
+    background-color: $light_track_color;
+    color: $light_alt_fg_color;
+  }
   .login-dialog-timed-login-indicator {
     height: 2px;
     margin: 6px 0 0 0;
     background-color: $light_alt_fg_color;
   }
-  &:focus .login-dialog-timed-login-indicator { background-color: $light_alt_fg_color; }
+  &:focus .login-dialog-timed-login-indicator {
+    background-color: $light_alt_fg_color;
+  }
 }
 
 .user-icon {
@@ -2688,8 +3208,12 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
     text-align: left;
     padding-left: 15px;
 
-    &:ltr { padding-left: 14px; }
-    &:rtl { padding-right: 14px; }
+    &:ltr {
+      padding-left: 14px;
+    }
+    &:rtl {
+      padding-right: 14px;
+    }
   }
 
   .user-icon {
@@ -2723,7 +3247,6 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
   }
 }
 
-
 .login-dialog-prompt-entry {
   height: 1.5em;
 }
@@ -2740,7 +3263,6 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
   font-size: 1em;
   padding-top: 1em;
 }
-
 
 //SCREEN SHIELD
 
@@ -2769,7 +3291,9 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
   text-shadow: $shadow_1;
 }
 
-.screen-shield-clock-date { @include font(display-2); }
+.screen-shield-clock-date {
+  @include font(display-2);
+}
 
 .screen-shield-notifications-container {
   spacing: 6px;
@@ -2789,9 +3313,10 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
     color: $light_alt_fg_color;
     border-radius: $bt_radius;
   }
-  .notification { margin-right: 16px; } //compensate for space allocated to the scrollbar
+  .notification {
+    margin-right: 16px;
+  } //compensate for space allocated to the scrollbar
 }
-
 
 .screen-shield-notification-label {
   min-height: $small_size - 2px;
@@ -2805,9 +3330,12 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
   color: $light_alt_fg_color;
 }
 
-#panel.lock-screen { background-color: $alt_dark_bg_color; }
+#panel.lock-screen {
+  background-color: $alt_dark_bg_color;
+}
 
-.screen-shield-background { //just the shadow, really
+.screen-shield-background {
+  //just the shadow, really
   background: black;
   box-shadow: $shadow_5;
 }
@@ -2818,9 +3346,10 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
 }
 
 #screenShieldNotifications {
-  StScrollBar { @extend %overview_scrollbar; }
+  StScrollBar {
+    @extend %overview_scrollbar;
+  }
 }
-
 
 // Looking Glass
 #LookingGlassDialog {
@@ -2839,7 +3368,9 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
     background-color: rgba($base_color, 0.01);
     box-shadow: inset 0 -1px 0 $borders_color;
   }
-  .labels { spacing: 0; }
+  .labels {
+    spacing: 0;
+  }
   .notebook-tab {
     -natural-hpadding: 12px;
     -minimum-hpadding: 6px;
@@ -2864,8 +3395,13 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
       text-shadow: none;
     }
   }
-  StBoxLayout#EvalBox { padding: 4px; spacing: 4px; }
-  StBoxLayout#ResultsArea { spacing: 4px; }
+  StBoxLayout#EvalBox {
+    padding: 4px;
+    spacing: 4px;
+  }
+  StBoxLayout#ResultsArea {
+    spacing: 4px;
+  }
 }
 
 .lg-dialog {
@@ -2875,8 +3411,10 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
   }
   .shell-link {
     color: $link_color;
-    &:hover { color: $link_color; }
-   }
+    &:hover {
+      color: $link_color;
+    }
+  }
 }
 
 .lg-completions-text {
@@ -2885,7 +3423,7 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
 }
 
 .lg-obj-inspector-title {
-    spacing: 4px;
+  spacing: 4px;
 }
 
 .lg-obj-inspector-button {
@@ -2895,14 +3433,26 @@ $login_entry_bg: if($variant == 'dark', rgba(black, 0.1), rgba(white, 0.1));
   border-radius: $bt_radius;
   @include font(button);
   @include button(flat-normal);
-  &:hover { @include button(flat-hover); }
-  &:active { @include button(flat-active); }
-  &:insensitive { @include button(flat-insensitive); }
-  &:focus { @include button(flat-focus); }
-  &:hover { border: none; }
+  &:hover {
+    @include button(flat-hover);
+  }
+  &:active {
+    @include button(flat-active);
+  }
+  &:insensitive {
+    @include button(flat-insensitive);
+  }
+  &:focus {
+    @include button(flat-focus);
+  }
+  &:hover {
+    border: none;
+  }
 }
 
-#lookingGlassExtensions { padding: 4px; }
+#lookingGlassExtensions {
+  padding: 4px;
+}
 
 .lg-extensions-list {
   padding: 4px;

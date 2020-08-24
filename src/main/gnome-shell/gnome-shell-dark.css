@@ -108,7 +108,7 @@ StEntry:insensitive {
 
 StEntry StIcon.capslock-warning {
   icon-size: 16px;
-  warning-color: #F27835;
+  warning-color: #f27835;
   padding: 0 0;
 }
 
@@ -146,17 +146,20 @@ StScrollBar StBin#trough {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
+StScrollBar StButton#vhandle,
+StScrollBar StButton#hhandle {
   border-radius: 100px;
   background-color: #999999;
   margin: 6px;
 }
 
-StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover {
+StScrollBar StButton#vhandle:hover,
+StScrollBar StButton#hhandle:hover {
   background-color: #e4e4e4;
 }
 
-StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
+StScrollBar StButton#vhandle:active,
+StScrollBar StButton#hhandle:active {
   background-color: #dedede;
 }
 
@@ -164,15 +167,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-#screenShieldNotifications StScrollBar StButton#vhandle, #overview StScrollBar StButton#vhandle, #screenShieldNotifications StScrollBar StButton#hhandle, #overview StScrollBar StButton#hhandle {
+#screenShieldNotifications StScrollBar StButton#vhandle, #overview StScrollBar StButton#vhandle,
+#screenShieldNotifications StScrollBar StButton#hhandle,
+#overview StScrollBar StButton#hhandle {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-#screenShieldNotifications StScrollBar StButton#vhandle:hover, #overview StScrollBar StButton#vhandle:hover, #screenShieldNotifications StScrollBar StButton#hhandle:hover, #overview StScrollBar StButton#hhandle:hover {
+#screenShieldNotifications StScrollBar StButton#vhandle:hover, #overview StScrollBar StButton#vhandle:hover,
+#screenShieldNotifications StScrollBar StButton#hhandle:hover,
+#overview StScrollBar StButton#hhandle:hover {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
-#screenShieldNotifications StScrollBar StButton#vhandle:active, #overview StScrollBar StButton#vhandle:active, #screenShieldNotifications StScrollBar StButton#hhandle:active, #overview StScrollBar StButton#hhandle:active {
+#screenShieldNotifications StScrollBar StButton#vhandle:active, #overview StScrollBar StButton#vhandle:active,
+#screenShieldNotifications StScrollBar StButton#hhandle:active,
+#overview StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -391,7 +400,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 1em;
   font-weight: normal;
   color: #999999;
-  padding-bottom: .4em;
+  padding-bottom: 0.4em;
 }
 
 .mount-dialog-subject,
@@ -514,7 +523,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .end-session-dialog-warning {
   width: 28em;
-  color: #F27835;
+  color: #f27835;
   padding-top: 6px;
 }
 
@@ -701,7 +710,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .prompt-dialog-error-label {
-  color: #F27835;
+  color: #f27835;
 }
 
 .prompt-dialog-description:rtl {
@@ -715,7 +724,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .prompt-dialog-error-label {
   font-size: 1em;
-  color: #FC4138;
+  color: #fc4138;
   padding-bottom: 8px;
 }
 
@@ -743,7 +752,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .polkit-dialog-user-layout .polkit-dialog-user-root-label {
-  color: #F27835;
+  color: #f27835;
 }
 
 .polkit-dialog-user-layout .polkit-dialog-user-icon {
@@ -1206,7 +1215,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 8px;
 }
 
-.ws-switcher-active-up, .ws-switcher-active-down {
+.ws-switcher-active-up,
+.ws-switcher-active-down {
   height: 48px;
   background-color: #0860f2;
   color: rgba(255, 255, 255, 0.85);
@@ -1264,7 +1274,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.15);
 }
 
-#panel #panelLeft, #panel #panelCenter {
+#panel #panelLeft,
+#panel #panelCenter {
   spacing: 0;
 }
 
@@ -1374,11 +1385,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .screencast-indicator {
-  color: #FC4138;
+  color: #fc4138;
 }
 
 #panel .remote-access-indicator {
-  color: #F27835;
+  color: #f27835;
 }
 
 #panel.solid {
@@ -2075,7 +2086,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .nm-dialog-icons {
-  spacing: .5em;
+  spacing: 0.5em;
 }
 
 .nm-dialog-icon {
@@ -2125,7 +2136,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: normal;
 }
 
-.app-folder-dialog .folder-name-container .folder-name-entry, .search-entry {
+.app-folder-dialog .folder-name-container .folder-name-entry,
+.search-entry {
   width: 304px;
   padding: 0 8px;
   border: none;
@@ -2139,7 +2151,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-.app-folder-dialog .folder-name-container .folder-name-entry:focus, .search-entry:focus {
+.app-folder-dialog .folder-name-container .folder-name-entry:focus,
+.search-entry:focus {
   border-color: transparent;
   background-color: rgba(255, 255, 255, 0.18);
   padding: 0 8px;
@@ -2147,22 +2160,27 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon, .search-entry .search-entry-icon {
+.app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon,
+.search-entry .search-entry-icon {
   icon-size: 16px;
   padding: 0 0;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon, .search-entry:hover .search-entry-icon, .search-entry:focus .search-entry-icon {
+.app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon,
+.search-entry:hover .search-entry-icon,
+.search-entry:focus .search-entry-icon {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.app-folder-dialog .folder-name-container .folder-name-entry:insensitive, .search-entry:insensitive {
+.app-folder-dialog .folder-name-container .folder-name-entry:insensitive,
+.search-entry:insensitive {
   border: none;
   color: rgba(255, 255, 255, 0.45);
 }
 
-.app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text, .search-entry StLabel.hint-text {
+.app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text,
+.search-entry StLabel.hint-text {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -3105,7 +3123,7 @@ StWidget.focused .app-well-app-running-dot {
 .caps-lock-warning-label {
   text-align: center;
   padding-bottom: 8px;
-  color: #F27835;
+  color: #f27835;
 }
 
 .login-dialog-logo-bin {
@@ -3121,7 +3139,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .login-dialog-message-warning {
-  color: #F27835;
+  color: #f27835;
 }
 
 .login-dialog-message-hint {
@@ -3162,7 +3180,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .login-dialog-user-list {
   spacing: 12px;
-  padding: .2em;
+  padding: 0.2em;
   width: 23em;
 }
 

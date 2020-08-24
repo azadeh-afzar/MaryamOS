@@ -17,7 +17,10 @@ UnityDecoration {
   -UnityDecoration-title-fade: 35px;
   -UnityDecoration-title-alignment: 0.0;
 
-  &.background { border-radius: $wm_radius; background-color: transparent; }
+  &.background {
+    border-radius: $wm_radius;
+    background-color: transparent;
+  }
 
   .top {
     border: 1px solid $borders_color;
@@ -36,8 +39,12 @@ UnityDecoration {
       color: transparentize($header_fg, 0.3);
     }
   }
-  .left, .right, .bottom,
-  .left:backdrop, .right:backdrop, .bottom:backdrop {
+  .left,
+  .right,
+  .bottom,
+  .left:backdrop,
+  .right:backdrop,
+  .bottom:backdrop {
     background-color: $borders_color;
   }
 }
@@ -49,7 +56,9 @@ UnityPanelWidget,
   color: lighten($panel_fg, 20%);
   box-shadow: none;
 
-  &:backdrop { color: lighten($panel_fg, 1%); }
+  &:backdrop {
+    color: lighten($panel_fg, 1%);
+  }
 }
 
 .unity-panel.menubar.menuitem:hover,

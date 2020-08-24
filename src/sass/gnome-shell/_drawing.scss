@@ -71,14 +71,13 @@
   }
 }
 
-
 @mixin entry($t, $fc: $primary_color, $bc: $entry_shell_bg) {
-//
-// entry
-//
-// $t: entry type
-// $fc: focus color
-//
+  //
+  // entry
+  //
+  // $t: entry type
+  // $fc: focus color
+  //
 
   @if $t == normal {
     background-color: $bc;
@@ -102,12 +101,12 @@
 }
 
 @mixin search_entry($t, $fc: $primary_color) {
-//
-// search_entry
-//
-// $t: search_entry type
-// $fc: focus color
-//
+  //
+  // search_entry
+  //
+  // $t: search_entry type
+  // $fc: focus color
+  //
 
   @if $t == normal {
     background-color: rgba(white, 0.12);
@@ -133,13 +132,13 @@
 }
 
 @mixin button($t, $c: $base_color, $tc: $fg_color) {
-//
-// button
-//
-// $t: button type
-// $c: base color
-// $tc: text color
-//
+  //
+  // button
+  //
+  // $t: button type
+  // $c: base color
+  // $tc: text color
+  //
 
   @if $t == normal {
     color: if($tc == $fg_color, $button_fg_color, $tc);
@@ -159,7 +158,7 @@
   @if $t == hover {
     color: $tc;
     border-color: $button_borders_hover;
-    background-color: if($variant=='light', darken($c, 3%), lighten($c, 3%));
+    background-color: if($variant== "light", darken($c, 3%), lighten($c, 3%));
     text-shadow: none;
     icon-shadow: none;
   }
@@ -175,7 +174,7 @@
   @if $t == insensitive {
     color: if($tc == $fg_color, $disabled_fg_color, $tc);
     background-color: if($c == $base_color, $divider_color, $c);
-    border-color: if($variant == 'light', $button_border, $dark_borders_color);
+    border-color: if($variant == "light", $button_border, $dark_borders_color);
     text-shadow: none;
     icon-shadow: none;
   }

@@ -1,7 +1,7 @@
 // Dash to Dock
 
-$dash_panel_bg: if($variant == 'light', rgba(#f1f1f1, 0.15), rgba(#101010, 0.25));
-$dash_panel_fg: if($variant == 'light', black, white);
+$dash_panel_bg: if($variant == "light", rgba(#f1f1f1, 0.15), rgba(#101010, 0.25));
+$dash_panel_fg: if($variant == "light", black, white);
 
 #dashtodockContainer {
   background: transparent;
@@ -19,26 +19,34 @@ $dash_panel_fg: if($variant == 'light', black, white);
     margin: 0;
   }
 
-  @each $_dock, $_radius in (top, $wm_radius),
-                            (bottom, $wm_radius),
-                            (left, $wm_radius),
-                            (right, $wm_radius) {
+  @each $_dock, $_radius in (top, $wm_radius), (bottom, $wm_radius), (left, $wm_radius), (right, $wm_radius) {
     &.#{$_dock} #dash,
-    &.#{$_dock}:overview #dash { border-radius: #{$_radius}; }
+    &.#{$_dock}:overview #dash {
+      border-radius: #{$_radius};
+    }
 
     &.#{$_dock}.extended #dash,
-    &.#{$_dock}.extended:overview #dash { border-radius: #{$_radius}; }
+    &.#{$_dock}.extended:overview #dash {
+      border-radius: #{$_radius};
+    }
   }
 
-  &.top, &.bottom {
-    #dash { padding: 0 4px; }
+  &.top,
+  &.bottom {
+    #dash {
+      padding: 0 4px;
+    }
   }
 
-  &.left, &.right {
-    #dash { padding: 4px 0; }
+  &.left,
+  &.right {
+    #dash {
+      padding: 4px 0;
+    }
   }
 
-  #dash { // default-mode
+  #dash {
+    // default-mode
     background-color: $dash_panel_bg;
     box-shadow: inset 0 0 0 1px rgba(white, 0.05);
 
@@ -51,15 +59,18 @@ $dash_panel_fg: if($variant == 'light', black, white);
     }
   }
 
-  &.opaque #dash { // solid-mode
+  &.opaque #dash {
+    // solid-mode
     background-color: $dash_panel_bg;
   }
 
-  &.transparent #dash { // translucent-mode
+  &.transparent #dash {
+    // translucent-mode
     background-color: $dash_panel_bg; // does not work
   }
 
-  &:overview #dash { // overview-mode #1
+  &:overview #dash {
+    // overview-mode #1
     background-color: $light_divider_color;
 
     .app-well-app-running-dot {
@@ -72,7 +83,8 @@ $dash_panel_fg: if($variant == 'light', black, white);
   }
 
   &.opaque:overview,
-  &.transparent:overview { // overview-mode #2
+  &.transparent:overview {
+    // overview-mode #2
     #dash {
       background-color: transparent !important;
       box-shadow: none !important;
@@ -96,7 +108,6 @@ $dash_panel_fg: if($variant == 'light', black, white);
   }
 }
 
-
 // Simple Dock
 
 #dash:desktop {
@@ -118,10 +129,18 @@ $dash_panel_fg: if($variant == 'light', black, white);
     padding: 0 16px;
     font-weight: 500;
     @include button(flat-normal);
-    &:hover { @include button(flat-hover); }
-    &:focus { @include button(flat-focus); }
-    &:active { @include button(flat-active); }
-    &:insensitive { @include button(flat-disabled); }
+    &:hover {
+      @include button(flat-hover);
+    }
+    &:focus {
+      @include button(flat-focus);
+    }
+    &:active {
+      @include button(flat-active);
+    }
+    &:insensitive {
+      @include button(flat-disabled);
+    }
   }
 
   &-current {
@@ -159,7 +178,9 @@ $dash_panel_fg: if($variant == 'light', black, white);
 
   &-sunrise-icon,
   &-sunset-icon,
-  &-build-icon { color: $alt_fg_color; }
+  &-build-icon {
+    color: $alt_fg_color;
+  }
 }
 
 // GPaste
@@ -176,10 +197,15 @@ $dash_panel_fg: if($variant == 'light', black, white);
       color: $fg_color;
     }
 
-    .search-entry-icon { color: $hint_fg_color; }
+    .search-entry-icon {
+      color: $hint_fg_color;
+    }
 
-    &:hover, &:focus {
-      .search-entry-icon { color: $fg_color; }
+    &:hover,
+    &:focus {
+      .search-entry-icon {
+        color: $fg_color;
+      }
     }
   }
 }

@@ -1,17 +1,17 @@
 * {
   padding: 0;
   background-clip: padding-box;
-  -gtktoolbutton-icon-spacing: 4;
-  -gtktextview-error-underline-color: $error_color;
+  -GtkToolButton-icon-spacing: 4;
+  -GtkTextView-error-underline-color: $error_color;
 
-  -gtkscrolledwindow-scrollbar-spacing: 0;
-  -gtktoolitemgroup-expander-size: 11;
+  -GtkScrolledWindow-scrollbar-spacing: 0;
+  -GtkToolItemGroup-expander-size: 11;
 
-  -gtkwidget-text-handle-width: 20;
-  -gtkwidget-text-handle-height: 20;
+  -GtkWidget-text-handle-width: 20;
+  -GtkWidget-text-handle-height: 20;
 
-  -gtkdialog-button-spacing: 4;
-  -gtkdialog-action-area-border: 0;
+  -GtkDialog-button-spacing: 4;
+  -GtkDialog-action-area-border: 0;
 
   // We use the outline properties to signal the focus properties
   outline-color: gtkalpha(currentColor, 0.15);
