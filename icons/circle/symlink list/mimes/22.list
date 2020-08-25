@@ -1,6 +1,7 @@
 android-package-archive.svg application-vnd.android.package-archive.svg
 application-atom+xml.svg application-rss+xml.svg
 application-atom+xml.svg text-x-opml+xml.svg
+application-certificate.svg application-pkcs12.svg
 application-certificate.svg application-pkix-cerl.svg
 application-certificate.svg application-pkix-cert.svg
 application-certificate.svg application-x-pkcs12.svg
@@ -203,6 +204,7 @@ text-x-tex.svg viewbib.svg
 text-x-texinfo.svg text-x-nfo.svg
 text-x-texinfo.svg text-x-readme.svg
 text-xml.svg application-vnd-google-earth-kml.svg
+text-xml.svg application-vnd.google-earth.kml+xml.svg
 text-xml.svg application-xml.svg
 text-xml.svg application-xsd.svg
 text-xml.svg application-xslt+xml.svg

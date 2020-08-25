@@ -13,6 +13,7 @@ application-atom+xml.svg application-rss_xml.svg
 application-atom+xml.svg gnome-mime-application-atom+xml.svg
 application-atom+xml.svg gnome-mime-application-rss+xml.svg
 application-atom+xml.svg text-x-opml+xml.svg
+application-certificate.svg application-pkcs12.svg
 application-certificate.svg application-pkix-cerl.svg
 application-certificate.svg application-pkix-cert.svg
 application-certificate.svg application-x-pkcs12.svg
@@ -546,6 +547,7 @@ text-x-vcard.svg gnome-mime-text-x-vcard.svg
 text-x-vcard.svg office-contact.svg
 text-x-vcard.svg vcard.svg
 text-xml.svg application-vnd-google-earth-kml.svg
+text-xml.svg application-vnd.google-earth.kml+xml.svg
 text-xml.svg application-xml-dtd.svg
 text-xml.svg application-xml.svg
 text-xml.svg application-xsd.svg
@@ -614,7 +616,6 @@ x-office-contact.svg x-mail-distribution-list.svg
 x-office-document.svg application-rtf-rtl.svg
 x-office-document.svg application-sxw.svg
 x-office-document.svg application-vnd.oasis.opendocument.text-master.svg
-x-office-document.svg application-vnd.oasis.opendocument.text-master.svgln
 x-office-document.svg application-vnd.oasis.opendocument.text-rtl.svg
 x-office-document.svg application-vnd.oasis.opendocument.text.svg
 x-office-document.svg application-vnd.sun.xml.writer.global.svg

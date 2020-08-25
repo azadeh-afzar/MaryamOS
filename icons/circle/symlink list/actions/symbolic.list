@@ -38,8 +38,12 @@ list-remove-symbolic.svg value-decrease-symbolic.svg
 mail-flag-symbolic.svg marker-symbolic.svg
 mail-forward-symbolic.svg mail-reply-rtl-symbolic.svg
 mail-forward-symbolic.svg mail-reply-sender-rtl-symbolic.svg
+mail-inbox-symbolic.svg inbox-symbolic.svg
 mail-mark-junk-symbolic.svg mail-spam-symbolic.svg
+mail-outbox-symbolic.svg outbox-symbolic.svg
 mail-reply-symbolic.svg mail-forward-rtl-symbolic.svg
+mail-sent-symbolic-rtl.svg mail-send-symbolic-rtl.svg
+mail-sent-symbolic.svg mail-send-symbolic.svg
 media-playback-start-rtl-symbolic.svg media-playback-start-symbolic-rtl.svg
 media-playlist-repeat-one-symbolic.svg media-playlist-repeat-once-symbolic.svg
 media-playlist-repeat-symbolic.svg media-playlist-repeat-song-symbolic.svg
@@ -71,8 +75,10 @@ star-new-symbolic.svg starred-symbolic.svg
 stopwatch-symbolic.svg scan-type-batch-symbolic.svg
 system-reboot-symbolic.svg system-restart-symbolic.svg
 system-switch-user-symbolic.svg screensaver-switch-users-symbolic.svg
+view-conceal-symbolic.svg eye-not-looking-symbolic.svg
 view-left-pane-symbolic.svg view-right-pane-symbolic-rtl.svg
 view-left-pane-symbolic.svg view-sidebar-symbolic.svg
+view-reveal-symbolic.svg eye-open-negative-filled-symbolic.svg
 view-right-pane-symbolic.svg view-left-pane-symbolic-rtl.svg
 window-close-symbolic.svg close-symbolic.svg
 window-pop-out-symbolic.svg detach-symbolic.svg

@@ -1,14 +1,12 @@
-./accessories-dictionary.svg kbabeldict.svg
-./leafpad.svg krename.svg
-./preferences-desktop-accessibility.svg preferences-desktop-assistive-technology.svg
-./preferences-system-network.svg package_utilities_web.svg
-./synaptic.svg appset.svg
 7zip.svg 7z.svg
 7zip.svg J7Z.svg
 7zip.svg p7zip.svg
 Vbox.svg VBox.svg
 Vbox.svg vbox.svg
 Vbox.svg virtualbox-bin.svg
+Zoom.svg us.zoom.Zoom.svg
+Zoom.svg zoom-desktop.svg
+Zoom.svg zoom-icon.svg
 access.svg ax-applet.svg
 access.svg cs-universal-access.svg
 access.svg csd-a11y-keyboard.svg
@@ -40,6 +38,7 @@ accessories-dictionary.svg dictionary.svg
 accessories-dictionary.svg flegita.svg
 accessories-dictionary.svg gaiksaurus.svg
 accessories-dictionary.svg gnome-dictionary.svg
+accessories-dictionary.svg kbabeldict.svg
 accessories-dictionary.svg kthesaurus.svg
 accessories-dictionary.svg org.gnome.Dictionary.svg
 accessories-dictionary.svg verbiste.svg
@@ -163,7 +162,6 @@ applications-system.svg preferences-desktop-applications.svg
 applications-system.svg preferences-desktop-apps.svg
 applications-system.svg preferences-other.svg
 applications-system.svg preferences-plugin.svg
-applications-system.svg preferences-system.svg
 applications-system.svg system-config-boot.svg
 applications-system.svg system-config-services.svg
 applications-system.svg system-run.svg
@@ -573,6 +571,8 @@ fragments.svg org.gnome.Fragments.svg
 freefilesync.svg FreeFileSync.svg
 freefilesync.svg org.freefilesync.FreeFileSync.svg
 freeminer.svg terasology.svg
+fritzing.svg fritzing_icon.svg
+fritzing.svg org.fritzing.Fritzing.svg
 gcolor2.svg colorpicker.svg
 gcolor2.svg com.github.ronnydo.colorpicker.svg
 gcolor2.svg com.github.thezbyg.Gpick.svg
@@ -587,6 +587,10 @@ gcolor2.svg nl.hjdskes.gcolor3.svg
 gconf-editor.svg galternatives.svg
 gconf-editor.svg gkdebconf-icon.svg
 gconf-editor.svg gkdebconf.svg
+gdebi.svg gdeb.svg
+gdebi.svg gnome-mime-application-x-deb.svg
+gdebi.svg nx-software-center.svg
+gdebi.svg org.nxos.softwarecenter.svg
 gdm-xnest.svg gdm-setup.svg
 gdm-xnest.svg gdmsetup.svg
 geany.svg org.gnome.Geany.svg
@@ -707,8 +711,6 @@ gnome-software.svg org.gnome.Software.Editor.svg
 gnome-software.svg org.gnome.Software.svg
 gnome-software.svg software-store.svg
 gnome-software.svg software.svg
-gnome-software.svg synaptic.svg
-gnome-software.svg system-software-install.svg
 gnome-sound-recorder.svg audio-recorder.svg
 gnome-sound-recorder.svg com.github.ryonakano.reco.svg
 gnome-sound-recorder.svg deepin-voice-recorder.svg
@@ -779,6 +781,8 @@ gtranslator.svg org.gnome.Gtranslator.svg
 hardinfo.svg com.github.lpereira.HardInfo.svg
 hardinfo.svg com.github.lpereira.hardinfo.svg
 hardinfo.svg harddrake2.svg
+hb-icon.svg fr.handbrake.ghb.svg
+hb-icon.svg handbrake.svg
 help-browser.svg 4137_winhlp32.0.svg
 help-browser.svg chmsee-icon.svg
 help-browser.svg deepin-manual.svg
@@ -897,6 +901,8 @@ jockey.svg org.kde.plasma.audiodeviceswitcher.svg
 jockey.svg sysprof-icon.svg
 jockey.svg sysprof.svg
 jockey.svg system76-driver.svg
+joplin.svg appimagekit-joplin.svg
+joplin.svg joplin-desktop.svg
 karbon.svg calligrakarbon.svg
 kdeconnect.svg org.kde.kdeconnect.kcm.svg
 kdeconnect.svg org.kde.kdeconnect.svg
@@ -949,6 +955,7 @@ kuickshow.svg gthumb.svg
 kuickshow.svg showimage.svg
 kuickshow.svg xviewer.svg
 kwalletmanager.svg kwalletmanager2.svg
+leafpad.svg krename.svg
 libreoffice-base.svg libreoffice3-base.svg
 libreoffice-base.svg libreoffice34-base.svg
 libreoffice-base.svg libreoffice4.2-base.svg
@@ -959,6 +966,7 @@ libreoffice-base.svg libreoffice5.3-base.svg
 libreoffice-base.svg libreoffice5.4-base.svg
 libreoffice-base.svg libreoffice6.0-base.svg
 libreoffice-base.svg libreoffice6.4-base.svg
+libreoffice-base.svg libreoffice7.0-base.svg
 libreoffice-base.svg libreofficedev6.0-base.svg
 libreoffice-base.svg libreofficedev6.1-base.svg
 libreoffice-base.svg org.libreoffice.LibreOffice-base.svg
@@ -973,6 +981,7 @@ libreoffice-calc.svg libreoffice5.3-calc.svg
 libreoffice-calc.svg libreoffice5.4-calc.svg
 libreoffice-calc.svg libreoffice6.0-calc.svg
 libreoffice-calc.svg libreoffice6.4-calc.svg
+libreoffice-calc.svg libreoffice7.0-calc.svg
 libreoffice-calc.svg libreofficedev6.0-calc.svg
 libreoffice-calc.svg libreofficedev6.1-calc.svg
 libreoffice-calc.svg org.libreoffice.LibreOffice-calc.svg
@@ -987,6 +996,7 @@ libreoffice-draw.svg libreoffice5.3-draw.svg
 libreoffice-draw.svg libreoffice5.4-draw.svg
 libreoffice-draw.svg libreoffice6.0-draw.svg
 libreoffice-draw.svg libreoffice6.4-draw.svg
+libreoffice-draw.svg libreoffice7.0-draw.svg
 libreoffice-draw.svg libreofficedev6.0-draw.svg
 libreoffice-draw.svg libreofficedev6.1-draw.svg
 libreoffice-draw.svg org.libreoffice.LibreOffice-draw.svg
@@ -1001,6 +1011,7 @@ libreoffice-impress.svg libreoffice5.3-impress.svg
 libreoffice-impress.svg libreoffice5.4-impress.svg
 libreoffice-impress.svg libreoffice6.0-impress.svg
 libreoffice-impress.svg libreoffice6.4-impress.svg
+libreoffice-impress.svg libreoffice7.0-impress.svg
 libreoffice-impress.svg libreofficedev6.0-impress.svg
 libreoffice-impress.svg libreofficedev6.1-impress.svg
 libreoffice-impress.svg org.libreoffice.LibreOffice-impress.svg
@@ -1025,6 +1036,8 @@ libreoffice-main.svg libreoffice5.4.svg
 libreoffice-main.svg libreoffice6.0-main.svg
 libreoffice-main.svg libreoffice6.0.svg
 libreoffice-main.svg libreoffice6.4-startcenter.svg
+libreoffice-main.svg libreoffice7.0-main.svg
+libreoffice-main.svg libreoffice7.0.svg
 libreoffice-main.svg libreofficedev6.0-main.svg
 libreoffice-main.svg libreofficedev6.0-startcenter.svg
 libreoffice-main.svg libreofficedev6.1-main.svg
@@ -1041,15 +1054,21 @@ libreoffice-math.svg libreoffice5.3-math.svg
 libreoffice-math.svg libreoffice5.4-math.svg
 libreoffice-math.svg libreoffice6.0-math.svg
 libreoffice-math.svg libreoffice6.4-math.svg
+libreoffice-math.svg libreoffice7.0-math.svg
 libreoffice-math.svg libreofficedev6.0-math.svg
 libreoffice-math.svg libreofficedev6.1-math.svg
 libreoffice-math.svg org.libreoffice.LibreOffice-math.svg
 libreoffice-math.svg org.libreoffice.LibreOffice.math.svg
+libreoffice-printeradmin.svg boomaga.svg
 libreoffice-startcenter.svg libreoffice5.0-startcenter.svg
 libreoffice-startcenter.svg libreoffice5.1-startcenter.svg
 libreoffice-startcenter.svg libreoffice5.2-startcenter.svg
 libreoffice-startcenter.svg libreoffice5.4-startcenter.svg
 libreoffice-startcenter.svg libreoffice6.0-startcenter.svg
+libreoffice-startcenter.svg libreoffice7.0-startcenter.svg
+libreoffice-template.svg libreoffice3-template.svg
+libreoffice-template.svg libreoffice34-template.svg
+libreoffice-template.svg libreoffice4.2-template.svg
 libreoffice-writer.svg 97C1_wordpad.0.svg
 libreoffice-writer.svg docear.svg
 libreoffice-writer.svg libreoffice3-writer.svg
@@ -1062,6 +1081,7 @@ libreoffice-writer.svg libreoffice5.3-writer.svg
 libreoffice-writer.svg libreoffice5.4-writer.svg
 libreoffice-writer.svg libreoffice6.0-writer.svg
 libreoffice-writer.svg libreoffice6.4-writer.svg
+libreoffice-writer.svg libreoffice7.0-writer.svg
 libreoffice-writer.svg libreofficedev6.0-writer.svg
 libreoffice-writer.svg libreofficedev6.1-writer.svg
 libreoffice-writer.svg org.libreoffice.LibreOffice-writer.svg
@@ -1209,6 +1229,13 @@ muondiscover.svg muondis-cover.svg
 muondiscover.svg org.kde.discover.svg
 muondiscover.svg plasmadiscover.svg
 mypaint.svg org.mypaint.MyPaint.svg
+neovim.svg light_neovim_gtk.svg
+neovim.svg nvim-gtk.svg
+neovim.svg nvim-qt.svg
+neovim.svg nvim.svg
+neovim.svg org.daa.NeovimGtk.svg
+neovim.svg org.neovim.nvim.svg
+neovim.svg pynvim.svg
 netease-cloud-music.svg com.netease.CloudMusic.svg
 network-workgroup.svg cs-network.svg
 network-workgroup.svg folder-remote-properties.svg
@@ -1313,6 +1340,7 @@ plasma.svg cuttlefish.svg
 plasma.svg plasma-media-center.svg
 polari.svg internet-chat.svg
 polari.svg org.gnome.Polari.svg
+postman.svg com.getpostman.Postman.svg
 preferences-color.svg adjust-colors.svg
 preferences-color.svg application-vnd.iccprofile.svg
 preferences-color.svg cinnamon-preferences-color.svg
@@ -1341,6 +1369,7 @@ preferences-desktop-accessibility.svg accessibility-directory.svg
 preferences-desktop-accessibility.svg accessibility.svg
 preferences-desktop-accessibility.svg accessibility_section.svg
 preferences-desktop-accessibility.svg kaccess.svg
+preferences-desktop-accessibility.svg preferences-desktop-assistive-technology.svg
 preferences-desktop-baloo.svg baloo.svg
 preferences-desktop-baloo.svg nepomuk.svg
 preferences-desktop-display.svg XrendrMixer.svg
@@ -1477,6 +1506,7 @@ preferences-system-network-ldap.svg yast-ldap-kerberos.svg
 preferences-system-network-sharing.svg preferences-system-network-share.svg
 preferences-system-network-sharing.svg yast-nfs.svg
 preferences-system-network.svg network-wired.svg
+preferences-system-network.svg package_utilities_web.svg
 preferences-system-network.svg yast-network-group.svg
 preferences-system-notifications.svg appointment-soon.svg
 preferences-system-notifications.svg cs-notifications.svg
@@ -1693,13 +1723,15 @@ smplayer.svg multimedia-video-player.svg
 smuxi-frontend-gnome.svg smuxi.svg
 software-center.svg Appstore.svg
 software-center.svg mintinstall.svg
+software-properties.svg cs-software-properties.svg
+software-properties.svg software-sources.svg
+software-properties.svg x-system-software-sources.svg
 software-store.svg deepin-software-center.svg
 software-store.svg lubuntu-software-center.svg
 software-store.svg muondiscover.svg
 software-store.svg org.gnome.software.svg
 software-store.svg software-center.svg
 software-store.svg software-properties-mint.svg
-software-store.svg softwarecenter-debian.svg
 software-store.svg ubuntu-kylin-software-center.svg
 software-store.svg yast-software.svg
 software-store.svg yumex-dnf.svg
@@ -1708,9 +1740,8 @@ software.svg zeroinstall.svg
 softwarecenter-debian.svg com.github.donadigo.eddy.svg
 softwarecenter-debian.svg deepin-deb-installer.svg
 softwarecenter-debian.svg eddy.svg
+softwarecenter-ubuntu.svg ubuntusoftware.svg
 softwarecenter.svg gnome-software.svg
-softwarecenter.svg softwarecenter-ubuntu.svg
-softwarecenter.svg ubuntusoftware.svg
 steam.svg 10B4_steam.0.svg
 steam.svg com.valvesoftware.Steam.svg
 steam.svg steam-icon.svg
@@ -1732,6 +1763,7 @@ sublime-text.svg sublime_text.svg
 sublime-text.svg sublimetext.svg
 swell-foop.svg gnome-swell-foop.svg
 swell-foop.svg org.gnome.SwellFoop.svg
+synaptic.svg appset.svg
 synaptic.svg dnfdragora.svg
 synaptic.svg gnome-app-install.svg
 synaptic.svg kynaptic.svg
@@ -1791,6 +1823,10 @@ system-users.svg org.kde.plasma.uswitcher.svg
 system-users.svg stock_new-meeting.svg
 system-users.svg users-admin.svg
 system-users.svg yast-users.svg
+teams-for-linux.svg appimagekit-teams-for-linux.svg
+teams-for-linux.svg com.github.IsmaelMartinez.teams_for_linux.svg
+teams-for-linux.svg com.microsoft.Teams.svg
+teams-for-linux.svg teams.svg
 teamviewer.svg TeamViewer.svg
 teamviewer.svg chrome-oooiobdokpcfdlahlmcddobejikcmkfo-Default.svg
 telegram.svg chrome-clhhggbfdinjmjhajaheehoeibfljjno-Default.svg
@@ -1985,6 +2021,10 @@ utilities-terminal.svg roxterm.svg
 utilities-terminal.svg terminal-tango.svg
 viber.svg com.viber.Viber.svg
 video-display.svg monitor.svg
+vim.svg gvim.svg
+vim.svg org.vim.Vim.svg
+vim.svg vim-qt.svg
+vim.svg vimlogo.svg
 virtualbox.svg Vbox.svg
 virtualbox.svg gnome-boxes.svg
 virtualbox.svg virtual-box.svg

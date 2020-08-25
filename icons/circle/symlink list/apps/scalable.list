@@ -10,6 +10,9 @@
 Vbox.svg VBox.svg
 Vbox.svg vbox.svg
 Vbox.svg virtualbox-bin.svg
+Zoom.svg us.zoom.Zoom.svg
+Zoom.svg zoom-desktop.svg
+Zoom.svg zoom-icon.svg
 abrt.svg alleyoop.svg
 access.svg ax-applet.svg
 access.svg cs-universal-access.svg
@@ -1152,6 +1155,8 @@ jockey.svg org.kde.plasma.audiodeviceswitcher.svg
 jockey.svg sysprof-icon.svg
 jockey.svg sysprof.svg
 jockey.svg system76-driver.svg
+joplin.svg appleimagekit-joplin.svg
+joplin.svg joplin-desktop.svg
 juk.svg org.kde.juk.svg
 kdeconnect.svg org.kde.kdeconnect.kcm.svg
 kdeconnect.svg org.kde.kdeconnect.svg
@@ -1236,6 +1241,7 @@ libreoffice-base.svg libreoffice5.3-base.svg
 libreoffice-base.svg libreoffice5.4-base.svg
 libreoffice-base.svg libreoffice6.0-base.svg
 libreoffice-base.svg libreoffice6.4-base.svg
+libreoffice-base.svg libreoffice7.0-base.svg
 libreoffice-base.svg libreofficedev6.0-base.svg
 libreoffice-base.svg libreofficedev6.1-base.svg
 libreoffice-base.svg org.libreoffice.LibreOffice-base.svg
@@ -1250,6 +1256,7 @@ libreoffice-calc.svg libreoffice5.3-calc.svg
 libreoffice-calc.svg libreoffice5.4-calc.svg
 libreoffice-calc.svg libreoffice6.0-calc.svg
 libreoffice-calc.svg libreoffice6.4-calc.svg
+libreoffice-calc.svg libreoffice7.0-calc.svg
 libreoffice-calc.svg libreofficedev6.0-calc.svg
 libreoffice-calc.svg libreofficedev6.1-calc.svg
 libreoffice-calc.svg org.libreoffice.LibreOffice-calc.svg
@@ -1264,6 +1271,7 @@ libreoffice-draw.svg libreoffice5.3-draw.svg
 libreoffice-draw.svg libreoffice5.4-draw.svg
 libreoffice-draw.svg libreoffice6.0-draw.svg
 libreoffice-draw.svg libreoffice6.4-draw.svg
+libreoffice-draw.svg libreoffice7.0-draw.svg
 libreoffice-draw.svg libreofficedev6.0-draw.svg
 libreoffice-draw.svg libreofficedev6.1-draw.svg
 libreoffice-draw.svg org.libreoffice.LibreOffice-draw.svg
@@ -1278,6 +1286,7 @@ libreoffice-impress.svg libreoffice5.3-impress.svg
 libreoffice-impress.svg libreoffice5.4-impress.svg
 libreoffice-impress.svg libreoffice6.0-impress.svg
 libreoffice-impress.svg libreoffice6.4-impress.svg
+libreoffice-impress.svg libreoffice7.0-impress.svg
 libreoffice-impress.svg libreofficedev6.0-impress.svg
 libreoffice-impress.svg libreofficedev6.1-impress.svg
 libreoffice-impress.svg org.libreoffice.LibreOffice-impress.svg
@@ -1302,6 +1311,8 @@ libreoffice-main.svg libreoffice5.4.svg
 libreoffice-main.svg libreoffice6.0-main.svg
 libreoffice-main.svg libreoffice6.0.svg
 libreoffice-main.svg libreoffice6.4-startcenter.svg
+libreoffice-main.svg libreoffice7.0-main.svg
+libreoffice-main.svg libreoffice7.0.svg
 libreoffice-main.svg libreofficedev6.0-main.svg
 libreoffice-main.svg libreofficedev6.0-startcenter.svg
 libreoffice-main.svg libreofficedev6.1-main.svg
@@ -1318,6 +1329,7 @@ libreoffice-math.svg libreoffice5.3-math.svg
 libreoffice-math.svg libreoffice5.4-math.svg
 libreoffice-math.svg libreoffice6.0-math.svg
 libreoffice-math.svg libreoffice6.4-math.svg
+libreoffice-math.svg libreoffice7.0-math.svg
 libreoffice-math.svg libreofficedev6.0-math.svg
 libreoffice-math.svg libreofficedev6.1-math.svg
 libreoffice-math.svg org.libreoffice.LibreOffice-math.svg
@@ -1328,6 +1340,7 @@ libreoffice-startcenter.svg libreoffice5.1-startcenter.svg
 libreoffice-startcenter.svg libreoffice5.2-startcenter.svg
 libreoffice-startcenter.svg libreoffice5.4-startcenter.svg
 libreoffice-startcenter.svg libreoffice6.0-startcenter.svg
+libreoffice-startcenter.svg libreoffice7.0-startcenter.svg
 libreoffice-template.svg libreoffice3-template.svg
 libreoffice-template.svg libreoffice34-template.svg
 libreoffice-template.svg libreoffice4.2-template.svg
@@ -1343,6 +1356,7 @@ libreoffice-writer.svg libreoffice5.3-writer.svg
 libreoffice-writer.svg libreoffice5.4-writer.svg
 libreoffice-writer.svg libreoffice6.0-writer.svg
 libreoffice-writer.svg libreoffice6.4-writer.svg
+libreoffice-writer.svg libreoffice7.0-writer.svg
 libreoffice-writer.svg libreofficedev6.0-writer.svg
 libreoffice-writer.svg libreofficedev6.1-writer.svg
 libreoffice-writer.svg org.libreoffice.LibreOffice-writer.svg
@@ -2436,6 +2450,7 @@ vivaldi.svg vivaldi-snapshot.svg
 vlc.svg org.videolan.VLC.svg
 vmware-player.svg vmplayer.svg
 vmware-workstation.svg vmware.svg
+vscodium.svg com.vscodium.codium.svg
 wallpaper.svg gnome-desktop-config.svg
 wallpaper.svg xfdashboard.svg
 waterfox.svg waterfox-icon.svg
