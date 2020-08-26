@@ -1081,10 +1081,9 @@ button:visited {
   }
 }
 
-/**************
-* Spinbuttons *
-***************/
-
+//
+// Spinbuttons
+//
 spinbutton {
   &:drop(active) {
     box-shadow: none;
@@ -1374,6 +1373,20 @@ toolbar {
       border-width: 0 0 0 1px;
     }
   }
+
+  // &:not(.inline-toolbar) {
+  //   switch,
+  //   scale,
+  //   entry,
+  //   spinbutton,
+  //   button {
+  //     margin-right: 1px;
+  //     margin-bottom: 1px;
+  //   }
+  //
+  //   .linked > button,
+  //   .linked > entry { margin-right:0; }
+  // }
 }
 
 .primary-toolbar:not(.libreoffice-toolbar) {
@@ -4702,23 +4715,11 @@ button.emoji-section {
   // font-size: large;
 
   widget {
-    transition: $shorter_transition;
+    border-radius: $bt_radius;
+    transition: none;
 
     &:hover {
-      font-size: larger;
-    }
-  }
-}
-
-.emoji {
-  button.emoji-section {
-    widget {
-      border-radius: $bt_radius;
-      transition: none;
-
-      &:hover {
-        @extend %selected_items;
-      }
+      @extend %selected_items;
     }
   }
 }
