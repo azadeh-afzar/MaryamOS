@@ -12,7 +12,7 @@ links_dir_path = os.path.join(file_path, LINKS_DIR)
 dirs = [directory[0] for directory in os.walk(links_dir_path)]
 
 dont_use = "links"
-categories = ["actions", "apps", "devices", "emblems", "mimes", "places", "status"]
+categories = ["apps"]
 
 for dir in dirs:
     dir_name = os.path.basename(dir)

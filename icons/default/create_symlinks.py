@@ -10,7 +10,7 @@ file_path = os.path.abspath(os.path.dirname(__file__))
 symlink_list_directory = os.path.join(file_path, SYMLINK_LIST_DIR)
 symlink_directory = os.path.join(file_path, SYMLINK_DIR)
 
-categories = ["actions", "apps", "devices", "emblems", "mimes", "places", "status"]
+categories = ["apps"]
 
 category_list_dirs = [os.path.join(symlink_list_directory, category) for category in categories]
 category_dirs = { category : os.path.join(symlink_directory, category) for category in categories }
