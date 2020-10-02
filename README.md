@@ -1,16 +1,14 @@
 MaryamOS Theme
 ======
 
-MaryamOS is a Complete Desktop Theme for Gnome and GTK 3, it looks like Apple MacOS Big Sur.
+MaryamOS is a Complete Desktop Theme for Gnome shell, it looks like Apple MacOS Big Sur top bar.
 MaryamOS includes gnome-shell theme, icons and cursor themes.
 
 ## Info
 
-- All-in-One theme for GTK 3, Gnome Shell, Icons, Cursors.
+- All-in-One theme for Gnome Shell, Icons, Cursors.
 - Intended only for Gnome desktops with GTK+ 3.20 or later.
-- Supports Nautilus, Nemo, LibreOffice and etc.
 - Theme for Plank dock.
-- High resolution wallpapers included.
 
 ## Preview
 

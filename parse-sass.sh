@@ -29,8 +29,6 @@ fi
 
 for color in "${_COLOR_VARIANTS[@]}"; do
   for trans in "${_TRANS_VARIANTS[@]}"; do
-    sassc $SASSC_OPT src/main/gtk-3.0/gtk${color}${trans}.{scss,css}
-    echo "==> Generating the gtk${color}${trans}.css..."
     sassc $SASSC_OPT src/main/gnome-shell/gnome-shell${color}${trans}.{scss,css}
     echo "==> Generating the gnome-shell${color}${trans}.css..."
   done

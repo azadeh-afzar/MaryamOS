@@ -6,10 +6,6 @@ REPO_DIR=$(cd $(dirname $0) && pwd)
 ASRC_DIR="${REPO_DIR}/src/assets"
 CURSOR_DIR="${REPO_DIR}/cursors"
 
-function inkscape() {
-  command flatpak run org.inkscape.Inkscape "$@"
-}
-
 render_thumbnail() {
   local dest=$1
   local color=$2
@@ -30,12 +26,7 @@ for color in '-light' '-dark' ; do
   render_thumbnail "${dest:-gtk-3.0}" "${color}"
 done
 
-echo "Rendering gtk-3.0 assets"
-cd "$ASRC_DIR/gtk-3.0/common-assets" && ./render-assets.sh && ./render-sidebar-assets.sh
-cd "$ASRC_DIR/gtk-3.0/windows-assets" && ./render-assets.sh && ./render-alt-assets.sh
-
 echo "Rendering Cursor assets"
 cd "$CURSOR_DIR" && ./build.sh
-
 
 exit 0
