@@ -54,17 +54,6 @@ prompt () {
   esac
 }
 
-# Check command avalibility
-function has_command() {
-  command -v $1 > /dev/null
-}
-
-operation_canceled() {
-  clear
-  prompt  --info "\n Operation canceled by user, Bye!"
-  exit 1
-}
-
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
@@ -86,13 +75,12 @@ install() {
   local name=${2}
   local color=${3}
   local opacity=${4}
-  local alt=${5}
-  local icon=${6}
+  local icon=${5}
 
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
 
-  local THEME_DIR=${1}/${2}${3}${4}${5}${6}
+  local THEME_DIR=${1}/${2}${3}${4}${5}
 
   [[ -d ${THEME_DIR} ]] && rm --recursive --force ${THEME_DIR}
 
@@ -271,7 +259,7 @@ install_theme() {
 for opacity in "${opacities[@]-${OPACITY_VARIANTS[@]}}"; do
   for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
     for icon in "${icons[@]-${ICON_VARIANTS[0]}}"; do
-      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${opacity}" "${alt}" "${icon}"
+      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${opacity}" "${icon}"
     done
   done
 done
@@ -283,18 +271,10 @@ install_theme
 # Install cursors
 echo
 prompt --info "Installing cursors..."
-if [ "$UID" -eq "$ROOT_UID" ]; then
-  CURSOR_DEST_DIR="/usr/share/icons"
-else
-  CURSOR_DEST_DIR="$HOME/.local/share/icons"
-fi
-
-if [ -d "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors" ]; then
-  rm --recursive --force "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors"
-fi
 
 cd "${REPO_DIR}/cursors"
-cp --recursive dist "$CURSOR_DEST_DIR/${THEME_NAME}-Cursors"
+./install.sh
+
 prompt --success "Installing cursors ... DONE"
 
 # Install Icons

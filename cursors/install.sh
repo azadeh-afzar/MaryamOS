@@ -3,7 +3,7 @@
 CURRENT_DIR=$(cd $(dirname $0) && pwd)
 
 cd "${CURRENT_DIR}/BigSur"
-./build.sh
+./install.sh
 
 cd "${CURRENT_DIR}/McMojave"
-./build.sh
+./install.sh

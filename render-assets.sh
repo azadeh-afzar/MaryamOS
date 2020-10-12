@@ -27,6 +27,7 @@ for color in '-light' '-dark' ; do
 done
 
 echo "Rendering Cursor assets"
-cd "$CURSOR_DIR" && ./build.sh
+cd "$CURSOR_DIR"
+./build.sh
 
 exit 0
