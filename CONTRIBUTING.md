@@ -96,10 +96,6 @@ advice about good merge requests for open-source projects applies; we
 have [our own writeup][good merge request]
 of this advice. (adapted from mypy guidelines)
 
-See also our [coding conventions][code conventions] -- which consist mainly of a 
-reference to [PEP 8](https://www.python.org/dev/peps/pep-0008/) -- for the code you
-put in the merge request.
-
 Also, do not squash your commits after you have submitted a merge request, as this
 erases context during review. We will squash commits when the merge request is merged.
 
