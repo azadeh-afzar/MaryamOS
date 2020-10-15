@@ -331,6 +331,8 @@ builder.svg package_development.svg
 builder.svg package_development_tools.svg
 builder.svg redhat-system_tools.svg
 builder.svg xfce-devel.svg
+burp.svg BurpSuiteCommunity.svg
+burp.svg kali-burpsuite.svg
 cairo-dock.svg cairo-dock-c.svg
 cairo-dock.svg cairo-dock-o.svg
 cairo-dock.svg latte-dock.svg
@@ -373,6 +375,7 @@ calligrastage.svg org.kde.calligrastage.svg
 calligrawords.svg kwords.svg
 calligrawords.svg org.kde.calligrawords.svg
 camera.svg camera-web.svg
+cawbird.svg uk.co.ibboard.cawbird.svg
 ccsm.svg desktop-effect.svg
 ccsm.svg desktop-effects.svg
 ccsm.svg fusion-icon.svg
@@ -424,6 +427,8 @@ com.deepin.Music.svg org.deepin.flatdeb.deepin-music.svg
 com.deepin.VoiceRecorder.svg org.deepin.flatdeb.deepin-voice-recorder.svg
 com.gexperts.Tilix.svg tilix.svg
 config-users.svg xfsm-switch.svg
+corebird.svg de.lucaswerkmeister.corebird.svg
+corebird.svg org.baedert.corebird.svg
 credentials-preferences.svg cs-online-accounts.svg
 credentials-preferences.svg deepin-cloud-configuration.svg
 credentials-preferences.svg goa-panel.svg
@@ -697,6 +702,8 @@ fragments.svg org.gnome.Fragments.svg
 freefilesync.svg FreeFileSync.svg
 freefilesync.svg org.freefilesync.FreeFileSync.svg
 freeminer.svg terasology.svg
+fritzing.svg fritzing_icon.svg
+fritzing.svg org.fritzing.Fritzing.svg
 gcolor2.svg colorpicker.svg
 gcolor2.svg com.github.ronnydo.colorpicker.svg
 gcolor2.svg com.github.thezbyg.Gpick.svg
@@ -895,6 +902,7 @@ goa-account-lastfm.svg lastfm.svg
 goa-account-lastfm.svg online-account-lastfm.svg
 godot.svg org.godotengine.Godot.svg
 godot.svg steam_icon_404790.svg
+goland.svg com.jetbrains.GoLand.svg
 google-calculator.svg chrome-calculator.svg
 google-calendar.svg calendar-blue-31.svg
 google-calendar.svg chrome-ejjicmeblgpmajnghnpcppodonldlgfn-Default.svg
@@ -952,6 +960,8 @@ gufw.svg preferences-certificates.svg
 hardinfo.svg com.github.lpereira.HardInfo.svg
 hardinfo.svg com.github.lpereira.hardinfo.svg
 hardinfo.svg harddrake2.svg
+hb-icon.svg fr.handbrake.ghb.svg
+hb-icon.svg handbrake.svg
 help-browser.svg 4137_winhlp32.0.svg
 help-browser.svg chmsee-icon.svg
 help-browser.svg deepin-manual.svg
@@ -1155,7 +1165,7 @@ jockey.svg org.kde.plasma.audiodeviceswitcher.svg
 jockey.svg sysprof-icon.svg
 jockey.svg sysprof.svg
 jockey.svg system76-driver.svg
-joplin.svg appleimagekit-joplin.svg
+joplin.svg appimagekit-joplin.svg
 joplin.svg joplin-desktop.svg
 juk.svg org.kde.juk.svg
 kdeconnect.svg org.kde.kdeconnect.kcm.svg
@@ -1231,6 +1241,8 @@ lastfm.svg lastfm-www.last.fm.svg
 lastfm.svg unity-webapps-lastfm.svg
 lastfm.svg web-lastfm.svg
 leafpad.svg krename.svg
+libinput-gestures.svg org.cunidev.gestures.svg
+libinput-gestures.svg preferences-desktop-gestures-touch.svg
 libreoffice-base.svg libreoffice3-base.svg
 libreoffice-base.svg libreoffice34-base.svg
 libreoffice-base.svg libreoffice4.2-base.svg
@@ -1408,6 +1420,7 @@ luminance-hdr.svg net.sourceforge.qtpfsgui.LuminanceHDR.svg
 lutris.svg net.lutris.Lutris.svg
 mailnag.svg mail-notification.svg
 mailspring.svg com.getmailspring.Mailspring.svg
+marker.svg com.github.fabiocolacio.marker.svg
 matlab.svg matlab-desktop.svg
 media-player-banshee.svg banshee-1.svg
 media-player-banshee.svg banshee.svg
@@ -2222,6 +2235,10 @@ system-users.svg org.kde.plasma.uswitcher.svg
 system-users.svg stock_new-meeting.svg
 system-users.svg users-admin.svg
 system-users.svg yast-users.svg
+teams-for-linux.svg appimagekit-teams-for-linux.svg
+teams-for-linux.svg com.github.IsmaelMartinez.teams_for_linux.svg
+teams-for-linux.svg com.microsoft.Teams.svg
+teams-for-linux.svg teams.svg
 teamviewer.svg TeamViewer.svg
 teamviewer.svg chrome-oooiobdokpcfdlahlmcddobejikcmkfo-Default.svg
 telegram.svg chrome-clhhggbfdinjmjhajaheehoeibfljjno-Default.svg
@@ -2431,6 +2448,7 @@ vim.svg gvim.svg
 vim.svg org.vim.Vim.svg
 vim.svg vim-qt.svg
 vim.svg vimlogo.svg
+virt-manager.svg org.virt_manager.virt-manager.svg
 virtualbox.svg Vbox.svg
 virtualbox.svg gnome-boxes.svg
 virtualbox.svg virtual-box.svg
@@ -2491,6 +2509,11 @@ web-outlook.svg chrome-pfpeapihoiogbcmdmnibeplnikfnhoge-Default.svg
 web-outlook.svg unity-webapps-hotmail.svg
 web-outlook.svg unity-webapps-outlook.svg
 web-outlook.svg web-hotmail.svg
+web-whatsapp.svg io.bit3.WhatsAppQT.svg
+web-whatsapp.svg whatsapp-desktop.svg
+web-whatsapp.svg whatsapp-for-linux.svg
+web-whatsapp.svg whatsapp.svg
+web-whatsapp.svg whatsappfordesktop.svg
 web-yahoo.svg goa-account-yahoo.svg
 web-yahoo.svg unity-webapps-yahoo-mail.svg
 web-yahoo.svg unity-webapps-yahoo-news.svg
