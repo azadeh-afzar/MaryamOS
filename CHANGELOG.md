@@ -6,8 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Update default icons to WhiteSur upstream git commit 56086cd
-- Update circle icons to McMojave-circle upstream git commit 6c9d6c5
+- Update default icons to WhiteSur upstream git commit e4f9697
+- Update circle icons to McMojave-circle upstream git commit 95c67fa
 - Add symbolic links auto generation scripts for icon themes
 - Fix icon theme bugs.
 - new icons.
