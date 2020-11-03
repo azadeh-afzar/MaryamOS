@@ -87,7 +87,7 @@ install() {
   prompt --info "Installing '${THEME_DIR}'..."
 
   mkdir --parents                                                                                          "${THEME_DIR}"
-  cp --update --recursive "${REPO_DIR}/LICENSE"                                                            "${THEME_DIR}"
+  cp --update --recursive "${REPO_DIR}/COPYING"                                                            "${THEME_DIR}"
 
   echo "[Desktop Entry]" >>                                                                                "${THEME_DIR}/index.theme"
   echo "Type=X-GNOME-Metatheme" >>                                                                         "${THEME_DIR}/index.theme"
