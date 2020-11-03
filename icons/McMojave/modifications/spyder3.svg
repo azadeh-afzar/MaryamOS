@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <filter id="c" x="-.036" y="-.036" width="1.072" height="1.072" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.88972449"/>
+  </filter>
+  <linearGradient id="b" x1="408.25" x2="407.94" y1="547.6" y2="498.89" gradientTransform="matrix(1.3276,0,0,1.3276,-510.64,-663.52)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#e6e6e6" offset="1"/>
+  </linearGradient>
+ </defs>
+ <rect transform="matrix(1.0115,0,0,1.0115,-389.32,-489.92)" x="386.85" y="486.31" width="59.315" height="59.315" ry="29.657" filter="url(#c)" opacity=".25"/>
+ <rect x="1.9826" y="1.9784" width="59.997" height="59.997" ry="29.998" fill="url(#b)" stroke-width="1.0115"/>
+ <g transform="matrix(.23019 0 0 .23603 -47.544 93.46)">
+  <polygon transform="translate(-1400.5,140.5)" points="1681 -419.03 1718.6 -466.12 1778.6 -465.78 1815.8 -418.25 1802.2 -359.33 1748 -333.38 1694.1 -359.95" fill="#ebebeb" stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="9.18"/>
+  <polygon transform="translate(-1400.5,140.5)" points="1720.5 -390.83 1725.3 -425.31 1759.3 -431.31 1775.5 -400.59 1751.6 -375.59" fill="#ebebeb" stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="7.98"/>
+  <g fill="none">
+   <g stroke="#303030" stroke-width="7.98">
+    <path d="m319.26-351.63c6.166 42.041 5.605 67.996 5.605 67.996"/>
+    <path d="m357.94-290.03c20.012-34.925 36.773-61.438 36.773-61.438"/>
+    <path d="m444.15-288.46s-29.373 10.371-68.668 27.02c25.842 42.322 49.441 56.729 49.441 56.729"/>
+    <path d="m351.04-236.83c-3.139 43.106-1.4 73.657-1.4 73.657"/>
+    <path d="m321.05-250.68c-27.187 31.729-56.616 49.609-56.616 49.609"/>
+    <path d="m324.86-283.64c-44.508 5.942-74.498 3.082-74.498 3.082"/>
+   </g>
+   <path d="m288.88-250 22.534-22.479c6.391-6.391 18.05-6.727 24.777 0l11.547 11.546" stroke="#ee1c24" stroke-width="15"/>
+   <path d="m405.75-272.71-22.535 22.479c-6.39 6.391-18.049 6.727-24.776 0l-11.547-11.546" stroke="#ee1c24" stroke-width="15"/>
+  </g>
+  <path d="m403.79-262.73c-4.372 4.373-9.809 6.055-12.107 3.758-2.354-2.356-0.673-7.793 3.756-12.166 4.371-4.372 9.81-6.053 12.107-3.755 2.355 2.353 0.673 7.791-3.756 12.163z" fill="#f00" stroke="#ee1c24" stroke-linecap="round" stroke-linejoin="round" stroke-width="15.3"/>
+ </g>
+</svg>

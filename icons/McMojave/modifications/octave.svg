@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <filter id="c" x="-.036" y="-.036" width="1.072" height="1.072" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.88972449"/>
+  </filter>
+  <linearGradient id="b" x1="408.25" x2="407.94" y1="547.6" y2="498.89" gradientTransform="matrix(1.3276,0,0,1.3276,-510.64,-663.52)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#e6e6e6" offset="1"/>
+  </linearGradient>
+  <radialGradient id="radialGradient3033" cx="182.98" cy="395.05" r="148.95" gradientTransform="matrix(.22914 -.24901 .76436 .83064 -272.85 -159.69)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#008cbe" offset="0"/>
+   <stop stop-color="#b2ffff" offset="1"/>
+  </radialGradient>
+ </defs>
+ <rect transform="matrix(1.0115,0,0,1.0115,-389.32,-489.92)" x="386.85" y="486.31" width="59.315" height="59.315" ry="29.657" filter="url(#c)" opacity=".25"/>
+ <rect x="1.9826" y="1.9784" width="59.997" height="59.997" ry="29.998" fill="url(#b)" stroke-width="1.0115"/>
+ <g transform="matrix(1.3426 0 0 1.3426 -72.801 -116.22)">
+  <path d="m66.432 97.489c-5.1958 5.6464-3.9366 16.169 2.8111 23.502 6.7477 7.3328 16.429 8.6996 21.625 3.0531s3.9402-16.169-2.8075-23.502c-6.7477-7.3329-16.433-8.6991-21.628-3.0527zm4.7115 2.3455c4.0826-4.4366 11.589-3.4715 16.767 2.156 5.1784 5.6275 6.0665 13.785 1.9839 18.222-4.0826 4.4366-11.591 3.4737-16.769-2.1538s-6.0645-13.787-1.9819-18.224z" fill="url(#radialGradient3033)"/>
+  <g fill="#ff7f2a" stroke="#d45500" stroke-width=".74404">
+   <rect x="85.382" y="99.494" width="4.3499" height="4.3499" rx=".76959" ry=".76959"/>
+   <rect x="60.927" y="105.22" width="10.245" height="10.245" rx="1.8127" ry="1.8127"/>
+   <rect x="87.405" y="118.64" width="6.1898" height="6.1898" rx="1.0951" ry="1.0951"/>
+  </g>
+ </g>
+</svg>
